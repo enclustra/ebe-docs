@@ -44,9 +44,6 @@
 <span id="document-introduction"></span><div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>This is documentation for the Enclustra buildsystem project.</p>
-<p>NOT UP TO DATE</p>
-<p>NOT UP TO DATE</p>
-<p>NOT UP TO DATE</p>
 <div class="section" id="version-information">
 <h3>Version information<a class="headerlink" href="#version-information" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
@@ -220,19 +217,22 @@ sudo pip install --upgrade virtualenv
 <h3>Directory structure<a class="headerlink" href="#directory-structure" title="Permalink to this headline">¶</a></h3>
 <p>The Build Environment is designed to work with a specific directory structure depicted below:</p>
 <div class="highlight-bash"><div class="highlight"><pre>.
+<span class="p">|</span>-- build.sh
 <span class="p">|</span>-- bin
 <span class="p">|</span>-- binaries
+<span class="p">|</span>-- buildscripts
 <span class="p">|</span>-- sources
 <span class="p">|</span>   <span class="p">|</span>-- target_submodule_1
 <span class="p">|</span>   <span class="p">|</span>-- target_submodule_2
 <span class="p">|</span>   <span class="p">|</span>-- target_submodule_3
 <span class="p">|</span>   <span class="p">|</span>-- target_submodule_4
 <span class="p">|</span>-- targets
-<span class="p">|</span>   <span class="p">|</span>-- Family_1
-<span class="p">|</span>       <span class="p">|</span>-- Board_1
-<span class="p">|</span>       <span class="p">|</span>-- Board_2
-<span class="p">|</span>   <span class="p">|</span>-- Family_2
-<span class="p">|</span>       <span class="p">|</span>-- Board_3
+<span class="p">|</span>   <span class="p">|</span>-- Module 1
+<span class="p">|</span>       <span class="p">|</span>-- Baseboard 1
+<span class="p">|</span>       <span class="p">|</span>-- Baseboard 2
+<span class="p">|</span>   <span class="p">|</span>-- Module 2
+<span class="p">|</span>       <span class="p">|</span>-- Baseboard 1
+<span class="p">|</span>       <span class="p">|</span>-- Baseboard 2
 <span class="p">|</span>-- target_output
 </pre></div>
 </div>
@@ -243,16 +243,22 @@ sudo pip install --upgrade virtualenv
 <col width="50%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Folder</th>
+<tr class="row-odd"><th class="head">File/Folder</th>
 <th class="head">function</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>bin</td>
+<tr class="row-even"><td>build.sh</td>
+<td>Main script file, a wrapper the python scripts.</td>
+</tr>
+<tr class="row-odd"><td>bin</td>
 <td>Remote toolchains installation folder.</td>
 </tr>
-<tr class="row-odd"><td>binaries</td>
+<tr class="row-even"><td>binaries</td>
 <td>Additional target binaries download folder.</td>
+</tr>
+<tr class="row-odd"><td>buildscripts</td>
+<td>Actual buildscripts written in python</td>
 </tr>
 <tr class="row-even"><td>sources</td>
 <td>master_git_repository clone foder. It contains submodules folders.</td>
@@ -268,7 +274,7 @@ sudo pip install --upgrade virtualenv
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
 <p>Output folders are named according to this folder naming scheme:</p>
-<p class="last"><code class="docutils literal"><span class="pre">out_&lt;family&gt;_&lt;module&gt;_&lt;board&gt;_&lt;bootmode&gt;</span></code>.</p>
+<p class="last"><code class="docutils literal"><span class="pre">out_&lt;module&gt;_&lt;board&gt;_&lt;bootmode&gt;</span></code>.</p>
 </div>
 </div>
 <div class="section" id="repositories-structure">
