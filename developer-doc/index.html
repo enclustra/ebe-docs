@@ -1,0 +1,557 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Enclustra Build Environment - Developer Documentation</title>
+    
+    <link rel="stylesheet" href="_static/rtd.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="None" href="index.html#document-index" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="nav-item nav-item-0"><a href="index.html#document-index">Enclustra Build Environment - Developer Documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="project">
+<h1>Enclustra Build Environment - Developer Documentation<a class="headerlink" href="#project" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<span id="document-introduction"></span><div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This is documentation for the Enclustra buildsystem project.</p>
+<p>NOT UP TO DATE</p>
+<p>NOT UP TO DATE</p>
+<p>NOT UP TO DATE</p>
+<div class="section" id="version-information">
+<h3>Version information<a class="headerlink" href="#version-information" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Date</th>
+<th class="head">Rev</th>
+<th class="head">Author</th>
+<th class="head">Changes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>2015-03-13</td>
+<td>0.1.0</td>
+<td>Karol Gugala</td>
+<td>Quick start guide</td>
+</tr>
+<tr class="row-odd"><td>2015-03-30</td>
+<td>0.2.0</td>
+<td>Karol Gugala</td>
+<td>Builsystem description</td>
+</tr>
+<tr class="row-even"><td>2015-04-17</td>
+<td>0.2.1</td>
+<td>Michael Gielda</td>
+<td>Review</td>
+</tr>
+<tr class="row-odd"><td>2015-05-08</td>
+<td>0.3.0</td>
+<td>Karol Gugala</td>
+<td>Binaries and command line options</td>
+</tr>
+<tr class="row-even"><td>2015-05-08</td>
+<td>0.3.1</td>
+<td>Aleksandra Szawara</td>
+<td>Language check</td>
+</tr>
+<tr class="row-odd"><td>2015-06-01</td>
+<td>0.3.2</td>
+<td>Karol Gugala</td>
+<td>Boot modes</td>
+</tr>
+<tr class="row-even"><td>2015-08-19</td>
+<td>0.3.3</td>
+<td>Aurelio Lucchesi</td>
+<td>Minor corrections</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<span id="document-system"></span><div class="section" id="build-environment">
+<h2>Build Environment<a class="headerlink" href="#build-environment" title="Permalink to this headline">¶</a></h2>
+<p>This chapter describes the Build Environment structure.
+The whole Build Environment is written in <code class="docutils literal"><span class="pre">Python</span></code>.
+Its internal functionality is determined by <cite>ini</cite> files placed in a specific directory layout.</p>
+<div class="section" id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h3>
+<p>To run the build script a Python interpreter is required.
+The system is compatible with both, Python 2 and Python 3.</p>
+<p>The Build Environment requires additional software to be installed as listed below:</p>
+<table border="1" class="docutils" id="id1">
+<caption><span class="caption-text">Required software</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">tool</th>
+<th class="head">minimal version</th>
+<th class="head">comments</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>dialog</td>
+<td>1.1-20120215</td>
+<td>Required only in the GUI mode</td>
+</tr>
+<tr class="row-odd"><td>make</td>
+<td>3.79.1</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>git</td>
+<td>1.7.8</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>tar</td>
+<td>1.15</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>wget</td>
+<td>1.0</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>c++ compiler</td>
+<td>&nbsp;</td>
+<td>Required to build a busybox rootfs</td>
+</tr>
+<tr class="row-even"><td>gcc</td>
+<td>&nbsp;</td>
+<td>Required to buld the Linux kernel, U-Boot and a busybox rootfs</td>
+</tr>
+</tbody>
+</table>
+<p>For more information on how to install the required packages in the supported systems, please refer to the corresponding subsection (<a class="reference internal" href="#suse"><span class="std std-ref">OpenSUSE 13.2 (Harlequin)</span></a>, <a class="reference internal" href="#centos"><span class="std std-ref">CentOS 7</span></a>, <a class="reference internal" href="#ubuntu"><span class="std std-ref">Ubuntu 14.04 LTS</span></a>).</p>
+<p>Additionally, the following Python modules are required (this applies to every supported distribution):</p>
+<ul class="simple">
+<li>os2emxpath</li>
+<li>backports</li>
+<li>ntpath</li>
+<li>pkg_resources</li>
+<li>opcode</li>
+<li>posixpath</li>
+<li>sre_constants</li>
+<li>nturl2path</li>
+<li>sre_parse</li>
+<li>sre_compile</li>
+<li>pyexpat</li>
+<li>strop</li>
+<li>genericpath</li>
+<li>repr</li>
+</ul>
+<p>Those packages can be obtained by using <code class="docutils literal"><span class="pre">pip</span></code>:</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo pip install os2emxpath backports ntpath pkg_resources opcode posixpath sre_constants<span class="se">\</span>
+                 nturl2path sre_parse sre_compile pyexpat strop genericpath repr
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Either the <code class="docutils literal"><span class="pre">dialog</span></code> Python module or the external <code class="docutils literal"><span class="pre">dialog</span></code> application is required to use the Build Environment&#8217;s GUI.</p>
+</div>
+<div class="section" id="opensuse-13-2-harlequin">
+<span id="suse"></span><h4>OpenSUSE 13.2 (Harlequin)<a class="headerlink" href="#opensuse-13-2-harlequin" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash"><div class="highlight"><pre>sudo pip install argparse
+sudo yzpper install -y dialog git make
+sudo yzpper install -y u-boot-tools gcc patch
+sudo yzpper install -y gcc-c++
+sudo yzpper install -y flex bison
+sudo yzpper install -y linux32
+</pre></div>
+</div>
+</div>
+<div class="section" id="centos-7">
+<span id="centos"></span><h4>CentOS 7<a class="headerlink" href="#centos-7" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash"><div class="highlight"><pre>sudo yum install -y dialog make git tar wget
+sudo yum -y groupinstall <span class="s1">&#39;Development Tools&#39;</span>
+sudo yum install -y glibc.i686 libgcc.i686 libstdc++.i686 glibc-devel.i686
+</pre></div>
+</div>
+</div>
+<div class="section" id="ubuntu-14-04-lts">
+<span id="ubuntu"></span><h4>Ubuntu 14.04 LTS<a class="headerlink" href="#ubuntu-14-04-lts" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get install -y u-boot-tools
+sudo apt-get install -y git
+sudo apt-get install -y gcc-multilib
+sudo apt-get install -y lib32stdc++6
+sudo apt-get install -y python-pip python-dev build-essential
+sudo pip install --upgrade pip
+sudo pip install --upgrade virtualenv
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="directory-structure">
+<h3>Directory structure<a class="headerlink" href="#directory-structure" title="Permalink to this headline">¶</a></h3>
+<p>The Build Environment is designed to work with a specific directory structure depicted below:</p>
+<div class="highlight-bash"><div class="highlight"><pre>.
+<span class="p">|</span>-- bin
+<span class="p">|</span>-- binaries
+<span class="p">|</span>-- sources
+<span class="p">|</span>   <span class="p">|</span>-- target_submodule_1
+<span class="p">|</span>   <span class="p">|</span>-- target_submodule_2
+<span class="p">|</span>   <span class="p">|</span>-- target_submodule_3
+<span class="p">|</span>   <span class="p">|</span>-- target_submodule_4
+<span class="p">|</span>-- targets
+<span class="p">|</span>   <span class="p">|</span>-- Family_1
+<span class="p">|</span>       <span class="p">|</span>-- Board_1
+<span class="p">|</span>       <span class="p">|</span>-- Board_2
+<span class="p">|</span>   <span class="p">|</span>-- Family_2
+<span class="p">|</span>       <span class="p">|</span>-- Board_3
+<span class="p">|</span>-- target_output
+</pre></div>
+</div>
+<table border="1" class="docutils" id="id2">
+<caption><span class="caption-text">Folder description</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Folder</th>
+<th class="head">function</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>bin</td>
+<td>Remote toolchains installation folder.</td>
+</tr>
+<tr class="row-odd"><td>binaries</td>
+<td>Additional target binaries download folder.</td>
+</tr>
+<tr class="row-even"><td>sources</td>
+<td>master_git_repository clone foder. It contains submodules folders.</td>
+</tr>
+<tr class="row-odd"><td>targets</td>
+<td>Targets configuration. Family folders containing board folders, where device configuration files are placed.</td>
+</tr>
+<tr class="row-even"><td>target_output</td>
+<td>Folders generated during the build process, that contain the output files after a succefull build of every specific target.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>Output folders are named according to this folder naming scheme:</p>
+<p class="last"><code class="docutils literal"><span class="pre">out_&lt;family&gt;_&lt;module&gt;_&lt;board&gt;_&lt;bootmode&gt;</span></code>.</p>
+</div>
+</div>
+<div class="section" id="repositories-structure">
+<h3>Repositories structure<a class="headerlink" href="#repositories-structure" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">sources</span></code> directory is the master git repository with a number of submodules pointing to actual code repositories.
+During the fetch phase, the Build Environment synchronizes only the submodules required to build the selected targets.</p>
+<div class="highlight-bash"><div class="highlight"><pre>.
+<span class="p">|</span>-- master_git_repository
+<span class="p">|</span>   <span class="p">|</span>-- target_submodule_1
+<span class="p">|</span>   <span class="p">|</span>-- target_submodule_2
+<span class="p">|</span>   <span class="p">|</span>-- target_submodule_3
+</pre></div>
+</div>
+</div>
+<div class="section" id="system-configuration">
+<h3>System Configuration<a class="headerlink" href="#system-configuration" title="Permalink to this headline">¶</a></h3>
+<p>System settings are stored in <code class="docutils literal"><span class="pre">enclustra.ini</span></code> file in the main directory of the Build Environment.
+This file contains general information about the Build Environment configuration and the available toolchains.
+The file contains three obligatory sections:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[general]</span>
+<span class="k">[toolchains]</span>
+<span class="k">[debug]</span>
+</pre></div>
+</div>
+<p>The <strong>[general]</strong> section holds two required keys:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[general]</span>
+<span class="na">manifest_repository</span> <span class="o">=</span> <span class="s">git@github.com:enclustra/enclustra-buildscript-master.git</span>
+<span class="na">nthreads</span> <span class="o">=</span> <span class="s">9</span>
+</pre></div>
+</div>
+<p>The value of the <code class="docutils literal"><span class="pre">manifest_repository</span></code> key refers to the master git repository containing submodules with target sources.
+The <code class="docutils literal"><span class="pre">nthreads</span></code> key holds a number of jobs running during the building process of the selected targets.</p>
+<p>The <strong>[toolchains]</strong> section provides information about available toolchains. Its key-value pairs are constructed as follows:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">key</span></code> is the name under which the toolchain will be registered</li>
+<li><code class="docutils literal"><span class="pre">value</span></code> holds information where the toolchain can be found. There are two available values <code class="docutils literal"><span class="pre">local</span></code> and <code class="docutils literal"><span class="pre">remote</span></code>.
+The <code class="docutils literal"><span class="pre">local</span></code> means that the toolchain is installed in the system, while <code class="docutils literal"><span class="pre">remote</span></code> requires downloading from remote server.</li>
+</ul>
+<p>For every <code class="docutils literal"><span class="pre">remote</span></code> toolchain it is required to provide a section given exactly the same name as the key in <code class="docutils literal"><span class="pre">[toolchains]</span></code> section e.g.:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[toolchains]</span>
+<span class="na">arm-linux-gnueabi</span> <span class="o">=</span> <span class="s">remote</span>
+<span class="k">[arm-linux-gnueabi]</span>
+<span class="na">server</span> <span class="o">=</span> <span class="s">http://antmicro.com/projects/enclustra/arm-linux-gnueabi.tar.gz</span>
+<span class="na">path</span> <span class="o">=</span> <span class="s">arm-linux-gnueabi/bin</span>
+</pre></div>
+</div>
+<p>This section has to contain two keys:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">server</span></code> points to location where the toolchain tarball is located</li>
+<li><code class="docutils literal"><span class="pre">path</span></code> contains a relative path to the toolchain executables within the tarball</li>
+</ul>
+<p>The <strong>[debug]</strong> section is used to control debug information printing and/or storing. It holds the following key-value pairs:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">debug-calls</span></code> a boolean value whenever the Build Environment should print additional info about the called tools such as <cite>git</cite> or <cite>tar</cite></li>
+<li><code class="docutils literal"><span class="pre">quiet-mode</span></code> a boolean value. When set the output from a called tools will be hidden. Only information about the state of the system will be displayed.</li>
+<li><code class="docutils literal"><span class="pre">break-on-error</span></code> a boolean value. When set force the Build Environment to stop execution on first error.</li>
+<li><code class="docutils literal"><span class="pre">build-logfile</span></code> [optional]. When defined the whole output will be written to the file pointed be its value.
+The file will contain information about the state of the system along with the output from a called tools. The logging is no affected by the <code class="docutils literal"><span class="pre">quiet-mode</span></code> setting.</li>
+</ul>
+</div>
+<div class="section" id="device-configuration">
+<h3>Device Configuration<a class="headerlink" href="#device-configuration" title="Permalink to this headline">¶</a></h3>
+<p>The targets configuration is stored in set of the <code class="docutils literal"><span class="pre">build.ini</span></code> files.
+The files are stored in the <code class="docutils literal"><span class="pre">targets</span></code> folder and its sub folders within the Build Environment.
+Those files contain information how to fetch and build software for a selected device, and optionally information about binaries required for the device.</p>
+<p>The <code class="docutils literal"><span class="pre">targets</span></code> folder contains a sub folders narrowing a possible devices parameters.
+By default the system is designed to distinguish the devices by (in order):</p>
+<ol class="arabic simple">
+<li>Family (chip vendor)</li>
+<li>Module</li>
+<li>Base board</li>
+<li>Booting options</li>
+</ol>
+<p>This, of course may be modified by the developer and adjusted according to needs.
+General rule is that the next folder level introduces new features or distinguishes between a version of the device.</p>
+<p>Each folder may contain the <code class="docutils literal"><span class="pre">build.ini</span></code>, <code class="docutils literal"><span class="pre">description</span></code> file and a number of a sub folders.</p>
+<p>A device configuration must be described by at least one <code class="docutils literal"><span class="pre">build.ini</span></code> file.
+Properties from the <code class="docutils literal"><span class="pre">build.ini</span></code> files from sub folders are added to the device description.
+If a certain property is defined in the parent <code class="docutils literal"><span class="pre">build.ini</span></code> file it is overwritten by the one defined in a sub folder.</p>
+<p>The result configuration built from the <code class="docutils literal"><span class="pre">build.ini</span></code> files must contain two obligatory and four optional sections:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[toolchains]</span>
+<span class="k">[targets]</span>
+<span class="c1"># optional</span>
+<span class="k">[binaries]</span>
+<span class="k">[bootimage]</span>
+<span class="k">[bootimage-required-files]</span>
+<span class="k">[bootimage-result-files]</span>
+</pre></div>
+</div>
+<div class="section" id="toolchains">
+<h4>Toolchains<a class="headerlink" href="#toolchains" title="Permalink to this headline">¶</a></h4>
+<p>The <strong>[toolchains]</strong> section holds a number of key value pairs, each defining one toolchain used by the device.
+The key defines a unique toolchain label, this is used internally to distinguish between a different tools.
+Value determines the registered toolchain that should be used in order to build targets for the device e.g.</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[toolchains]</span>
+<span class="na">arm</span> <span class="o">=</span> <span class="s">arm-none-linux-gnueabi</span>
+<span class="na">uboot</span> <span class="o">=</span> <span class="s">uboot-tools</span>
+<span class="na">dtc</span> <span class="o">=</span> <span class="s">device-tree-compiler</span>
+<span class="na">bootgen</span> <span class="o">=</span> <span class="s">mkbootimage</span>
+</pre></div>
+</div>
+<p>The selected toolchains are added to the <code class="docutils literal"><span class="pre">PATH</span></code> variable for every build command, including bootimage generation, invoked for the device</p>
+</div>
+<div class="section" id="targets">
+<h4>Targets<a class="headerlink" href="#targets" title="Permalink to this headline">¶</a></h4>
+<p>The <strong>[targets]</strong> section holds number of key-value pairs, each defining one target available for the device.
+The key defines a target name while the value determines whether the target is going to be set to fetch and built by default e.g.</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[targets]</span>
+<span class="na">u-boot</span> <span class="o">=</span> <span class="s">true</span>
+<span class="na">linux</span> <span class="o">=</span> <span class="s">false</span>
+</pre></div>
+</div>
+<p>For every target provided in the <code class="docutils literal"><span class="pre">[targets]</span></code> section two obligatory sections must be defined:</p>
+<ul class="simple">
+<li>[&lt;target-name&gt;]</li>
+<li>[&lt;target-name&gt;-copyfiles]</li>
+</ul>
+<p>Additionally three optional sections can be defined:</p>
+<ul class="simple">
+<li>[&lt;target-name&gt;-scripts]</li>
+<li>[&lt;target-name&gt;-build]</li>
+<li>[&lt;target-name&gt;-parallelbuild]</li>
+<li>[&lt;target-name&gt;-help]</li>
+</ul>
+<p>For example for the <code class="docutils literal"><span class="pre">uboot</span></code> target the sections are:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[targets]</span>
+<span class="na">uboot</span> <span class="o">=</span> <span class="s">true</span>
+<span class="c1"># obligatory</span>
+<span class="k">[uboot]</span>
+<span class="c1"># optional</span>
+<span class="k">[uboot-parallelbuild]</span>
+<span class="c1"># optional</span>
+<span class="k">[uboot-build]</span>
+<span class="c1"># obligatory</span>
+<span class="k">[uboot-copyfiles]</span>
+<span class="c1"># optional</span>
+<span class="k">[uboot-scripts]</span>
+<span class="c1">#optional</span>
+<span class="k">[uboot-help]</span>
+</pre></div>
+</div>
+<p>The <strong>[&lt;target-name&gt;]</strong> section contains one obligatory and one optional key:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">repository</span></code> obligatory key which value holds the name of the git submodule containing a source code for the target.</li>
+<li><code class="docutils literal"><span class="pre">branch</span></code> optional key which holds the name of the git branch which will be used for compilation.</li>
+<li><code class="docutils literal"><span class="pre">disables</span></code> optional key holding a name of the target, which will be disabled if this target will be chosen.
+The disabled target will not be fetched and built. This option is useful when two targets operate on the same repository, but with different build configurations.</li>
+</ul>
+<p>The <strong>[&lt;target-name&gt;-build]</strong> section contains a number of key-value pairs describing how to build targets.
+The key is the build name, while value is the exact command that needs to be invoked to build the software.
+The build commands will be called in the exact order as defined in the section.</p>
+<p>The <strong>[&lt;target-name&gt;-parallelbuild]</strong> section contains a number of key-value pairs describing how to build targets.
+The key is the build name, while value is the exact command that needs to be invoked to build the software.
+The build commands will be called in the exact order as defined in the section.
+The <code class="docutils literal"><span class="pre">-jX</span></code> switch will be added to each build command, where <code class="docutils literal"><span class="pre">X</span></code> is the number of a threads defined in the <code class="docutils literal"><span class="pre">enclustra.ini</span></code> file.</p>
+<p>The <strong>[&lt;target-name&gt;-copyfiles]</strong> section contains a number of key-value pairs describing which file will be copied to the output directory after a successful building process.
+The key determines the name under which the file will be saved in the output directory while the value holds a relative path to the file in the target repository directory.</p>
+<p>The <strong>[&lt;target-name&gt;-help]</strong> section holds only one key - <code class="docutils literal"><span class="pre">description</span></code> which value is a short description displayed when the user is about to choose which targets are going to be fetched and/or built.</p>
+<p>The <strong>[&lt;target-name&gt;-scripts]</strong> section contains two optional keys:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">postfetch</span></code> points to a script which will be copied to the target repository directory and run after a successful fetch of the sources</li>
+<li><code class="docutils literal"><span class="pre">postbuild</span></code> points to a script which will be copied to the target repository directory and run after a successful building process of the target</li>
+</ul>
+<p>The scripts must be placed in the deepest device sub directory, or referenced by a symbolic link from there.</p>
+<p>Example configuration for <code class="docutils literal"><span class="pre">uboot</span></code> target:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[uboot]</span>
+<span class="na">repository</span> <span class="o">=</span> <span class="s">xilinx-uboot</span>
+<span class="k">[uboot-parallelbuild]</span>
+<span class="na">defconfig</span> <span class="o">=</span> <span class="s">make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- zynq_mars_zx3_defconfig</span>
+<span class="na">elf</span> <span class="o">=</span> <span class="s">make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-</span>
+<span class="k">[uboot-copyfiles]</span>
+<span class="na">u-boot.elf</span> <span class="o">=</span> <span class="s">u-boot</span>
+<span class="k">[uboot-scripts]</span>
+<span class="na">postfetch</span> <span class="o">=</span> <span class="s">postfetch.sh</span>
+<span class="na">postbuild</span> <span class="o">=</span> <span class="s">postbuild.sh</span>
+<span class="k">[uboot-help]</span>
+<span class="na">description</span> <span class="o">=</span> <span class="s">Fetch and build the U-Boot bootloader.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="binaries">
+<h4>Binaries<a class="headerlink" href="#binaries" title="Permalink to this headline">¶</a></h4>
+<p>The <strong>[Binaries]</strong> section holds a number of key-value pairs, each defining one binary file required for the device.
+The key defines a binary name while the boolean value determines if the binary is default choice or not.
+For every binary in the <code class="docutils literal"><span class="pre">[binaries]</span></code> section it is required to provide two additional sections:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">[&lt;binary-name&gt;]</span></code></li>
+<li><code class="docutils literal"><span class="pre">[&lt;binary-name&gt;-copyfiles]</span></code></li>
+</ul>
+<p>The <strong>[&lt;binary-name&gt;]</strong> section contains three keys:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">unpack</span></code> - determining whenever the acquired binary should be unpacked before copying to the output folder.</li>
+<li><code class="docutils literal"><span class="pre">url</span></code> - defining the location from where the binary can be acquired</li>
+<li><code class="docutils literal"><span class="pre">shortname</span></code> - a short string that will be appended to the output directory name, if not specified, the full binary-name will be used</li>
+<li><code class="docutils literal"><span class="pre">description</span></code> - the name of the binary displayed in the GUI menu</li>
+</ul>
+<p>The <strong>[&lt;binary-name&gt;-copyfiles]</strong> section holds a number of key-value pairs describing which file will be copied to the output directory after a downloading and optional unpacking of the binary file.
+The key determines a name under which the file will be saved in the output directory while the value holds relative path to the file in the binaries directory.</p>
+<p>Example configuration for the <code class="docutils literal"><span class="pre">boot_files</span></code> binary:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[binaries]</span>
+<span class="na">boot_files</span> <span class="o">=</span> <span class="s">true</span>
+<span class="k">[boot_files]</span>
+<span class="na">unpack</span> <span class="o">=</span> <span class="s">true</span>
+<span class="na">url</span> <span class="o">=</span> <span class="s">http://www.example.com/bins/boot_files.zip</span>
+<span class="na">description</span> <span class="o">=</span> <span class="s">&quot;Boot files&quot;</span>
+<span class="k">[boot_files-copyfiles]</span>
+<span class="na">fpga.bit</span> <span class="o">=</span> <span class="s">boot_files/fpga.bit</span>
+<span class="na">script</span> <span class="o">=</span> <span class="s">boot_files/script</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="bootimage">
+<h4>Bootimage<a class="headerlink" href="#bootimage" title="Permalink to this headline">¶</a></h4>
+<p>The <strong>[bootimage]</strong> section contains only one key <code class="docutils literal"><span class="pre">bootimage</span></code> defining the command that need to be invoked in order to create the image.
+The command will be invoked from the output folder after successful build of the targets.</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[bootimage]</span>
+<span class="na">bootimage</span> <span class="o">=</span> <span class="s">mkbootimage boot.bif boot.bin</span>
+</pre></div>
+</div>
+<p>The <strong>[bootimage-required-files]</strong> section contains a number of key-value pairs determining a set of files required to build bootimage.
+The key is the name of the file while boolean value determines if the file is required or not.
+This mechanism enable disabling the particular files in when bootimage settings are overridden. For the Xilinx family the section may look like:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[bootimage-required-files]</span>
+<span class="na">boot.bif</span> <span class="o">=</span> <span class="s">true</span>
+<span class="na">fsbl.elf</span> <span class="o">=</span> <span class="s">true</span>
+<span class="na">fpga.bit</span> <span class="o">=</span> <span class="s">true</span>
+<span class="na">u-boot.elf</span> <span class="o">=</span> <span class="s">true</span>
+</pre></div>
+</div>
+<p>The bootimage will not be generated if any of the required files is missing.</p>
+<p>The <strong>[bootimage-result-files]</strong> section contains a number of key-value pairs determining a set of files generated by the bootimage command.
+The key is the name of the file while boolean value determines if the file is generated or not.
+This mechanism enable disabling the particular files in when bootimage settings are overridden. For the Xilinx family the section may look like:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[bootimage-result-files]</span>
+<span class="na">boot.bin</span> <span class="o">=</span> <span class="s">true</span>
+</pre></div>
+</div>
+<p>Every file set as generated will be removed if the bootimage generation fails due to errors or will be skipped due to missing files marked as required.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html#document-index">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html#document-index">Table Of Contents</a></h3>
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-introduction">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#version-information">Version information</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-system">Build Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#directory-structure">Directory structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#repositories-structure">Repositories structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#system-configuration">System Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#device-configuration">Device Configuration</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="nav-item nav-item-0"><a href="index.html#document-index">Enclustra Build Environment - Developer Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright Antmicro Ltd for Enclustra GmbH, 2015.
+      Last updated on 2015-12-08.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4a0+.
+    </div>
+  </body>
+</html>
