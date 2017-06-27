@@ -81,6 +81,11 @@
 <td>Tomasz Gorochowik</td>
 <td>Major reorganization</td>
 </tr>
+<tr class="row-even"><td>2016-06-21</td>
+<td>0.1.4</td>
+<td>Tomasz Gorochowik</td>
+<td>Project mode section</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -121,19 +126,23 @@ The system is compatible with both, Python 2 and Python 3.</p>
 <td>1.7.8</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-odd"><th class="stub">tar</th>
+<tr class="row-odd"><th class="stub">mercurial</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><th class="stub">tar</th>
 <td>1.15</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-even"><th class="stub">wget</th>
-<td>1.0</td>
+<tr class="row-odd"><th class="stub">curl</th>
+<td>7.9.3</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-odd"><th class="stub">c++ compiler</th>
+<tr class="row-even"><th class="stub">c++ compiler</th>
 <td>&nbsp;</td>
 <td>Required to build a busybox rootfs</td>
 </tr>
-<tr class="row-even"><th class="stub">gcc</th>
+<tr class="row-odd"><th class="stub">gcc</th>
 <td>&nbsp;</td>
 <td>Required to build the Linux kernel, U-Boot and a busybox rootfs</td>
 </tr>
@@ -158,7 +167,7 @@ The system is compatible with both, Python 2 and Python 3.</p>
 <li>repr</li>
 </ul>
 <p>Those packages can be obtained by using <code class="docutils literal"><span class="pre">pip</span></code>:</p>
-<div class="highlight-bash"><div class="highlight"><pre>sudo pip install os2emxpath backports ntpath pkg_resources opcode posixpath sre_constants<span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo pip install os2emxpath backports ntpath pkg_resources opcode posixpath sre_constants<span class="se">\</span>
                  nturl2path sre_parse sre_compile pyexpat strop genericpath repr
 </pre></div>
 </div>
@@ -168,8 +177,8 @@ The system is compatible with both, Python 2 and Python 3.</p>
 </div>
 <div class="section" id="opensuse-13-2-harlequin">
 <span id="suse"></span><h4>OpenSUSE 13.2 (Harlequin)<a class="headerlink" href="#opensuse-13-2-harlequin" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash"><div class="highlight"><pre>sudo pip install argparse
-sudo yzpper install -y dialog git make
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo pip install argparse
+sudo yzpper install -y dialog git make mercurial
 sudo yzpper install -y u-boot-tools gcc patch
 sudo yzpper install -y gcc-c++
 sudo yzpper install -y flex bison
@@ -179,7 +188,7 @@ sudo yzpper install -y linux32
 </div>
 <div class="section" id="centos-7">
 <span id="centos"></span><h4>CentOS 7<a class="headerlink" href="#centos-7" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash"><div class="highlight"><pre>sudo yum install -y dialog make git tar wget
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo yum install -y dialog make git tar wget mercurial
 sudo yum -y groupinstall <span class="s1">&#39;Development Tools&#39;</span>
 sudo yum install -y glibc.i686 libgcc.i686 libstdc++.i686 glibc-devel.i686
 </pre></div>
@@ -187,8 +196,9 @@ sudo yum install -y glibc.i686 libgcc.i686 libstdc++.i686 glibc-devel.i686
 </div>
 <div class="section" id="ubuntu-14-04-lts">
 <span id="ubuntu"></span><h4>Ubuntu 14.04 LTS<a class="headerlink" href="#ubuntu-14-04-lts" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get install -y u-boot-tools
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get install -y u-boot-tools
 sudo apt-get install -y git
+sudo apt-get install -y mercurial
 sudo apt-get install -y gcc-multilib
 sudo apt-get install -y lib32stdc++6
 sudo apt-get install -y python-pip python-dev build-essential
@@ -201,7 +211,7 @@ sudo pip install --upgrade virtualenv
 <div class="section" id="directory-structure">
 <h3>Directory Structure<a class="headerlink" href="#directory-structure" title="Permalink to this headline">¶</a></h3>
 <p>The build environment is designed to work with a specific directory structure depicted below:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="p">|</span>-- bin
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="p">|</span>-- bin
 <span class="p">|</span>-- binaries
 <span class="p">|</span>-- buildscripts
 <span class="p">|</span>-- sources
@@ -261,7 +271,7 @@ sudo pip install --upgrade virtualenv
 <h3>Repositories Structure<a class="headerlink" href="#repositories-structure" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal"><span class="pre">sources</span></code> directory is the master git repository with a number of submodules pointing to actual code repositories.
 During the fetch phase, the build environment synchronizes only the submodules required to build the selected targets.</p>
-<div class="highlight-bash"><div class="highlight"><pre>.
+<div class="highlight-bash"><div class="highlight"><pre><span></span>.
 <span class="p">|</span>-- container_git_repository
 <span class="p">|</span>   <span class="p">|</span>-- target_submodule_1
 <span class="p">|</span>   <span class="p">|</span>-- target_submodule_2
@@ -354,7 +364,7 @@ Additionally, parameters in the <code class="docutils literal"><span class="pre"
 <li>Clone the build environment repository with:</li>
 </ol>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre>git clone https://github.com/enclustra-bsp/bsp-xilinx.git
+<div><div class="highlight-bash"><div class="highlight"><pre><span></span>git clone https://github.com/enclustra-bsp/bsp-xilinx.git
 </pre></div>
 </div>
 </div></blockquote>
@@ -362,7 +372,7 @@ Additionally, parameters in the <code class="docutils literal"><span class="pre"
 <li>Change to the enclustra-buildscripts directory:</li>
 </ol>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd </span>enclustra-buildscripts
+<div><div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> enclustra-buildscripts
 </pre></div>
 </div>
 </div></blockquote>
@@ -404,7 +414,7 @@ Additionally, parameters in the <code class="docutils literal"><span class="pre"
 <h3>Command Line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h3>
 <p>The build process can be invoked from the command line. All options that are available in the GUI are present on the command line interface as well.
 A list of the available command line options can be obtained like this:</p>
-<div class="highlight-none"><div class="highlight"><pre>./build.sh --help
+<div class="highlight-none"><div class="highlight"><pre><span></span>./build.sh --help
 
 usage: build.sh [-h] [-L] [-d device] [-l] [-x target] [-f target] [-b target]
             [--fetch-history target] [--list-dev-options] [-o index] [-c] [-v]
@@ -431,41 +441,41 @@ optional arguments:
 </pre></div>
 </div>
 <p>In order to list all available devices use the following command:</p>
-<div class="highlight-bash"><div class="highlight"><pre>./build.sh -L
+<div class="highlight-bash"><div class="highlight"><pre><span></span>./build.sh -L
 </pre></div>
 </div>
 <p>If the <code class="docutils literal"><span class="pre">build.sh</span></code> script is invoked with the <code class="docutils literal"><span class="pre">-d</span></code> option, the build environment switches to console mode.
 This mode requires a valid device specifier in order to locate the device configuration within the <code class="docutils literal"><span class="pre">targets</span></code> directory for the specific device, e.g. for the <cite>Mars ZX3</cite> module on the <cite>Mars PM3</cite> base board in <cite>QSPI</cite> boot mode, the command would look like this:</p>
-<div class="highlight-bash"><div class="highlight"><pre>./build.sh -d Mars_ZX3/Mars_PM3/QSPI
+<div class="highlight-bash"><div class="highlight"><pre><span></span>./build.sh -d Mars_ZX3/Mars_PM3/QSPI
 </pre></div>
 </div>
 <p>Such a command will fetch and build all the default targets for a selected device.
 To list all the available targets for a selected device, the user needs to add the <code class="docutils literal"><span class="pre">-l</span></code> switch to the command, e.g.:</p>
-<div class="highlight-bash"><div class="highlight"><pre>./build.sh -d Mars_ZX3/Mars_PM3/QSPI -l
+<div class="highlight-bash"><div class="highlight"><pre><span></span>./build.sh -d Mars_ZX3/Mars_PM3/QSPI -l
 </pre></div>
 </div>
 <p>The <code class="docutils literal"><span class="pre">-x</span></code> option will fetch and build only the selected target, e.g.:</p>
-<div class="highlight-bash"><div class="highlight"><pre>./build.sh -d Mars_ZX3/Mars_PM3/QSPI -x Linux
+<div class="highlight-bash"><div class="highlight"><pre><span></span>./build.sh -d Mars_ZX3/Mars_PM3/QSPI -x Linux
 </pre></div>
 </div>
 <p>That will fetch and build only the <code class="docutils literal"><span class="pre">Linux</span></code> target for the selected device.</p>
 <p>To only fetch or build a specific target, the user can specify those targets with the <code class="docutils literal"><span class="pre">-f</span></code> (fetch) and <code class="docutils literal"><span class="pre">-b</span></code> (build) options. It is possible to choose multiple targets, e.g. like this:</p>
-<div class="highlight-bash"><div class="highlight"><pre>./build.sh -d Mars_ZX3/Mars_PM3/QSPI -f Linux -b BusyBox -x U-Boot
+<div class="highlight-bash"><div class="highlight"><pre><span></span>./build.sh -d Mars_ZX3/Mars_PM3/QSPI -f Linux -b BusyBox -x U-Boot
 </pre></div>
 </div>
 <p>This will fetch Linux, build BusyBox and fetch/build U-Boot.</p>
 <p>The <code class="docutils literal"><span class="pre">--list-dev-options</span></code> option will list all the available device options for the chosen device. It can be used like this:</p>
-<div class="highlight-bash"><div class="highlight"><pre>./build.sh -d Mars_ZX3/Mars_PM3/QSPI -x Linux --list-dev-options
+<div class="highlight-bash"><div class="highlight"><pre><span></span>./build.sh -d Mars_ZX3/Mars_PM3/QSPI -x Linux --list-dev-options
 </pre></div>
 </div>
 <p>This will print out an indexed list of device options.</p>
 <p>The <code class="docutils literal"><span class="pre">-o</span></code> option allows the user to choose a device option for the selected device by providing the index of a specific device option, like this:</p>
-<div class="highlight-bash"><div class="highlight"><pre>./build.sh -d Mars_ZX3/Mars_PM3/QSPI -x Linux -o 1
+<div class="highlight-bash"><div class="highlight"><pre><span></span>./build.sh -d Mars_ZX3/Mars_PM3/QSPI -x Linux -o 1
 </pre></div>
 </div>
 <p>If no device option is selected, the default one will be used.</p>
 <p>To reset the build environment and delete all downloaded code, binaries, tools and built files, the <code class="docutils literal"><span class="pre">--clean</span></code> option can be used:</p>
-<div class="highlight-bash"><div class="highlight"><pre>./build.sh --clean
+<div class="highlight-bash"><div class="highlight"><pre><span></span>./build.sh --clean
 </pre></div>
 </div>
 </div>
@@ -495,7 +505,7 @@ After building the files, they can be deployed to the hardware, like described i
 </div>
 <p>As a general note on U-Boot used in all the following guides: U-Boot is using variables from the default environment. Moreover, the boot scripts used by U-Boot also rely on those variables. - If the environment was changed and saved earlier, U-Boot will always use these saved environment variables on a fresh boot, even after changing the U-Boot environment.
 To restore the default environment, run the following command in the U-Boot command line:</p>
-<div class="highlight-bash"><div class="highlight"><pre>env default -a
+<div class="highlight-bash"><div class="highlight"><pre><span></span>env default -a
 </pre></div>
 </div>
 <p>This will not overwrite the stored environment but will only restore the default one in the current run.
@@ -515,7 +525,7 @@ To permanently restore the default environment, the <code class="docutils litera
 <li><p class="first">Copy <code class="docutils literal"><span class="pre">boot.bin</span></code>, <code class="docutils literal"><span class="pre">uImage</span></code>, <code class="docutils literal"><span class="pre">devicetree.dtb</span></code> and <code class="docutils literal"><span class="pre">uboot.scr</span></code> from the build environment output directory onto the BOOT partition (FAT formatted).</p>
 </li>
 <li><p class="first">Extract the <code class="docutils literal"><span class="pre">rootfs.tar</span></code> archive from the build environment output directory onto the second partition (rootfs, ext2 formatted). This must be done as a root.</p>
-<div class="highlight-bash"><div class="highlight"><pre>sudo tar -xpf rootfs.tar -C /path/to/mmc/mountpoint
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo tar -xpf rootfs.tar -C /path/to/mmc/mountpoint
 </pre></div>
 </div>
 </li>
@@ -531,7 +541,7 @@ To permanently restore the default environment, the <code class="docutils litera
 </li>
 </ol>
 <p>If one wants to manually trigger booting from a SD Card, the following command has to be invoked from the U-Boot command line:</p>
-<div class="highlight-bash"><div class="highlight"><pre>run sdboot
+<div class="highlight-bash"><div class="highlight"><pre><span></span>run sdboot
 </pre></div>
 </div>
 </div>
@@ -588,22 +598,22 @@ To permanently restore the default environment, the <code class="docutils litera
 <li><p class="first">Connect a serial console to the device (e.g. using PuTTY or picocom).</p>
 </li>
 <li><p class="first">Setup the U-Boot connection parameters (in the U-Boot console):</p>
-<div class="highlight-bash"><div class="highlight"><pre>setenv ipaddr <span class="s1">&#39;xxx.xxx.xxx.xxx&#39;</span>
-<span class="c"># where xxx.xxx.xxx.xxx is the board address</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>setenv ipaddr <span class="s1">&#39;xxx.xxx.xxx.xxx&#39;</span>
+<span class="c1"># where xxx.xxx.xxx.xxx is the board address</span>
 setenv serverip <span class="s1">&#39;yyy.yyy.yyy.yyy&#39;</span>
-<span class="c"># where yyy.yyy.yyy.yyy is the server (host computer) address</span>
+<span class="c1"># where yyy.yyy.yyy.yyy is the server (host computer) address</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Copy <code class="docutils literal"><span class="pre">boot.bin</span></code>, <code class="docutils literal"><span class="pre">uImage</span></code>, <code class="docutils literal"><span class="pre">devicetree.dtb</span></code>, <code class="docutils literal"><span class="pre">uboot.scr</span></code> and <code class="docutils literal"><span class="pre">uramdisk</span></code> from the build environment output directory to the TFTP server directory</p>
 </li>
 <li><p class="first">Set memory pinmux to QSPI Flash:</p>
-<div class="highlight-bash"><div class="highlight"><pre>zx_set_storage QSPI
+<div class="highlight-bash"><div class="highlight"><pre><span></span>zx_set_storage QSPI
 </pre></div>
 </div>
 </li>
 <li><p class="first">Update the boot image:</p>
-<div class="highlight-bash"><div class="highlight"><pre>mw.b <span class="si">${</span><span class="nv">bootimage_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">bootimage_size</span><span class="si">}</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">bootimage_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">bootimage_size</span><span class="si">}</span>
 tftpboot <span class="si">${</span><span class="nv">bootimage_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">bootimage_image</span><span class="si">}</span>
 sf probe
 sf erase <span class="si">${</span><span class="nv">qspi_bootimage_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">bootimage_size</span><span class="si">}</span>
@@ -612,7 +622,7 @@ sf write <span class="si">${</span><span class="nv">bootimage_loadaddr</span><sp
 </div>
 </li>
 <li><p class="first">Update the boot script image:</p>
-<div class="highlight-bash"><div class="highlight"><pre>mw.b <span class="si">${</span><span class="nv">bootscript_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">bootscript_size</span><span class="si">}</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">bootscript_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">bootscript_size</span><span class="si">}</span>
 tftpboot <span class="si">${</span><span class="nv">bootscript_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">bootscript_image</span><span class="si">}</span>
 sf probe
 sf erase <span class="si">${</span><span class="nv">qspi_bootscript_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">bootscript_size</span><span class="si">}</span>
@@ -621,7 +631,7 @@ sf write <span class="si">${</span><span class="nv">bootscript_loadaddr</span><s
 </div>
 </li>
 <li><p class="first">Update the Linux kernel:</p>
-<div class="highlight-bash"><div class="highlight"><pre>mw.b <span class="si">${</span><span class="nv">kernel_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">kernel_size</span><span class="si">}</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">kernel_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">kernel_size</span><span class="si">}</span>
 tftpboot <span class="si">${</span><span class="nv">kernel_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">kernel_image</span><span class="si">}</span>
 sf probe
 sf erase <span class="si">${</span><span class="nv">qspi_kernel_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">kernel_size</span><span class="si">}</span>
@@ -630,7 +640,7 @@ sf write <span class="si">${</span><span class="nv">kernel_loadaddr</span><span 
 </div>
 </li>
 <li><p class="first">Update the devicetree image:</p>
-<div class="highlight-bash"><div class="highlight"><pre>mw.b <span class="si">${</span><span class="nv">devicetree_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">devicetree_size</span><span class="si">}</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">devicetree_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">devicetree_size</span><span class="si">}</span>
 tftpboot <span class="si">${</span><span class="nv">devicetree_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">devicetree_image</span><span class="si">}</span>
 sf probe
 sf erase <span class="si">${</span><span class="nv">qspi_devicetree_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">devicetree_size</span><span class="si">}</span>
@@ -639,7 +649,7 @@ sf write <span class="si">${</span><span class="nv">devicetree_loadaddr</span><s
 </div>
 </li>
 <li><p class="first">Update the rootfs image:</p>
-<div class="highlight-bash"><div class="highlight"><pre>mw.b <span class="si">${</span><span class="nv">ramdisk_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">ramdisk_size</span><span class="si">}</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">ramdisk_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">ramdisk_size</span><span class="si">}</span>
 tftpboot <span class="si">${</span><span class="nv">ramdisk_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">ramdisk_image</span><span class="si">}</span>
 sf probe
 sf erase <span class="si">${</span><span class="nv">qspi_ramdisk_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">ramdisk_size</span><span class="si">}</span>
@@ -657,7 +667,7 @@ sf write <span class="si">${</span><span class="nv">ramdisk_loadaddr</span><span
 </li>
 </ol>
 <p>If one wants to manually trigger booting from the QSPI Flash, the following command has to be invoked from the U-Boot command line:</p>
-<div class="highlight-bash"><div class="highlight"><pre>run qspiboot
+<div class="highlight-bash"><div class="highlight"><pre><span></span>run qspiboot
 </pre></div>
 </div>
 <div class="admonition note">
@@ -720,22 +730,22 @@ When U-Boot is booted it can load and boot the Linux system stored on the NAND F
 <li><p class="first">Copy <code class="docutils literal"><span class="pre">uImage</span></code>, <code class="docutils literal"><span class="pre">devicetree.dtb</span></code>, <code class="docutils literal"><span class="pre">uboot.scr</span></code> and <code class="docutils literal"><span class="pre">rootfs.ubi</span></code>  files from the build environment output directory to the TFTP server directory.</p>
 </li>
 <li><p class="first">Setup the U-Boot connection parameters (in the U-Boot console):</p>
-<div class="highlight-bash"><div class="highlight"><pre>setenv ipaddr <span class="s1">&#39;xxx.xxx.xxx.xxx&#39;</span>
-<span class="c"># where xxx.xxx.xxx.xxx is the board address</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>setenv ipaddr <span class="s1">&#39;xxx.xxx.xxx.xxx&#39;</span>
+<span class="c1"># where xxx.xxx.xxx.xxx is the board address</span>
 setenv serverip <span class="s1">&#39;yyy.yyy.yyy.yyy&#39;</span>
-<span class="c"># where yyy.yyy.yyy.yyy is the server (host computer) address</span>
+<span class="c1"># where yyy.yyy.yyy.yyy is the server (host computer) address</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Stop the U-Boot autoboot.</p>
 </li>
 <li><p class="first">Set the memory pinmux to NAND Flash:</p>
-<div class="highlight-bash"><div class="highlight"><pre>zx_set_storage NAND
+<div class="highlight-bash"><div class="highlight"><pre><span></span>zx_set_storage NAND
 </pre></div>
 </div>
 </li>
 <li><p class="first">Update the boot script image:</p>
-<div class="highlight-bash"><div class="highlight"><pre>mw.b <span class="si">${</span><span class="nv">bootscript_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">bootscript_size</span><span class="si">}</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">bootscript_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">bootscript_size</span><span class="si">}</span>
 tftpboot <span class="si">${</span><span class="nv">bootscript_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">bootscript_image</span><span class="si">}</span>
 nand device 0
 nand erase.part nand-bootscript
@@ -744,7 +754,7 @@ nand write <span class="si">${</span><span class="nv">bootscript_loadaddr</span>
 </div>
 </li>
 <li><p class="first">Update the Linux kernel:</p>
-<div class="highlight-bash"><div class="highlight"><pre>mw.b <span class="si">${</span><span class="nv">kernel_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">kernel_size</span><span class="si">}</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">kernel_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">kernel_size</span><span class="si">}</span>
 tftpboot <span class="si">${</span><span class="nv">kernel_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">kernel_image</span><span class="si">}</span>
 nand device 0
 nand erase.part nand-linux
@@ -753,7 +763,7 @@ nand write <span class="si">${</span><span class="nv">kernel_loadaddr</span><spa
 </div>
 </li>
 <li><p class="first">Update the devicetree image:</p>
-<div class="highlight-bash"><div class="highlight"><pre>mw.b <span class="si">${</span><span class="nv">devicetree_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">devicetree_size</span><span class="si">}</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">devicetree_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">devicetree_size</span><span class="si">}</span>
 tftpboot <span class="si">${</span><span class="nv">devicetree_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">devicetree_image</span><span class="si">}</span>
 nand device 0
 nand erase.part nand-device-tree
@@ -762,7 +772,7 @@ nand write <span class="si">${</span><span class="nv">devicetree_loadaddr</span>
 </div>
 </li>
 <li><p class="first">Update the rootfs image:</p>
-<div class="highlight-bash"><div class="highlight"><pre>mw.b <span class="si">${</span><span class="nv">ubifs_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">ubifs_size</span><span class="si">}</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">ubifs_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">ubifs_size</span><span class="si">}</span>
 tftpboot <span class="si">${</span><span class="nv">ubifs_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">ubifs_image</span><span class="si">}</span>
 nand device 0
 nand erase.part nand-rootfs
@@ -771,7 +781,7 @@ nand write <span class="si">${</span><span class="nv">ubifs_loadaddr</span><span
 </div>
 </li>
 <li><p class="first">Trigger NAND Flash boot with:</p>
-<div class="highlight-bash"><div class="highlight"><pre>run nandboot
+<div class="highlight-bash"><div class="highlight"><pre><span></span>run nandboot
 </pre></div>
 </div>
 </li>
@@ -800,7 +810,7 @@ When U-Boot is booted it can load and boot the Linux system stored on the USB Dr
 <li><p class="first">Power on the board and stop the U-Boot autoboot.</p>
 </li>
 <li><p class="first">Trigger USB boot with:</p>
-<div class="highlight-bash"><div class="highlight"><pre>run usbboot
+<div class="highlight-bash"><div class="highlight"><pre><span></span>run usbboot
 </pre></div>
 </div>
 </li>
@@ -817,7 +827,7 @@ When U-Boot is booted it can load and boot the Linux system stored on the USB Dr
 <li><p class="first">Copy <code class="docutils literal"><span class="pre">boot.bin</span></code> and <code class="docutils literal"><span class="pre">uboot.scr</span></code> from the build environment output directory onto the BOOT partition.</p>
 </li>
 <li><p class="first">Extract the <code class="docutils literal"><span class="pre">rootfs.tar</span></code> archive from the build environment output directory into the NFS folder. This must be done as a root.</p>
-<div class="highlight-bash"><div class="highlight"><pre>sudo tar -xpf rootfs.tar -C /path/to/NFS
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo tar -xpf rootfs.tar -C /path/to/NFS
 </pre></div>
 </div>
 </li>
@@ -830,7 +840,7 @@ When U-Boot is booted it can load and boot the Linux system stored on the USB Dr
 <li><p class="first">Power on the board and stop the U-Boot autoboot.</p>
 </li>
 <li><p class="first">Set the server&#8217;s and target&#8217;s IP address, and the path to the rootfs NFS folder.</p>
-<div class="highlight-bash"><div class="highlight"><pre>env default -a
+<div class="highlight-bash"><div class="highlight"><pre><span></span>env default -a
 setenv ipaddr 192.168.1.10
 setenv serverip 192.168.1.2
 setenv serverpath /path/to/NFS
@@ -839,7 +849,7 @@ saveenv
 </div>
 </li>
 <li><p class="first">Trigger NFS boot with:</p>
-<div class="highlight-bash"><div class="highlight"><pre>run netboot
+<div class="highlight-bash"><div class="highlight"><pre><span></span>run netboot
 </pre></div>
 </div>
 </li>
@@ -850,6 +860,26 @@ saveenv
 </div>
 </div>
 </div>
+<span id="document-project_mode"></span><div class="section" id="project-mode">
+<h2>Project mode<a class="headerlink" href="#project-mode" title="Permalink to this headline">¶</a></h2>
+<p>For users who want to use the Enclustra Build Environment, but still be able to modify the parts of the system, a &#8216;project mode&#8217; is available.</p>
+<p>Project mode is similar to regular mode, but enables user to fully customize all the parts of the system.</p>
+<p>To enable project mode, choose &#8220;Advanced&#8221; option on the very last screen of the GUI workflow.</p>
+<blockquote>
+<div><img alt="_images/project_name.png" src="_images/project_name.png" />
+</div></blockquote>
+<p>Check the &#8216;enable&#8217; option on.</p>
+<blockquote>
+<div><img alt="_images/project_enable.png" src="_images/project_enable.png" />
+</div></blockquote>
+<p>Continue as usual.</p>
+<p>After the regular build has finished, the sources of the components that were chosen to be fetched, are going to be copied to the output directory.
+User is free to modify those sources and add a git upstream to them to keep them versioned.</p>
+<p>Besides the sources, a new build script called build.sh is generated.
+This script will run the Enclustra Build Environment in a special project mode.
+In this mode the step for choosing components to fetch is skipped, and the user is prompted to choose which of the components to build.
+If any of the components of the system were modified, the Build system will build them, and include the output files in the final boot images.</p>
+</div>
 <span id="document-faq"></span><div class="section" id="faq">
 <h2>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="how-to-script-u-boot">
@@ -857,7 +887,7 @@ saveenv
 <p>All U-Boot commands can be automated by scripting, so that it is much more convenient to deploy flash images to the hardware.</p>
 <p>For example, QSPI deployment:</p>
 <p>Put the following commands as plain text to a file <code class="docutils literal"><span class="pre">cmd.txt</span></code>:</p>
-<div class="highlight-none"><div class="highlight"><pre>mw.b ${bootimage_loadaddr} 0xFF ${bootimage_size}
+<div class="highlight-none"><div class="highlight"><pre><span></span>mw.b ${bootimage_loadaddr} 0xFF ${bootimage_size}
 tftpboot ${bootimage_loadaddr} ${bootimage_image}
 sf probe
 sf erase ${qspi_bootimage_offset} ${bootimage_size}
@@ -891,12 +921,12 @@ run qspiboot
 </pre></div>
 </div>
 <p>Then generate an image <code class="docutils literal"><span class="pre">cmd.img</span></code> and put it onto the TFTP server on the host computer like this:</p>
-<div class="highlight-bash"><div class="highlight"><pre>mkimage -T script -C none -n <span class="s2">&quot;QSPI flash commands&quot;</span> -d cmd.txt cmd.img
+<div class="highlight-bash"><div class="highlight"><pre><span></span>mkimage -T script -C none -n <span class="s2">&quot;QSPI flash commands&quot;</span> -d cmd.txt cmd.img
 cp cmd.img /tftpboot
 </pre></div>
 </div>
 <p>And finally, load the file on the target platform in U-boot and execute it, like this (after step 5 Setup U-Boot connection parameters, in the user documentation):</p>
-<div class="highlight-none"><div class="highlight"><pre>tftpboot 100000 cmd.img
+<div class="highlight-none"><div class="highlight"><pre><span></span>tftpboot 100000 cmd.img
 source 100000
 </pre></div>
 </div>
@@ -904,11 +934,11 @@ source 100000
 <div class="section" id="how-can-the-flash-memory-be-programmed-from-linux">
 <h3>How can the flash memory be programmed from Linux?<a class="headerlink" href="#how-can-the-flash-memory-be-programmed-from-linux" title="Permalink to this headline">¶</a></h3>
 <p>In order to program flash memory from Linux, a script like the following one can be used. - All required files need to be present in the current folder. They can be loaded via TFTP or from USB drive / SD card.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="c">#!/bin/sh</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
 
 getsize <span class="o">()</span>
 <span class="o">{</span>
-        <span class="nb">local  </span><span class="nv">size</span><span class="o">=</span><span class="sb">`</span>ls -al <span class="nv">$1</span> <span class="p">|</span> awk <span class="s1">&#39;{ print $5 }&#39;</span><span class="sb">`</span>
+        <span class="nb">local</span>  <span class="nv">size</span><span class="o">=</span><span class="sb">`</span>ls -al <span class="nv">$1</span> <span class="p">|</span> awk <span class="s1">&#39;{ print $5 }&#39;</span><span class="sb">`</span>
         <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$size</span><span class="s2">&quot;</span>
 <span class="o">}</span>
 
@@ -929,37 +959,37 @@ getsize <span class="o">()</span>
 
 flash_erase /dev/mtd0 <span class="m">0</span> 0
 <span class="nv">FILESIZE</span><span class="o">=</span><span class="sb">`</span>getsize <span class="si">${</span><span class="nv">PRELOADER_FILE</span><span class="si">}</span><span class="sb">`</span>
-<span class="nb">echo </span>Writing preloader file <span class="si">${</span><span class="nv">PRELOADER_FILE</span><span class="si">}</span> size <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span>
+<span class="nb">echo</span> Writing preloader file <span class="si">${</span><span class="nv">PRELOADER_FILE</span><span class="si">}</span> size <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span>
 mtd_debug write /dev/mtd0 <span class="si">${</span><span class="nv">PRELOADER_OFFSET</span><span class="si">}</span> <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span> <span class="si">${</span><span class="nv">PRELOADER_FILE</span><span class="si">}</span>
 
 <span class="nv">FILESIZE</span><span class="o">=</span><span class="sb">`</span>getsize <span class="si">${</span><span class="nv">UBOOT_FILE</span><span class="si">}</span><span class="sb">`</span>
-<span class="nb">echo </span>Writing uboot file <span class="si">${</span><span class="nv">UBOOT_FILE</span><span class="si">}</span> size <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span>
+<span class="nb">echo</span> Writing uboot file <span class="si">${</span><span class="nv">UBOOT_FILE</span><span class="si">}</span> size <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span>
 mtd_debug write /dev/mtd0 <span class="si">${</span><span class="nv">UBOOT_OFFSET</span><span class="si">}</span> <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span> <span class="si">${</span><span class="nv">UBOOT_FILE</span><span class="si">}</span>
 
 <span class="nv">FILESIZE</span><span class="o">=</span><span class="sb">`</span>getsize <span class="si">${</span><span class="nv">BITSTREAM_FILE</span><span class="si">}</span><span class="sb">`</span>
-<span class="nb">echo </span>Writing bitstream file <span class="si">${</span><span class="nv">BITSTREAM_FILE</span><span class="si">}</span> size <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span>
+<span class="nb">echo</span> Writing bitstream file <span class="si">${</span><span class="nv">BITSTREAM_FILE</span><span class="si">}</span> size <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span>
 mtd_debug write /dev/mtd0 <span class="si">${</span><span class="nv">BITSTREAM_OFFSET</span><span class="si">}</span> <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span> <span class="si">${</span><span class="nv">BITSTREAM_FILE</span><span class="si">}</span>
 
 <span class="nv">FILESIZE</span><span class="o">=</span><span class="sb">`</span>getsize <span class="si">${</span><span class="nv">SCRIPT_FILE</span><span class="si">}</span><span class="sb">`</span>
-<span class="nb">echo </span>Writing bootscript file <span class="si">${</span><span class="nv">SCRIPT_FILE</span><span class="si">}</span> size <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span>
+<span class="nb">echo</span> Writing bootscript file <span class="si">${</span><span class="nv">SCRIPT_FILE</span><span class="si">}</span> size <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span>
 mtd_debug write /dev/mtd0 <span class="si">${</span><span class="nv">SCRIPT_OFFSET</span><span class="si">}</span> <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span> <span class="si">${</span><span class="nv">SCRIPT_FILE</span><span class="si">}</span>
 
 <span class="nv">FILESIZE</span><span class="o">=</span><span class="sb">`</span>getsize <span class="si">${</span><span class="nv">DEVICETREE_FILE</span><span class="si">}</span><span class="sb">`</span>
-<span class="nb">echo </span>Writing devicetree <span class="si">${</span><span class="nv">DEVICETREE_FILE</span><span class="si">}</span> size <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span>
+<span class="nb">echo</span> Writing devicetree <span class="si">${</span><span class="nv">DEVICETREE_FILE</span><span class="si">}</span> size <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span>
 mtd_debug write /dev/mtd0 <span class="si">${</span><span class="nv">DEVICETREE_OFFSET</span><span class="si">}</span> <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span> <span class="si">${</span><span class="nv">DEVICETREE_FILE</span><span class="si">}</span>
 
 <span class="nv">FILESIZE</span><span class="o">=</span><span class="sb">`</span>getsize <span class="si">${</span><span class="nv">KERNEL_FILE</span><span class="si">}</span><span class="sb">`</span>
-<span class="nb">echo </span>Writing kernel file <span class="si">${</span><span class="nv">KERNEL_FILE</span><span class="si">}</span> size <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span>
+<span class="nb">echo</span> Writing kernel file <span class="si">${</span><span class="nv">KERNEL_FILE</span><span class="si">}</span> size <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span>
 mtd_debug write /dev/mtd0 <span class="si">${</span><span class="nv">KERNEL_OFFSET</span><span class="si">}</span> <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span> <span class="si">${</span><span class="nv">KERNEL_FILE</span><span class="si">}</span>
 
 flash_erase /dev/mtd1 <span class="m">0</span> 0
 <span class="nv">FILESIZE</span><span class="o">=</span><span class="sb">`</span>getsize <span class="si">${</span><span class="nv">ROOTFS_FILE</span><span class="si">}</span><span class="sb">`</span>
-<span class="nb">echo </span>Writing rootfs file <span class="si">${</span><span class="nv">ROOTFS_FILE</span><span class="si">}</span> size <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span>
+<span class="nb">echo</span> Writing rootfs file <span class="si">${</span><span class="nv">ROOTFS_FILE</span><span class="si">}</span> size <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span>
 mtd_debug write /dev/mtd1 <span class="si">${</span><span class="nv">ROOTFS_OFFSET</span><span class="si">}</span> <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span> <span class="si">${</span><span class="nv">ROOTFS_FILE</span><span class="si">}</span>
 </pre></div>
 </div>
 <p>Just make the script executable and execute it like this:</p>
-<div class="highlight-bash"><div class="highlight"><pre>chmod +x flash.sh
+<div class="highlight-bash"><div class="highlight"><pre><span></span>chmod +x flash.sh
 ./flash.sh
 </pre></div>
 </div>
@@ -1008,6 +1038,7 @@ mtd_debug write /dev/mtd1 <span class="si">${</span><span class="nv">ROOTFS_OFFS
 <li class="toctree-l2"><a class="reference internal" href="index_xilinx.html#nfs">NFS</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="index_xilinx.html#document-project_mode">Project mode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index_xilinx.html#document-faq">FAQ</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="index_xilinx.html#how-to-script-u-boot">How to script U-Boot?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index_xilinx.html#how-can-the-flash-memory-be-programmed-from-linux">How can the flash memory be programmed from Linux?</a></li>
@@ -1027,8 +1058,8 @@ mtd_debug write /dev/mtd1 <span class="si">${</span><span class="nv">ROOTFS_OFFS
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright Antmicro Ltd for Enclustra GmbH, 2015.
-      Last updated on 2015-12-08.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4a0+.
+      Last updated on 2016-07-15.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
     </div>
   </body>
 </html>
