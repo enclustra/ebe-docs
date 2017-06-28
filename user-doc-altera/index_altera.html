@@ -17,19 +17,21 @@
         VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="None" href="index_altera.html#document-index_altera" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
-        <li class="nav-item nav-item-0"><a href="index_altera.html#document-index_altera">Enclustra Build Environment - User Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index_altera.html#document-index_altera">Enclustra Build Environment - User Documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -86,6 +88,11 @@
 <td>Tomasz Gorochowik</td>
 <td>Project mode section</td>
 </tr>
+<tr class="row-odd"><td>2017-06-23</td>
+<td>0.1.5</td>
+<td>Maciej Mikunda</td>
+<td>Updates for release v1.5</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -101,7 +108,7 @@ Its internal functionality is determined by <cite>ini</cite> files placed in a s
 The system is compatible with both, Python 2 and Python 3.</p>
 <p>The build environment requires additional software to be installed as listed below:</p>
 <table border="1" class="docutils" id="sample-table">
-<caption><span class="caption-text">Required software</span><a class="headerlink" href="#sample-table" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Required software</span><a class="headerlink" href="#sample-table" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="33%" />
 <col width="33%" />
@@ -140,11 +147,11 @@ The system is compatible with both, Python 2 and Python 3.</p>
 </tr>
 <tr class="row-even"><th class="stub">c++ compiler</th>
 <td>&nbsp;</td>
-<td>Required to build a busybox rootfs</td>
+<td>Required to build a buildroot rootfs</td>
 </tr>
 <tr class="row-odd"><th class="stub">gcc</th>
 <td>&nbsp;</td>
-<td>Required to build the Linux kernel, U-Boot and a busybox rootfs</td>
+<td>Required to build the Linux kernel, U-Boot and a buildroot rootfs</td>
 </tr>
 </tbody>
 </table>
@@ -229,7 +236,7 @@ sudo pip install --upgrade virtualenv
 </pre></div>
 </div>
 <table border="1" class="docutils" id="folder-description">
-<caption><span class="caption-text">Folder description</span><a class="headerlink" href="#folder-description" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Folder description</span><a class="headerlink" href="#folder-description" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
@@ -284,7 +291,7 @@ During the fetch phase, the build environment synchronizes only the submodules r
 <p>Environment settings are stored in the <code class="docutils literal"><span class="pre">enclustra.ini</span></code> file in the main directory of the build environment.
 Before starting the build script, one may need to adjust the general settings of the build environment by editing this file.
 One of the most crucial setting is the number of build threads used in a parallel.
-This parameter is set in the <code class="docutils literal"><span class="pre">[general]</span></code> section by changing the <code class="docutils literal"><span class="pre">ntreads</span></code> key.
+This parameter is set in the <code class="docutils literal"><span class="pre">[general]</span></code> section by changing the <code class="docutils literal"><span class="pre">nthreads</span></code> key.
 Additionally, parameters in the <code class="docutils literal"><span class="pre">[debug]</span></code> section allow the user to adjust the logging settings:</p>
 <ul class="simple">
 <li>If the <code class="docutils literal"><span class="pre">debug-calls</span></code> option if set to <code class="docutils literal"><span class="pre">true</span></code>, the output of all external tool calls (such as <code class="docutils literal"><span class="pre">make</span></code>, <code class="docutils literal"><span class="pre">tar</span></code> etc.) will be displayed in the terminal.</li>
@@ -297,7 +304,7 @@ Additionally, parameters in the <code class="docutils literal"><span class="pre"
 <span id="document-supported_devices_altera"></span><div class="section" id="supported-devices">
 <h2>Supported Devices<a class="headerlink" href="#supported-devices" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils" id="supported-devicess">
-<caption><span class="caption-text">Supported devices</span><a class="headerlink" href="#supported-devicess" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Supported devices</span><a class="headerlink" href="#supported-devicess" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="25%" />
 <col width="25%" />
@@ -315,15 +322,24 @@ Additionally, parameters in the <code class="docutils literal"><span class="pre"
 <tr class="row-even"><th class="stub">Altera</th>
 <td>Mercury SA1</td>
 <td>Mercury PE1</td>
-<td>Linux, U-Boot, Busybox</td>
+<td>Linux, U-Boot, Buildroot</td>
 </tr>
 <tr class="row-odd"><th class="stub">Altera</th>
-<td>Mercury SA2</td>
+<td>Mercury+ SA2</td>
 <td>Mercury PE1</td>
-<td>Linux, U-Boot, Busybox</td>
+<td>Linux, U-Boot, Buildroot</td>
+</tr>
+<tr class="row-even"><th class="stub">Altera</th>
+<td>Mercury+ AA1</td>
+<td>Mercury PE1</td>
+<td>Linux, Buildroot</td>
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For Mercury+ AA1, U-Boot is delivered as a precompiled binary. It is generated using the Intel/Altera SoCEDS tool. The AA1 module support is added using custom patches.</p>
+</div>
 </div>
 <span id="document-quickstart_altera"></span><div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
@@ -342,7 +358,7 @@ Additionally, parameters in the <code class="docutils literal"><span class="pre"
 <li>Change to the enclustra-buildscripts directory:</li>
 </ol>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> enclustra-buildscripts
+<div><div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> bsp-altera
 </pre></div>
 </div>
 </div></blockquote>
@@ -350,31 +366,59 @@ Additionally, parameters in the <code class="docutils literal"><span class="pre"
 <li><p class="first">Run <code class="docutils literal"><span class="pre">./build.sh</span></code> script.</p>
 </li>
 <li><p class="first">The welcome screen provides basic information about the version of the build environment.</p>
-<img alt="_images/welcome_screen.png" src="_images/welcome_screen.png" />
+<blockquote>
+<div><img alt="_images/welcome_screen.png" src="_images/welcome_screen.png" />
+</div></blockquote>
+</li>
+<li><p class="first">Choose the configuration.</p>
+<blockquote>
+<div><img alt="_images/choose_config_altera.png" src="_images/choose_config_altera.png" />
+</div></blockquote>
 </li>
 <li><p class="first">Choose the module type.</p>
-<img alt="_images/module_altera.png" src="_images/module_altera.png" />
+<blockquote>
+<div><img alt="_images/module_altera.png" src="_images/module_altera.png" />
+</div></blockquote>
 </li>
 <li><p class="first">Choose the base board type.</p>
-<img alt="_images/board_altera.png" src="_images/board_altera.png" />
+<blockquote>
+<div><img alt="_images/board_altera.png" src="_images/board_altera.png" />
+</div></blockquote>
 </li>
 <li><p class="first">Choose the boot device.</p>
-<img alt="_images/bootmode.png" src="_images/bootmode.png" />
+<blockquote>
+<div><img alt="_images/bootmode.png" src="_images/bootmode.png" />
+</div></blockquote>
 </li>
 <li><p class="first">Choose which targets available for the chosen device family will be fetched. On the bottom of the screen a short description of the highlighted target is displayed. Choosing certain targets may disable fetching others.</p>
-<img alt="_images/fetch.png" src="_images/fetch.png" />
+<blockquote>
+<div><img alt="_images/fetch.png" src="_images/fetch.png" />
+</div></blockquote>
 </li>
 <li><p class="first">Choose which targets will be built. On the bottom of the screen a short description of a highlighted target is displayed. Choosing certain targets may disable building others.</p>
-<img alt="_images/build.png" src="_images/build.png" />
+<blockquote>
+<div><img alt="_images/build.png" src="_images/build.png" />
+</div></blockquote>
 </li>
 <li><p class="first">Choose the exact version of the device (chip type, industrial/commercial grade, speed grade).</p>
-<img alt="_images/dev_option_altera.png" src="_images/dev_option_altera.png" />
+<blockquote>
+<div><img alt="_images/dev_option_altera.png" src="_images/dev_option_altera.png" />
+</div></blockquote>
+</li>
+<li><p class="first">Customize binaries or use the default ones.</p>
+<blockquote>
+<div><img alt="_images/custom_bin_altera.png" src="_images/custom_bin_altera.png" />
+</div></blockquote>
 </li>
 <li><p class="first">Verify all the chosen build parameters.</p>
-<img alt="_images/summary_altera.png" src="_images/summary_altera.png" />
+<blockquote>
+<div><img alt="_images/summary_altera.png" src="_images/summary_altera.png" />
+</div></blockquote>
 </li>
 <li><p class="first">Choose wheter or not to save the configuration for later use.</p>
-<img alt="_images/save_altera.png" src="_images/save_altera.png" />
+<blockquote>
+<div><img alt="_images/save_altera.png" src="_images/save_altera.png" />
+</div></blockquote>
 </li>
 <li><p class="first">The build environment will fetch and build the chosen targets.</p>
 </li>
@@ -430,17 +474,17 @@ To list all the available targets for a selected device, the user needs to add t
 </div>
 <p>That will fetch and build only the <code class="docutils literal"><span class="pre">Linux</span></code> target for the selected device.</p>
 <p>To only fetch or build a specific target, the user can specify those targets with the <code class="docutils literal"><span class="pre">-f</span></code> (fetch) and <code class="docutils literal"><span class="pre">-b</span></code> (build) options. It is possible to choose multiple targets, e.g. like this:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>./build.sh -d Mercury_SA1/Mercury_PE1/QSPI -f Linux -b BusyBox -x U-Boot
+<div class="highlight-bash"><div class="highlight"><pre><span></span>./build.sh -d Mercury_SA1/Mercury_PE1/QSPI -f Linux -b Buildroot -x U-Boot
 </pre></div>
 </div>
-<p>This will fetch Linux, build BusyBox and fetch/build U-Boot.</p>
+<p>This will fetch Linux, build Buildroot and fetch/build U-Boot.</p>
 <p>The <code class="docutils literal"><span class="pre">--list-dev-options</span></code> option will list all the available device options for the chosen device. It can be used like this:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>./build.sh -d Mercury_SA1/Mercury_PE1/QSPI -x Linux --list-dev-options
 </pre></div>
 </div>
 <p>This will print out an indexed list of device options.</p>
 <p>The <code class="docutils literal"><span class="pre">-o</span></code> option allows the user to choose a device option for the selected device by providing the index of a specific device option, like this:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>./build.sh -d Mercury_SA1/Mercury_PE1/QSPI -x Linux -o 1
+<div class="highlight-bash"><div class="highlight"><pre><span></span>./build.sh -d Mercury_SA1/Mercury_PE1/QSPI -x Linux -o <span class="m">1</span>
 </pre></div>
 </div>
 <p>If no device option is selected, the default one will be used.</p>
@@ -448,6 +492,32 @@ To list all the available targets for a selected device, the user needs to add t
 <div class="highlight-bash"><div class="highlight"><pre><span></span>./build.sh --clean
 </pre></div>
 </div>
+</div>
+</div>
+<div class="section" id="deployment">
+<h2>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">¶</a></h2>
+<p>This chapter describes how to prepare the hardware to boot from different boot media, using the binaries generated from the build environment.</p>
+<p>All the guides in this section require the user to build the required files for the chosen device, with the build environment, as described in the previous section.
+Once the files are built, they can be deployed to the hardware as described in the following sub sections.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Default target output directories are named according to the following directory naming scheme:</p>
+<p class="last"><code class="docutils literal"><span class="pre">out_&lt;timestamp&gt;_&lt;module&gt;_&lt;board&gt;_&lt;bootmode&gt;</span></code>.</p>
+</div>
+<p>As a general note on U-Boot used in all the following guides: U-Boot is using variables from the default environment. Moreover, the boot scripts used by U-Boot also rely on those variables. If the environment was changed and saved earlier, U-Boot will always use these saved environment variables on a fresh boot, even after changing the U-Boot environment.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Regardless of the selected boot mode, the U-Boot environment is stored in the QSPI flash memory at offset 0x800000.</p>
+</div>
+<p>To restore the default environment, run the following command in the U-Boot command line:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>env default -a
+</pre></div>
+</div>
+<p>This will not overwrite the stored environment but will only restore the default one in the current run.
+To permanently restore the default environment, the <code class="docutils literal"><span class="pre">saveenv</span></code> command has to be invoked.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">A <code class="docutils literal"><span class="pre">***</span> <span class="pre">Warning</span> <span class="pre">-</span> <span class="pre">bad</span> <span class="pre">CRC,</span> <span class="pre">using</span> <span class="pre">default</span> <span class="pre">environment</span></code> warning message that appears when booting into U-Boot indicates that the default environment will be loaded.</p>
 </div>
 <div class="section" id="sd-card-mmc">
 <span id="altera-mmc"></span><h3>SD Card (MMC)<a class="headerlink" href="#sd-card-mmc" title="Permalink to this headline">¶</a></h3>
@@ -458,6 +528,8 @@ To list all the available targets for a selected device, the user needs to add t
 <li><p class="first">Record the preloader image to the unformatted partition of a SD Card (type a2):</p>
 <blockquote>
 <div><div class="highlight-bash"><div class="highlight"><pre><span></span>sudo dd <span class="k">if</span><span class="o">=</span>preloader-mkpimage.bin <span class="nv">of</span><span class="o">=</span>/dev/sdX2
+<span class="c1"># or for Mercury+ AA1 module:</span>
+sudo dd <span class="k">if</span><span class="o">=</span>uboot-mkpimage.bin <span class="nv">of</span><span class="o">=</span>/dev/sdX2
 sync
 <span class="c1"># where X is the letter of the device</span>
 </pre></div>
@@ -492,7 +564,7 @@ sync
 <div class="section" id="qspi-flash">
 <span id="altera-qspi"></span><h3>QSPI Flash<a class="headerlink" href="#qspi-flash" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils" id="altera-qspi-flash-layout">
-<caption><span class="caption-text">Altera Family QSPI Flash Layout</span><a class="headerlink" href="#altera-qspi-flash-layout" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 4 </span><span class="caption-text">Altera Family QSPI Flash Layout</span><a class="headerlink" href="#altera-qspi-flash-layout" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="33%" />
 <col width="33%" />
@@ -557,7 +629,7 @@ setenv serverip <span class="s1">&#39;yyy.yyy.yyy.yyy&#39;</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Copy <code class="docutils literal"><span class="pre">uImage</span></code>, <code class="docutils literal"><span class="pre">devicetree.dtb</span></code>, <code class="docutils literal"><span class="pre">uboot.scr</span></code>, <code class="docutils literal"><span class="pre">rootfs.jffs2</span></code>,  <code class="docutils literal"><span class="pre">u-boot.img</span></code>, <code class="docutils literal"><span class="pre">fpga.rbf.img</span></code> and <code class="docutils literal"><span class="pre">preloader-mkpimage.bin</span></code> from the build environment output directory to the TFTP server directory</p>
+<li><p class="first">Copy <code class="docutils literal"><span class="pre">uImage</span></code>, <code class="docutils literal"><span class="pre">devicetree.dtb</span></code>, <code class="docutils literal"><span class="pre">uboot.scr</span></code> (or <code class="docutils literal"><span class="pre">uboot_ramdisk.scr</span></code> file when using RAMDISK, which must be renamed to <code class="docutils literal"><span class="pre">uboot.scr</span></code>) and <code class="docutils literal"><span class="pre">rootfs.jffs2</span></code> (or <code class="docutils literal"><span class="pre">uramdisk</span></code> when using RAMDISK), <code class="docutils literal"><span class="pre">u-boot.img</span></code>, <code class="docutils literal"><span class="pre">fpga.rbf.img</span></code> and <code class="docutils literal"><span class="pre">preloader-mkpimage.bin</span></code> from the build environment output directory to the TFTP server directory</p>
 </li>
 <li><p class="first">Update the preloader image:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">preloader_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">preloader_size</span><span class="si">}</span>
@@ -614,11 +686,21 @@ sf write <span class="si">${</span><span class="nv">devicetree_loadaddr</span><s
 </div>
 </li>
 <li><p class="first">Update the rootfs image:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">rootfs_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">rootfs_size</span><span class="si">}</span>
-tftpboot <span class="si">${</span><span class="nv">rootfs_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">rootfs_image</span><span class="si">}</span>
+<p>This step depends on the chosen boot device.</p>
+<p>If QSPI RAMDISK was selected:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">ramdisk_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">ramdisk_size</span><span class="si">}</span>
+tftpboot <span class="si">${</span><span class="nv">ramdisk_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">ramdisk_image</span><span class="si">}</span>
 sf probe
-sf erase <span class="si">${</span><span class="nv">qspi_rootfs_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">rootfs_size</span><span class="si">}</span>
-sf write <span class="si">${</span><span class="nv">rootfs_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">qspi_rootfs_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">filesize</span><span class="si">}</span>
+sf erase <span class="si">${</span><span class="nv">qspi_ramdisk_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">ramdisk_size</span><span class="si">}</span>
+sf write <span class="si">${</span><span class="nv">ramdisk_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">qspi_ramdisk_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">filesize</span><span class="si">}</span>
+</pre></div>
+</div>
+<p>If QSPI was selected:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">jffs2_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">jffs2_size</span><span class="si">}</span>
+tftpboot <span class="si">${</span><span class="nv">jffs2_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">jffs2_image</span><span class="si">}</span>
+sf probe
+sf erase <span class="si">${</span><span class="nv">qspi_rootfs_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">jffs2_size</span><span class="si">}</span>
+sf write <span class="si">${</span><span class="nv">jffs2_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">qspi_rootfs_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">filesize</span><span class="si">}</span>
 </pre></div>
 </div>
 </li>
@@ -705,8 +787,8 @@ sync
 </li>
 <li><p class="first">Set the server&#8217;s and target&#8217;s IP address, and the path to the rootfs NFS folder.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>env default -a
-setenv ipaddr 192.168.1.10
-setenv serverip 192.168.1.2
+setenv ipaddr <span class="m">192</span>.168.1.10
+setenv serverip <span class="m">192</span>.168.1.2
 setenv serverpath /path/to/NFS
 saveenv
 </pre></div>
@@ -747,13 +829,13 @@ n
 <span class="c1"># choose primary</span>
 p
 <span class="c1"># set number to &#39;2&#39;</span>
-2
+<span class="m">2</span>
 <span class="c1"># leave default start sector, and set the size to 2 MiB</span>
 +2M
 <span class="c1"># change the partition type</span>
 t
 <span class="c1"># choose the second partition (may be chosen automatically if only one exists)</span>
-2
+<span class="m">2</span>
 <span class="c1"># set type to Altera Boot Partition</span>
 a2
 <span class="c1"># create a new primary partition</span>
@@ -761,21 +843,21 @@ n
 <span class="c1"># set as primary</span>
 p
 <span class="c1"># set number to &#39;1&#39;</span>
-1
+<span class="m">1</span>
 <span class="c1"># leave default start sector, and set the size to 16MiB</span>
 +16M
 <span class="c1"># change the partition type</span>
 t
 <span class="c1"># choose the first partition</span>
-1
+<span class="m">1</span>
 <span class="c1"># set type to fat16</span>
-4
+<span class="m">4</span>
 <span class="c1"># create the third partition</span>
 n
 <span class="c1"># set as primary</span>
 p
 <span class="c1"># set number to &#39;3&#39;</span>
-3
+<span class="m">3</span>
 <span class="c1"># leave default start and end sector</span>
 <span class="c1"># write changes to the disk</span>
 w
@@ -811,7 +893,7 @@ $ cat /etc/xinetd.d/tftp
 service tftp
 <span class="o">{</span>
 <span class="nv">protocol</span> <span class="o">=</span> udp
-<span class="nv">port</span> <span class="o">=</span> 69
+<span class="nv">port</span> <span class="o">=</span> <span class="m">69</span>
 <span class="nv">socket_type</span> <span class="o">=</span> dgram
 <span class="nb">wait</span> <span class="o">=</span> yes
 <span class="nv">user</span> <span class="o">=</span> nobody
@@ -827,7 +909,7 @@ $ sudo chown root:root /nfs_exp
 $ sudo chmod <span class="m">777</span> /nfs_exp
 $ sudo nano /etc/exports
 $ cat /etc/exports
-/nfs_exp 192.168.1.0/24<span class="o">(</span><span class="nv">fsid</span><span class="o">=</span>0,rw,no_subtree_check,no_root_squash<span class="o">)</span>
+/nfs_exp <span class="m">192</span>.168.1.0/24<span class="o">(</span><span class="nv">fsid</span><span class="o">=</span><span class="m">0</span>,rw,no_subtree_check,no_root_squash<span class="o">)</span>
 $ sudo exportfs -a
 </pre></div>
 </div>
@@ -837,13 +919,13 @@ $ sudo exportfs -a
 </div>
 <p>To configure the DHCP server do this:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ cat /etc/dhcp/dhcpd.conf
-default-lease-time 600<span class="p">;</span>
-max-lease-time 7200<span class="p">;</span>
-option subnet-mask 255.255.255.0<span class="p">;</span>
-option broadcast-address 192.168.1.255<span class="p">;</span>
-option domain-name-servers 192.168.1.1, 192.168.1.2<span class="p">;</span>
-subnet 192.168.1.0 netmask 255.255.255.0 <span class="o">{</span>
-    range 192.168.1.10 192.168.1.255<span class="p">;</span>
+default-lease-time <span class="m">600</span><span class="p">;</span>
+max-lease-time <span class="m">7200</span><span class="p">;</span>
+option subnet-mask <span class="m">255</span>.255.255.0<span class="p">;</span>
+option broadcast-address <span class="m">192</span>.168.1.255<span class="p">;</span>
+option domain-name-servers <span class="m">192</span>.168.1.1, <span class="m">192</span>.168.1.2<span class="p">;</span>
+subnet <span class="m">192</span>.168.1.0 netmask <span class="m">255</span>.255.255.0 <span class="o">{</span>
+    range <span class="m">192</span>.168.1.10 <span class="m">192</span>.168.1.255<span class="p">;</span>
 <span class="o">}</span>
 $ sudo /etc/init.d/isc-dhcp-server restart
 </pre></div>
@@ -967,7 +1049,7 @@ getsize <span class="o">()</span>
 <span class="nv">ROOTFS_FILE</span><span class="o">=</span><span class="s2">&quot;rootfs.jffs2&quot;</span>
 <span class="nv">ROOTFS_OFFSET</span><span class="o">=</span><span class="s2">&quot;0&quot;</span>
 
-flash_erase /dev/mtd0 <span class="m">0</span> 0
+flash_erase /dev/mtd0 <span class="m">0</span> <span class="m">0</span>
 <span class="nv">FILESIZE</span><span class="o">=</span><span class="sb">`</span>getsize <span class="si">${</span><span class="nv">PRELOADER_FILE</span><span class="si">}</span><span class="sb">`</span>
 <span class="nb">echo</span> Writing preloader file <span class="si">${</span><span class="nv">PRELOADER_FILE</span><span class="si">}</span> size <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span>
 mtd_debug write /dev/mtd0 <span class="si">${</span><span class="nv">PRELOADER_OFFSET</span><span class="si">}</span> <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span> <span class="si">${</span><span class="nv">PRELOADER_FILE</span><span class="si">}</span>
@@ -992,7 +1074,7 @@ mtd_debug write /dev/mtd0 <span class="si">${</span><span class="nv">DEVICETREE_
 <span class="nb">echo</span> Writing kernel file <span class="si">${</span><span class="nv">KERNEL_FILE</span><span class="si">}</span> size <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span>
 mtd_debug write /dev/mtd0 <span class="si">${</span><span class="nv">KERNEL_OFFSET</span><span class="si">}</span> <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span> <span class="si">${</span><span class="nv">KERNEL_FILE</span><span class="si">}</span>
 
-flash_erase /dev/mtd1 <span class="m">0</span> 0
+flash_erase /dev/mtd1 <span class="m">0</span> <span class="m">0</span>
 <span class="nv">FILESIZE</span><span class="o">=</span><span class="sb">`</span>getsize <span class="si">${</span><span class="nv">ROOTFS_FILE</span><span class="si">}</span><span class="sb">`</span>
 <span class="nb">echo</span> Writing rootfs file <span class="si">${</span><span class="nv">ROOTFS_FILE</span><span class="si">}</span> size <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span>
 mtd_debug write /dev/mtd1 <span class="si">${</span><span class="nv">ROOTFS_OFFSET</span><span class="si">}</span> <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span> <span class="si">${</span><span class="nv">ROOTFS_FILE</span><span class="si">}</span>
@@ -1038,6 +1120,9 @@ mtd_debug write /dev/mtd1 <span class="si">${</span><span class="nv">ROOTFS_OFFS
 <li class="toctree-l1"><a class="reference internal" href="index_altera.html#document-quickstart_altera">Usage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="index_altera.html#gui">GUI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index_altera.html#command-line">Command Line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index_altera.html#deployment">Deployment</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="index_altera.html#sd-card-mmc">SD Card (MMC)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index_altera.html#qspi-flash">QSPI Flash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index_altera.html#usb-drive">USB Drive</a></li>
@@ -1061,13 +1146,13 @@ mtd_debug write /dev/mtd1 <span class="si">${</span><span class="nv">ROOTFS_OFFS
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
-        <li class="nav-item nav-item-0"><a href="index_altera.html#document-index_altera">Enclustra Build Environment - User Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index_altera.html#document-index_altera">Enclustra Build Environment - User Documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright Antmicro Ltd for Enclustra GmbH, 2015.
-      Last updated on 2016-07-15.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
+        &#169; Copyright Antmicro Ltd for Enclustra GmbH, 2015.
+      Last updated on 2017-06-28.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.2.
     </div>
   </body>
 </html>
