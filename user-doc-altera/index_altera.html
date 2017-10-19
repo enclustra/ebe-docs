@@ -689,18 +689,18 @@ sf write <span class="si">${</span><span class="nv">devicetree_loadaddr</span><s
 <p>This step depends on the chosen boot device.</p>
 <p>If QSPI RAMDISK was selected:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">ramdisk_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">ramdisk_size</span><span class="si">}</span>
-tftpboot <span class="si">${</span><span class="nv">ramdisk_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">ramdisk_image</span><span class="si">}</span>
+tftpboot <span class="si">${</span><span class="nv">ramdisk_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">uramdisk_image</span><span class="si">}</span>
 sf probe
 sf erase <span class="si">${</span><span class="nv">qspi_ramdisk_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">ramdisk_size</span><span class="si">}</span>
 sf write <span class="si">${</span><span class="nv">ramdisk_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">qspi_ramdisk_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">filesize</span><span class="si">}</span>
 </pre></div>
 </div>
 <p>If QSPI was selected:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">jffs2_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">jffs2_size</span><span class="si">}</span>
-tftpboot <span class="si">${</span><span class="nv">jffs2_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">jffs2_image</span><span class="si">}</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">rootfs_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">rootfs_size</span><span class="si">}</span>
+tftpboot <span class="si">${</span><span class="nv">rootfs_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">rootfs_image</span><span class="si">}</span>
 sf probe
-sf erase <span class="si">${</span><span class="nv">qspi_rootfs_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">jffs2_size</span><span class="si">}</span>
-sf write <span class="si">${</span><span class="nv">jffs2_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">qspi_rootfs_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">filesize</span><span class="si">}</span>
+sf erase <span class="si">${</span><span class="nv">qspi_rootfs_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">rootfs_size</span><span class="si">}</span>
+sf write <span class="si">${</span><span class="nv">rootfs_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">qspi_rootfs_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">filesize</span><span class="si">}</span>
 </pre></div>
 </div>
 </li>
@@ -1151,7 +1151,7 @@ mtd_debug write /dev/mtd1 <span class="si">${</span><span class="nv">ROOTFS_OFFS
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright Antmicro Ltd for Enclustra GmbH, 2015.
-      Last updated on 2017-06-28.
+      Last updated on 2017-10-19.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.2.
     </div>
   </body>
