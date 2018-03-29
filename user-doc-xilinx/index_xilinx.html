@@ -91,7 +91,7 @@
 <td>Maciej Mikunda</td>
 <td>Updates for release v1.5</td>
 </tr>
-<tr class="row-even"><td>2018-01-24</td>
+<tr class="row-even"><td>2018-03-21</td>
 <td>0.1.6</td>
 <td>Mariusz Glebocki</td>
 <td>Updates for release v1.6</td>
@@ -298,51 +298,56 @@ Additionally, parameters in the <code class="docutils literal"><span class="pre"
 </thead>
 <tbody valign="top">
 <tr class="row-even"><th class="stub">Xilinx</th>
+<td>Cosmos XZQ10</td>
+<td>&#8211;</td>
+<td>Linux, U-Boot, Buildroot</td>
+</tr>
+<tr class="row-odd"><th class="stub">Xilinx</th>
 <td>Mars ZX2</td>
 <td>Mars Starter</td>
 <td>Linux, U-Boot, Buildroot</td>
 </tr>
-<tr class="row-odd"><th class="stub">Xilinx</th>
+<tr class="row-even"><th class="stub">Xilinx</th>
 <td>Mars ZX2</td>
 <td>Mars EB1</td>
 <td>Linux, U-Boot, Buildroot</td>
 </tr>
-<tr class="row-even"><th class="stub">Xilinx</th>
+<tr class="row-odd"><th class="stub">Xilinx</th>
 <td>Mars ZX2</td>
 <td>Mars PM3</td>
 <td>Linux, U-Boot, Buildroot</td>
 </tr>
-<tr class="row-odd"><th class="stub">Xilinx</th>
+<tr class="row-even"><th class="stub">Xilinx</th>
 <td>Mars ZX3</td>
 <td>Mars Starter</td>
 <td>Linux, U-Boot, Buildroot</td>
 </tr>
-<tr class="row-even"><th class="stub">Xilinx</th>
+<tr class="row-odd"><th class="stub">Xilinx</th>
 <td>Mars ZX3</td>
 <td>Mars EB1</td>
 <td>Linux, U-Boot, Buildroot</td>
 </tr>
-<tr class="row-odd"><th class="stub">Xilinx</th>
+<tr class="row-even"><th class="stub">Xilinx</th>
 <td>Mars ZX3</td>
 <td>Mars PM3</td>
 <td>Linux, U-Boot, Buildroot</td>
 </tr>
-<tr class="row-even"><th class="stub">Xilinx</th>
+<tr class="row-odd"><th class="stub">Xilinx</th>
 <td>Mars XU3</td>
 <td>Mars EB1</td>
 <td>Linux, U-Boot, Buildroot</td>
 </tr>
-<tr class="row-odd"><th class="stub">Xilinx</th>
+<tr class="row-even"><th class="stub">Xilinx</th>
 <td>Mercury ZX1</td>
 <td>Mercury PE1</td>
 <td>Linux, U-Boot, Buildroot</td>
 </tr>
-<tr class="row-even"><th class="stub">Xilinx</th>
+<tr class="row-odd"><th class="stub">Xilinx</th>
 <td>Mercury ZX5</td>
 <td>Mercury PE1</td>
 <td>Linux, U-Boot, Buildroot</td>
 </tr>
-<tr class="row-odd"><th class="stub">Xilinx</th>
+<tr class="row-even"><th class="stub">Xilinx</th>
 <td>Mercury+ XU1</td>
 <td>Mercury PE1</td>
 <td>Linux, U-Boot, Buildroot</td>
@@ -355,86 +360,54 @@ Additionally, parameters in the <code class="docutils literal"><span class="pre"
 <div class="section" id="gui">
 <h3>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h3>
 <p>In order to build the software for a chosen board using the GUI, please follow these steps:</p>
-<ol class="arabic simple">
-<li>Clone the build environment repository with:</li>
-</ol>
-<blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span></span>git clone https://github.com/enclustra-bsp/bsp-xilinx.git
+<ol class="arabic">
+<li><p class="first">Clone the build environment repository with:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">enclustra</span><span class="o">-</span><span class="n">bsp</span><span class="o">/</span><span class="n">bsp</span><span class="o">-</span><span class="n">xilinx</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
-</div></blockquote>
-<ol class="arabic simple" start="2">
-<li>Change to the bsp-xilinx directory:</li>
-</ol>
-<blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> bsp-xilinx
+</li>
+<li><p class="first">Change to the <code class="docutils literal"><span class="pre">bsp-xilinx</span></code> directory:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">bsp</span><span class="o">-</span><span class="n">xilinx</span>
 </pre></div>
 </div>
-</div></blockquote>
-<ol class="arabic" start="3">
-<li><p class="first">Run <code class="docutils literal"><span class="pre">./build.sh</span></code> script.</p>
+</li>
+<li><p class="first">Run the <code class="docutils literal"><span class="pre">./build.sh</span></code> script.</p>
 </li>
 <li><p class="first">The welcome screen provides basic information about the version of the build environment.</p>
-<blockquote>
-<div><img alt="_images/welcome_screen.png" src="_images/welcome_screen.png" />
-</div></blockquote>
+<img alt="_images/welcome_screen.png" src="_images/welcome_screen.png" />
 </li>
 <li><p class="first">Choose the configuration.</p>
-<blockquote>
-<div><img alt="_images/choose_config_xilinx.png" src="_images/choose_config_xilinx.png" />
-</div></blockquote>
+<img alt="_images/choose_config_xilinx.png" src="_images/choose_config_xilinx.png" />
 </li>
 <li><p class="first">Choose the chip type.</p>
-<blockquote>
-<div><img alt="_images/chip_xilinx.png" src="_images/chip_xilinx.png" />
-</div></blockquote>
+<img alt="_images/chip_xilinx.png" src="_images/chip_xilinx.png" />
 </li>
 <li><p class="first">Choose the module type.</p>
-<blockquote>
-<div><img alt="_images/module_xilinx.png" src="_images/module_xilinx.png" />
-</div></blockquote>
+<img alt="_images/module_xilinx.png" src="_images/module_xilinx.png" />
 </li>
 <li><p class="first">Choose the base board type.</p>
-<blockquote>
-<div><img alt="_images/board_xilinx.png" src="_images/board_xilinx.png" />
-</div></blockquote>
+<img alt="_images/board_xilinx.png" src="_images/board_xilinx.png" />
 </li>
 <li><p class="first">Choose the boot device.</p>
-<blockquote>
-<div><img alt="_images/bootmode.png" src="_images/bootmode.png" />
-</div></blockquote>
+<img alt="_images/bootmode.png" src="_images/bootmode.png" />
 </li>
 <li><p class="first">Choose which targets available for the chosen device family will be fetched. On the bottom of the screen a short description of the highlighted target is displayed. Choosing certain targets may disable fetching others.</p>
-<blockquote>
-<div><img alt="_images/fetch.png" src="_images/fetch.png" />
-</div></blockquote>
+<img alt="_images/fetch.png" src="_images/fetch.png" />
 </li>
-</ol>
-<p>#. Choose which targets will be built. On the bottom of the screen a short description of a highlighted target is displayed. Choosing certain targets may disable building others.
-In order to use the default target configuration enable the <code class="docutils literal"><span class="pre">Load</span> <span class="pre">initial</span> <span class="pre">...</span> <span class="pre">configuration</span></code> checkbox. If changes have been made to the target, disable this checkbox, so that the changes are not overwritten during the build process.</p>
-<blockquote>
-<div><img alt="_images/build.png" src="_images/build.png" />
-</div></blockquote>
-<ol class="arabic">
+<li><p class="first">Choose which targets will be built. On the bottom of the screen a short description of a highlighted target is displayed. Choosing certain targets may disable building others. In order to use the default target configuration enable the <code class="docutils literal"><span class="pre">Load</span> <span class="pre">initial</span> <span class="pre">...</span> <span class="pre">configuration</span></code> checkbox. If changes have been made to the target, disable this checkbox, so that the changes are not overwritten during the build process.</p>
+<img alt="_images/build.png" src="_images/build.png" />
+</li>
 <li><p class="first">Choose the exact version of the device (chip type, industrial/commercial grade, speed grade).</p>
-<blockquote>
-<div><img alt="_images/dev_option_xilinx.png" src="_images/dev_option_xilinx.png" />
-</div></blockquote>
+<img alt="_images/dev_option_xilinx.png" src="_images/dev_option_xilinx.png" />
 </li>
 <li><p class="first">Customize binaries or use the default ones.</p>
-<blockquote>
-<div><img alt="_images/custom_bin_xilinx.png" src="_images/custom_bin_xilinx.png" />
-</div></blockquote>
+<img alt="_images/custom_bin_xilinx.png" src="_images/custom_bin_xilinx.png" />
 </li>
 <li><p class="first">Verify all the chosen build parameters.</p>
-<blockquote>
-<div><img alt="_images/summary_xilinx.png" src="_images/summary_xilinx.png" />
-</div></blockquote>
+<img alt="_images/summary_xilinx.png" src="_images/summary_xilinx.png" />
 </li>
 <li><p class="first">Choose whether or not to save the configuration for later use.</p>
-<blockquote>
-<div><img alt="_images/save_xilinx.png" src="_images/save_xilinx.png" />
-</div></blockquote>
+<img alt="_images/save_xilinx.png" src="_images/save_xilinx.png" />
 </li>
 <li><p class="first">The build environment will fetch and build the chosen targets.</p>
 </li>
@@ -444,30 +417,30 @@ In order to use the default target configuration enable the <code class="docutil
 <h3>Command Line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h3>
 <p>The build process can be invoked from the command line. All options that are available in the GUI are present on the command line interface as well.
 A list of the available command line options can be obtained like this:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>./build.sh --help
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">build</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">help</span>
 
-usage: build.sh [-h] [-L] [-d device] [-l] [-x target] [-f target] [-b target]
-            [--fetch-history target] [--list-dev-options] [-o index] [-c] [-v]
+<span class="n">usage</span><span class="p">:</span> <span class="n">build</span><span class="o">.</span><span class="n">sh</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">L</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">d</span> <span class="n">device</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">l</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">x</span> <span class="n">target</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">f</span> <span class="n">target</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">b</span> <span class="n">target</span><span class="p">]</span>
+            <span class="p">[</span><span class="o">--</span><span class="n">fetch</span><span class="o">-</span><span class="n">history</span> <span class="n">target</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">dev</span><span class="o">-</span><span class="n">options</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">o</span> <span class="n">index</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">c</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span>
 
-Enclustra Build Environment
+<span class="n">Enclustra</span> <span class="n">Build</span> <span class="n">Environment</span>
 
-optional arguments:
-  -h, --help                    show this help message and exit
-  -L, --list-devices            list all available devices
-  -d device, --device device    specify device as follows:
-                                &lt;module&gt;/&lt;base_board&gt;/&lt;boot_device&gt;
-  -l, --list-targets            list all targets for chosen device
-  -x target                     fetch and build specific target
-  -f target, --fetch target     fetch specific target
-  -b target, --build target     build specific target
-  --fetch-history target        fetch specific target with history
-  --list-dev-options            list all available device options for chosen
-                                device
-  -o index, --dev-option index  set device option by index, the default one
-                                will be used if not specified
-  -c, --clean-all               delete all downloaded code, binaries, tools
-                                and built files
-  -v, --version                 print version
+<span class="n">optional</span> <span class="n">arguments</span><span class="p">:</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>                    <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
+  <span class="o">-</span><span class="n">L</span><span class="p">,</span> <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">devices</span>            <span class="nb">list</span> <span class="nb">all</span> <span class="n">available</span> <span class="n">devices</span>
+  <span class="o">-</span><span class="n">d</span> <span class="n">device</span><span class="p">,</span> <span class="o">--</span><span class="n">device</span> <span class="n">device</span>    <span class="n">specify</span> <span class="n">device</span> <span class="k">as</span> <span class="n">follows</span><span class="p">:</span>
+                                <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;/&lt;</span><span class="n">base_board</span><span class="o">&gt;/&lt;</span><span class="n">boot_device</span><span class="o">&gt;</span>
+  <span class="o">-</span><span class="n">l</span><span class="p">,</span> <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">targets</span>            <span class="nb">list</span> <span class="nb">all</span> <span class="n">targets</span> <span class="k">for</span> <span class="n">chosen</span> <span class="n">device</span>
+  <span class="o">-</span><span class="n">x</span> <span class="n">target</span>                     <span class="n">fetch</span> <span class="ow">and</span> <span class="n">build</span> <span class="n">specific</span> <span class="n">target</span>
+  <span class="o">-</span><span class="n">f</span> <span class="n">target</span><span class="p">,</span> <span class="o">--</span><span class="n">fetch</span> <span class="n">target</span>     <span class="n">fetch</span> <span class="n">specific</span> <span class="n">target</span>
+  <span class="o">-</span><span class="n">b</span> <span class="n">target</span><span class="p">,</span> <span class="o">--</span><span class="n">build</span> <span class="n">target</span>     <span class="n">build</span> <span class="n">specific</span> <span class="n">target</span>
+  <span class="o">--</span><span class="n">fetch</span><span class="o">-</span><span class="n">history</span> <span class="n">target</span>        <span class="n">fetch</span> <span class="n">specific</span> <span class="n">target</span> <span class="k">with</span> <span class="n">history</span>
+  <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">dev</span><span class="o">-</span><span class="n">options</span>            <span class="nb">list</span> <span class="nb">all</span> <span class="n">available</span> <span class="n">device</span> <span class="n">options</span> <span class="k">for</span> <span class="n">chosen</span>
+                                <span class="n">device</span>
+  <span class="o">-</span><span class="n">o</span> <span class="n">index</span><span class="p">,</span> <span class="o">--</span><span class="n">dev</span><span class="o">-</span><span class="n">option</span> <span class="n">index</span>  <span class="nb">set</span> <span class="n">device</span> <span class="n">option</span> <span class="n">by</span> <span class="n">index</span><span class="p">,</span> <span class="n">the</span> <span class="n">default</span> <span class="n">one</span>
+                                <span class="n">will</span> <span class="n">be</span> <span class="n">used</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">specified</span>
+  <span class="o">-</span><span class="n">c</span><span class="p">,</span> <span class="o">--</span><span class="n">clean</span><span class="o">-</span><span class="nb">all</span>               <span class="n">delete</span> <span class="nb">all</span> <span class="n">downloaded</span> <span class="n">code</span><span class="p">,</span> <span class="n">binaries</span><span class="p">,</span> <span class="n">tools</span>
+                                <span class="ow">and</span> <span class="n">built</span> <span class="n">files</span>
+  <span class="o">-</span><span class="n">v</span><span class="p">,</span> <span class="o">--</span><span class="n">version</span>                 <span class="nb">print</span> <span class="n">version</span>
 </pre></div>
 </div>
 <p>In order to list all available devices use the following command:</p>
@@ -583,8 +556,81 @@ To permanently restore the default environment, the <code class="docutils litera
 </pre></div>
 </div>
 </div>
+<div class="section" id="emmc-flash">
+<span id="xilinx-qspi"></span><h3>eMMC Flash<a class="headerlink" href="#emmc-flash" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Prepare a bootable SD card with a ramdisk or persistent rootfs as described in <a class="reference internal" href="#xilinx-mmc"><span class="std std-ref">SD Card (MMC)</span></a>.</p>
+</li>
+<li><p class="first">You&#8217;ll need the following files from eMMC build:
+<code class="docutils literal"><span class="pre">boot.bin</span></code>, <code class="docutils literal"><span class="pre">devicetree.dtb</span></code>, <code class="docutils literal"><span class="pre">Image</span></code> (Zynq Ultrascale+ only), <code class="docutils literal"><span class="pre">uImage</span></code> (Zynq-7000 only).
+Additionally, you&#8217;ll need <code class="docutils literal"><span class="pre">uramdisk</span></code>, <code class="docutils literal"><span class="pre">uboot_ramdisk.scr</span></code> when you want to use a ramdisk, and <code class="docutils literal"><span class="pre">rootfs.tar</span></code>, <code class="docutils literal"><span class="pre">uboot.scr</span></code> to use a persistent rootfs.
+Copy the files to a TFTP server&#8217;s directory to load them later through the network.
+If you don&#8217;t want to use the network connection on the board, copy the files to the <code class="docutils literal"><span class="pre">emmc</span></code> directory on the SD card&#8217;s rootfs partition instead.</p>
+</li>
+<li><p class="first">Boot Linux on the device from the SD Card (ramdisk or persistent rootfs) and login as root.</p>
+</li>
+<li><p class="first">If you&#8217;ve put eMMC build files on the SD card, and you&#8217;re booting from a ramdisk, mount the SD card&#8217;s second partition in <code class="docutils literal"><span class="pre">/mnt</span></code>.
+When booting from a persistent rootfs, the files are already in <code class="docutils literal"><span class="pre">/emmc</span></code>. In either case, <code class="docutils literal"><span class="pre">cd</span></code> to a directory with the files.
+In the case of files located on a TFTP server, connect to the network by running <code class="docutils literal"><span class="pre">dhcpcd</span> <span class="pre">eth0</span></code> and download the files:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>tftp -g -r boot.bin       <span class="nv">$SERVER_IP</span>
+tftp -g -r devicetree.dtb <span class="nv">$SERVER_IP</span>
+tftp -g -r uImage         <span class="nv">$SERVER_IP</span>  <span class="c1"># Zynq-7000 only</span>
+tftp -g -r Image          <span class="nv">$SERVER_IP</span>  <span class="c1"># Ultrascale+ only</span>
+
+<span class="c1"># For eMMC with persistent rootfs:</span>
+tftp -g -r rootfs.tar     <span class="nv">$SERVER_IP</span>
+tftp -g -r uboot.scr      <span class="nv">$SERVER_IP</span>
+
+<span class="c1"># For eMMC with ramdisk:</span>
+tftp -g -r uramdisk       <span class="nv">$SERVER_IP</span>
+tftp -g -r uboot_ramdisk.scr -l uboot.scr <span class="nv">$SERVER_IP</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">$SERVER_IP</span></code> is your TFTP server IP address.</p>
+</li>
+<li><p class="first">There are two <code class="docutils literal"><span class="pre">/dev/mmcblkN</span></code> devices.
+One of them is the SD card, and the other is the eMMC.
+To identify the eMMC, look which one has the <code class="docutils literal"><span class="pre">boot0</span></code> partition:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">mmcblk</span><span class="o">*</span><span class="n">boot0</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Partition the eMMC. Create a FAT32 <code class="docutils literal"><span class="pre">boot</span></code> partition as the first partition on the device, make its size at least 64 MB.
+If you want to use a persistent rootfs, create a second ext4 <code class="docutils literal"><span class="pre">rootfs</span></code> partition (at least 64 MB large).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For more information on how to prepare the boot medium, please refer to the official <a class="reference external" href="http://www.wiki.xilinx.com/Prepare+Boot+Medium">Xilinx guide</a>.
+Remember to use eMMC device <code class="docutils literal"><span class="pre">mmcblkX</span></code> instead of <code class="docutils literal"><span class="pre">sdX</span></code>.</p>
+</div>
+</li>
+<li><p class="first">Mount the <code class="docutils literal"><span class="pre">boot</span></code> partition and copy boot files to it:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">boot</span>
+<span class="n">mount</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">mmcblkXp1</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">boot</span>
+
+<span class="n">cp</span> <span class="n">boot</span><span class="o">.</span><span class="n">bin</span> <span class="n">devicetree</span><span class="o">.</span><span class="n">dtb</span> <span class="n">uboot</span><span class="o">.</span><span class="n">scr</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">boot</span><span class="o">/</span>
+<span class="n">cp</span> <span class="n">uImage</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">boot</span><span class="o">/</span>  <span class="c1"># Zynq-7000 only</span>
+<span class="n">cp</span> <span class="n">Image</span>  <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">boot</span><span class="o">/</span>  <span class="c1"># Ultrascale+ only</span>
+<span class="c1"># For eMMC with ramdisk:</span>
+<span class="n">cp</span> <span class="n">uramdisk</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">boot</span><span class="o">/</span>
+
+<span class="n">umount</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">boot</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Mount the <code class="docutils literal"><span class="pre">rootfs</span></code> partition and extract <code class="docutils literal"><span class="pre">rootfs.tar</span></code> (persistent rootfs only):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">rootfs</span>
+<span class="n">mount</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">mmcblkXp2</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">rootfs</span>
+
+<span class="n">tar</span> <span class="o">-</span><span class="n">xpv</span> <span class="o">-</span><span class="n">C</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">rootfs</span><span class="o">/</span> <span class="o">-</span><span class="n">f</span> <span class="n">rootfs</span><span class="o">.</span><span class="n">tar</span>
+
+<span class="n">umount</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">rootfs</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
 <div class="section" id="qspi-flash">
-<span id="xilinx-qspi"></span><h3>QSPI Flash<a class="headerlink" href="#qspi-flash" title="Permalink to this headline">¶</a></h3>
+<h3>QSPI Flash<a class="headerlink" href="#qspi-flash" title="Permalink to this headline">¶</a></h3>
 <p>The QSPI Flash is divided into 6 partitions based on U-Boot environment variables.
 Those variables are calculated and set automatically, so in most cases there is no need to change them.
 For more detailed information on partition offsets and sizes, please refer to <a class="reference internal" href="#xilinx-qspi-layout"><span class="std std-ref">QSPI Flash Layouts</span></a>.</p>
@@ -699,7 +745,7 @@ sf write <span class="si">${</span><span class="nv">jffs2_loadaddr</span><span c
 <span id="xilinx-nand"></span><h3>NAND Flash<a class="headerlink" href="#nand-flash" title="Permalink to this headline">¶</a></h3>
 <p>Enclustra Build Environment does not support direct boot from the NAND Flash memory.
 The FSBL and the U-Boot have to be started from SD Card (MMC) or QSPI Flash.
-Please refer to <a class="reference internal" href="#xilinx-mmc"><span class="std std-ref">SD Card (MMC)</span></a> or <a class="reference internal" href="#xilinx-qspi"><span class="std std-ref">QSPI Flash</span></a> in order to boot U-Boot from SD Card or QSPI Flash.
+Please refer to <a class="reference internal" href="#xilinx-mmc"><span class="std std-ref">SD Card (MMC)</span></a> or <a class="reference internal" href="#xilinx-qspi"><span class="std std-ref">eMMC Flash</span></a> in order to boot U-Boot from SD Card or QSPI Flash.
 When U-Boot is booted it can load and boot the Linux system stored on the NAND Flash memory.</p>
 <table border="1" class="docutils" id="xilinx-qspi-flash-layout">
 <caption><span class="caption-text">Xilinx Family NAND Flash Layout</span><a class="headerlink" href="#xilinx-qspi-flash-layout" title="Permalink to this table">¶</a></caption>
@@ -815,7 +861,7 @@ nand write <span class="si">${</span><span class="nv">ubifs_loadaddr</span><span
 <h3>USB Drive<a class="headerlink" href="#usb-drive" title="Permalink to this headline">¶</a></h3>
 <p>The Xilinx family devices cannot boot directly from a USB Drive.
 The FSBL and the U-Boot have to be started from SD Card (MMC) or QSPI Flash.
-Please refer to <a class="reference internal" href="#xilinx-mmc"><span class="std std-ref">SD Card (MMC)</span></a> or <a class="reference internal" href="#xilinx-qspi"><span class="std std-ref">QSPI Flash</span></a> in order to boot U-Boot from SD Card or QSPI Flash.
+Please refer to <a class="reference internal" href="#xilinx-mmc"><span class="std std-ref">SD Card (MMC)</span></a> or <a class="reference internal" href="#xilinx-qspi"><span class="std std-ref">eMMC Flash</span></a> in order to boot U-Boot from SD Card or QSPI Flash.
 When U-Boot is booted it can load and boot the Linux system stored on the USB Drive.</p>
 <p>In order to deploy images and boot the Linux system from a USB Drive, perform the following steps:</p>
 <ol class="arabic">
@@ -1345,6 +1391,7 @@ mtd_debug write /dev/mtd5 <span class="m">0</span> <span class="si">${</span><sp
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index_xilinx.html#deployment">Deployment</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="index_xilinx.html#sd-card-mmc">SD Card (MMC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_xilinx.html#emmc-flash">eMMC Flash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index_xilinx.html#qspi-flash">QSPI Flash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index_xilinx.html#nand-flash">NAND Flash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index_xilinx.html#usb-drive">USB Drive</a></li>
@@ -1372,7 +1419,7 @@ mtd_debug write /dev/mtd5 <span class="m">0</span> <span class="si">${</span><sp
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright Antmicro Ltd for Enclustra GmbH, 2015.
-      Last updated on 2018-03-21.
+      Last updated on 2018-03-29.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
     </div>
   </body>
