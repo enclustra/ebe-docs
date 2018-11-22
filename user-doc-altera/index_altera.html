@@ -1,35 +1,34 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Enclustra Build Environment - User Documentation</title>
-    
     <link rel="stylesheet" href="_static/rtd.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
         VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="None" href="index_altera.html#document-index_altera" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
-        <li class="nav-item nav-item-0"><a href="index_altera.html#document-index_altera">Enclustra Build Environment - User Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index_altera.html#document-index_altera">Enclustra Build Environment - User Documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -111,7 +110,7 @@ Its internal functionality is determined by <cite>ini</cite> files placed in a s
 The system is compatible with both, Python 2 and Python 3.</p>
 <p>The build environment requires additional software to be installed as listed below:</p>
 <table border="1" class="docutils" id="sample-table">
-<caption><span class="caption-text">Required software</span><a class="headerlink" href="#sample-table" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Required software</span><a class="headerlink" href="#sample-table" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="33%" />
 <col width="33%" />
@@ -130,45 +129,57 @@ The system is compatible with both, Python 2 and Python 3.</p>
 </tr>
 <tr class="row-odd"><th class="stub">make</th>
 <td>3.81.8</td>
-<td>&nbsp;</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-even"><th class="stub">git</th>
 <td>1.9.1</td>
-<td>&nbsp;</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-odd"><th class="stub">mercurial</th>
 <td>2.8.2</td>
-<td>&nbsp;</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-even"><th class="stub">tar</th>
 <td>1.27.1</td>
-<td>&nbsp;</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-odd"><th class="stub">unzip</th>
 <td>6.0</td>
-<td>&nbsp;</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-even"><th class="stub">curl</th>
 <td>7.35.0</td>
-<td>&nbsp;</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-odd"><th class="stub">wget</th>
 <td>1.15</td>
-<td>&nbsp;</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-even"><th class="stub">bc</th>
 <td>1.06.95</td>
-<td>&nbsp;</td>
+<td>&#160;</td>
 </tr>
-<tr class="row-odd"><th class="stub">autoconf</th>
+<tr class="row-odd"><th class="stub">libssl-dev</th>
+<td>1.0.0</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><th class="stub">patch</th>
+<td>2.7.1</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><th class="stub">rsync</th>
+<td>3.1.0</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><th class="stub">autoconf</th>
 <td>2.69</td>
 <td>Required to build a buildroot rootfs</td>
 </tr>
-<tr class="row-even"><th class="stub">g++</th>
+<tr class="row-odd"><th class="stub">g++</th>
 <td>4.8.3</td>
 <td>Required to build a buildroot rootfs</td>
 </tr>
-<tr class="row-odd"><th class="stub">gcc</th>
+<tr class="row-even"><th class="stub">gcc</th>
 <td>4.8.3</td>
 <td>Required to build the Linux kernel, U-Boot and a buildroot rootfs</td>
 </tr>
@@ -214,7 +225,7 @@ sudo apt install -y autoconf bc build-essential curl git mercurial <span class="
 </pre></div>
 </div>
 <table border="1" class="docutils" id="folder-description">
-<caption><span class="caption-text">Folder description</span><a class="headerlink" href="#folder-description" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Folder description</span><a class="headerlink" href="#folder-description" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
@@ -282,7 +293,7 @@ Additionally, parameters in the <code class="docutils literal"><span class="pre"
 <span id="document-supported_devices_altera"></span><div class="section" id="supported-devices">
 <h2>Supported Devices<a class="headerlink" href="#supported-devices" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils" id="supported-devices-altera">
-<caption><span class="caption-text">Supported devices</span><a class="headerlink" href="#supported-devices-altera" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Supported devices</span><a class="headerlink" href="#supported-devices-altera" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="25%" />
 <col width="25%" />
@@ -333,6 +344,24 @@ Additionally, parameters in the <code class="docutils literal"><span class="pre"
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="gui">
 <h3>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>By default the build script will fetch and build the latest EBE release.
+To use a specific release you need to clone a clean copy of the EBE repo and switch to a selected release:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">enclustra</span><span class="o">-</span><span class="n">bsp</span><span class="o">/</span><span class="n">bsp</span><span class="o">-</span><span class="n">altera</span><span class="o">.</span><span class="n">git</span> <span class="o">-</span><span class="n">b</span> <span class="n">v1</span><span class="o">.</span><span class="n">x</span>
+<span class="c1"># where v1.x is the release number (e.g. v1.5)</span>
+</pre></div>
+</div>
+<p>In order to use the latest code, switch to develop release:</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">enclustra</span><span class="o">-</span><span class="n">bsp</span><span class="o">/</span><span class="n">bsp</span><span class="o">-</span><span class="n">altera</span><span class="o">.</span><span class="n">git</span> <span class="o">-</span><span class="n">b</span> <span class="n">develop</span>
+<span class="n">export</span> <span class="n">EBE_RELEASE</span><span class="o">=</span><span class="n">master</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Since software in the develop release uses code which is currently under development the resulting software may be unstable.</p>
+</div>
 <p>In order to build the software for a chosen board using the GUI, please follow these steps:</p>
 <ol class="arabic simple">
 <li>Clone the build environment repository with:</li>
@@ -418,27 +447,55 @@ Additionally, parameters in the <code class="docutils literal"><span class="pre"
 A list of the available command line options can be obtained like this:</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>./build.sh --help
 
-usage: build.sh [-h] [-L] [-d device] [-l] [-x target] [-f target] [-b target]
-            [--fetch-history target] [--list-dev-options] [-o index] [-c] [-v]
+usage: tool [-h] [--release ver] [-L] [--list-devices-raw] [-d device] [-l]
+    [--list-targets-raw] [-x target] [-f target] [-b target]
+    [--custom-build target steps] [--fetch-history target]
+    [--list-dev-options] [--list-dev-binaries] [-B file path]
+    [--anti-unicorn] [--expert-mode] [-o index] [--generate-project]
+    [--build-project project_file] [--build-project-auto project_file]
+    [-s cfg] [-c] [-C] [-v]
 
 Enclustra Build Environment
 
 optional arguments:
   -h, --help                    show this help message and exit
+  --release ver                 specify release version of the buidscripts
   -L, --list-devices            list all available devices
+  --list-devices-raw            list all available devices in a script
+                                friendly way
   -d device, --device device    specify device as follows:
-                                &lt;module&gt;/&lt;base_board&gt;/&lt;boot_device&gt;
+                                &lt;family&gt;/&lt;module&gt;/&lt;base_board&gt;/&lt;boot_device&gt;
   -l, --list-targets            list all targets for chosen device
+  --list-targets-raw            list all targets for chosen device in a script
+                                friendly way
   -x target                     fetch and build specific target
   -f target, --fetch target     fetch specific target
   -b target, --build target     build specific target
+  --custom-build target steps   build specific target with specific steps
+                                (comma separated)
   --fetch-history target        fetch specific target with history
   --list-dev-options            list all available device options for chosen
                                 device
+  --list-dev-binaries           list all available binary files for chosen
+                                device
+  -B file path, --custom-binary file path
+                                exchange selected binary file with the one
+                                pointed by the path
+  --anti-unicorn                disables colored output
+  --expert-mode                 expert mode: prepare the environment for
+                                building the whole system manually
   -o index, --dev-option index  set device option by index, the default one
                                 will be used if not specified
+  --generate-project            generate project directory instead of a
+                                regular output
+  --build-project project_file  build project
+  --build-project-auto project_file
+                                build project automatically, skip the gui
+  -s cfg, --saved-config cfg    use previously saved configuration file
   -c, --clean-all               delete all downloaded code, binaries, tools
                                 and built files
+  -C, --clean-soft              run clean commands for all specified targets
+                                (if available)
   -v, --version                 print version
 </pre></div>
 </div>
@@ -472,7 +529,7 @@ To list all the available targets for a selected device, the user needs to add t
 </div>
 <p>This will print out an indexed list of device options.</p>
 <p>The <code class="docutils literal"><span class="pre">-o</span></code> option allows the user to choose a device option for the selected device by providing the index of a specific device option, like this:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>./build.sh -d Mercury_SA1/Mercury_PE1/QSPI -x Linux -o 1
+<div class="highlight-bash"><div class="highlight"><pre><span></span>./build.sh -d Mercury_SA1/Mercury_PE1/QSPI -x Linux -o <span class="m">1</span>
 </pre></div>
 </div>
 <p>If no device option is selected, the default one will be used.</p>
@@ -494,7 +551,7 @@ Once the files are built, they can be deployed to the hardware as described in t
 </div>
 <p>As a general note on U-Boot used in all the following guides: U-Boot is using variables from the default environment. Moreover, the boot scripts used by U-Boot also rely on those variables. If the environment was changed and saved earlier, U-Boot will always use these saved environment variables on a fresh boot, even after changing the U-Boot environment.</p>
 <table border="1" class="docutils" id="u-boot-environment-location-and-size">
-<caption><span class="caption-text">U-Boot environment location and size</span><a class="headerlink" href="#u-boot-environment-location-and-size" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 4 </span><span class="caption-text">U-Boot environment location and size</span><a class="headerlink" href="#u-boot-environment-location-and-size" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="20%" />
 <col width="20%" />
@@ -615,7 +672,7 @@ run mmcboot
 </div>
 <p>For Mercury AA1:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>setenv linux_storage EMMC
-setenv use_ramdisk 1
+setenv use_ramdisk <span class="m">1</span>
 run bootcmd
 </pre></div>
 </div>
@@ -633,7 +690,7 @@ n
 <span class="c1"># choose primary</span>
 p
 <span class="c1"># set number to 2</span>
-2
+<span class="m">2</span>
 <span class="c1"># leave default start sector</span>
 
 <span class="c1"># set the size to 2 MiB</span>
@@ -645,26 +702,26 @@ a2
 <span class="c1"># create a new partition</span>
 n
 p
-1
+<span class="m">1</span>
 <span class="c1"># leave default start sector</span>
 
 <span class="c1"># set the size to 200 MiB</span>
 +200M
 <span class="c1"># set the 1st partition type to FAT32</span>
 t
-1
+<span class="m">1</span>
 c
 <span class="c1"># create a new partition</span>
 n
 p
-3
+<span class="m">3</span>
 <span class="c1"># leave default start and end sector</span>
 
 
 <span class="c1"># set the 3rd partition type to Linux</span>
 t
-3
-83
+<span class="m">3</span>
+<span class="m">83</span>
 <span class="c1"># write changes and exit</span>
 w
 q
@@ -727,7 +784,7 @@ sync <span class="o">&amp;&amp;</span> umount /mnt
 </div>
 <div class="section" id="qspi-flash">
 <h3>QSPI Flash<a class="headerlink" href="#qspi-flash" title="Permalink to this headline">¶</a></h3>
-<p>The QSPI flash is divided into partitions based on the module&#8217;s family. The partition offsets are hard coded in the U-Boot code and should not be modified. For more detailed information on partition offsets and sizes, please refer to <a class="reference internal" href="#altera-qspi-layout"><span class="std std-ref">QSPI Flash Layouts</span></a>.</p>
+<p>The QSPI flash is divided into partitions based on the module’s family. The partition offsets are hard coded in the U-Boot code and should not be modified. For more detailed information on partition offsets and sizes, please refer to <a class="reference internal" href="#altera-qspi-layout"><span class="std std-ref">QSPI Flash Layouts</span></a>.</p>
 <p>There are two ways of flashing the QSPI flash memory - deploy each system part step by step or use the generated QSPI flash image.
 The first few steps are the same for both options. In order to prepare the flashing environment, perform the following steps:</p>
 <ol class="arabic">
@@ -962,10 +1019,10 @@ sync
 </li>
 <li><p class="first">Power on the board and stop the U-Boot autoboot.</p>
 </li>
-<li><p class="first">Set the server&#8217;s and target&#8217;s IP address, and the path to the rootfs NFS folder.</p>
+<li><p class="first">Set the server’s and target’s IP address, and the path to the rootfs NFS folder.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>env default -a
-setenv ipaddr 192.168.1.10
-setenv serverip 192.168.1.2
+setenv ipaddr <span class="m">192</span>.168.1.10
+setenv serverip <span class="m">192</span>.168.1.2
 setenv serverpath /path/to/NFS
 saveenv
 </pre></div>
@@ -1006,7 +1063,7 @@ n
 <span class="c1"># choose primary</span>
 p
 <span class="c1"># set number to &#39;2&#39;</span>
-2
+<span class="m">2</span>
 <span class="c1"># leave default start sector</span>
 
 <span class="c1"># set the size to 2 MiB</span>
@@ -1014,7 +1071,7 @@ p
 <span class="c1"># change the partition type</span>
 t
 <span class="c1"># choose the second partition (may be chosen automatically if only one exists)</span>
-2
+<span class="m">2</span>
 <span class="c1"># set type to Altera Boot Partition</span>
 a2
 <span class="c1"># create a new primary partition</span>
@@ -1022,7 +1079,7 @@ n
 <span class="c1"># set as primary</span>
 p
 <span class="c1"># set number to &#39;1&#39;</span>
-1
+<span class="m">1</span>
 <span class="c1"># leave default start sector</span>
 
 <span class="c1"># set the size to 200MiB</span>
@@ -1030,7 +1087,7 @@ p
 <span class="c1"># change the partition type</span>
 t
 <span class="c1"># choose the first partition</span>
-1
+<span class="m">1</span>
 <span class="c1"># set type to W95 FAT32 (LBA)</span>
 c
 <span class="c1"># create the third partition</span>
@@ -1038,7 +1095,7 @@ n
 <span class="c1"># set as primary</span>
 p
 <span class="c1"># set number to &#39;3&#39;</span>
-3
+<span class="m">3</span>
 <span class="c1"># leave default start sector</span>
 
 <span class="c1"># leave default end sector</span>
@@ -1077,7 +1134,7 @@ $ cat /etc/xinetd.d/tftp
 service tftp
 <span class="o">{</span>
 <span class="nv">protocol</span> <span class="o">=</span> udp
-<span class="nv">port</span> <span class="o">=</span> 69
+<span class="nv">port</span> <span class="o">=</span> <span class="m">69</span>
 <span class="nv">socket_type</span> <span class="o">=</span> dgram
 <span class="nb">wait</span> <span class="o">=</span> yes
 <span class="nv">user</span> <span class="o">=</span> nobody
@@ -1094,7 +1151,7 @@ $ sudo chown root:root /nfs_exp
 $ sudo chmod <span class="m">777</span> /nfs_exp
 $ sudo nano /etc/exports
 $ cat /etc/exports
-/nfs_exp 192.168.1.0/24<span class="o">(</span><span class="nv">fsid</span><span class="o">=</span>0,rw,no_subtree_check,no_root_squash<span class="o">)</span>
+/nfs_exp <span class="m">192</span>.168.1.0/24<span class="o">(</span><span class="nv">fsid</span><span class="o">=</span><span class="m">0</span>,rw,no_subtree_check,no_root_squash<span class="o">)</span>
 $ sudo exportfs -a
 </pre></div>
 </div>
@@ -1104,13 +1161,13 @@ $ sudo exportfs -a
 </div>
 <p>To configure the DHCP server do this:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ cat /etc/dhcp/dhcpd.conf
-default-lease-time 600<span class="p">;</span>
-max-lease-time 7200<span class="p">;</span>
-option subnet-mask 255.255.255.0<span class="p">;</span>
-option broadcast-address 192.168.1.255<span class="p">;</span>
-option domain-name-servers 192.168.1.1, 192.168.1.2<span class="p">;</span>
-subnet 192.168.1.0 netmask 255.255.255.0 <span class="o">{</span>
-    range 192.168.1.10 192.168.1.255<span class="p">;</span>
+default-lease-time <span class="m">600</span><span class="p">;</span>
+max-lease-time <span class="m">7200</span><span class="p">;</span>
+option subnet-mask <span class="m">255</span>.255.255.0<span class="p">;</span>
+option broadcast-address <span class="m">192</span>.168.1.255<span class="p">;</span>
+option domain-name-servers <span class="m">192</span>.168.1.1, <span class="m">192</span>.168.1.2<span class="p">;</span>
+subnet <span class="m">192</span>.168.1.0 netmask <span class="m">255</span>.255.255.0 <span class="o">{</span>
+    range <span class="m">192</span>.168.1.10 <span class="m">192</span>.168.1.255<span class="p">;</span>
 <span class="o">}</span>
 $ sudo /etc/init.d/isc-dhcp-server restart
 </pre></div>
@@ -1140,7 +1197,7 @@ sudo /etc/init.d/isc-dhcp-server restart
 <span id="altera-qspi-layout"></span><h3>QSPI Flash Layouts<a class="headerlink" href="#qspi-flash-layouts" title="Permalink to this headline">¶</a></h3>
 <p>The QSPI flash layout depends on the version of the Altera chip that is present in the module.</p>
 <table border="1" class="docutils" id="altera-cyclone-qspi-flash-layout">
-<caption><span class="caption-text">Altera Cyclone V Family QSPI Flash Layout</span><a class="headerlink" href="#altera-cyclone-qspi-flash-layout" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 5 </span><span class="caption-text">Altera Cyclone V Family QSPI Flash Layout</span><a class="headerlink" href="#altera-cyclone-qspi-flash-layout" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="25%" />
 <col width="25%" />
@@ -1163,7 +1220,7 @@ sudo /etc/init.d/isc-dhcp-server restart
 <tr class="row-odd"><th class="stub">U-Boot image</th>
 <td>u-boot.img</td>
 <td>0x60000</td>
-<td>0x40000</td>
+<td>0x60000</td>
 </tr>
 <tr class="row-even"><th class="stub">FPGA Bitstream</th>
 <td>fpga.rbf.img</td>
@@ -1171,7 +1228,7 @@ sudo /etc/init.d/isc-dhcp-server restart
 <td>0x700000</td>
 </tr>
 <tr class="row-odd"><th class="stub">U-Boot environment</th>
-<td>&nbsp;</td>
+<td>&#160;</td>
 <td>0x800000</td>
 <td>0x40000</td>
 </tr>
@@ -1199,7 +1256,7 @@ sudo /etc/init.d/isc-dhcp-server restart
 </table>
 <p>&nbsp;</p>
 <table border="1" class="docutils" id="altera-arria-qspi-flash-layout">
-<caption><span class="caption-text">Altera Arria 10 Family QSPI Flash Layout</span><a class="headerlink" href="#altera-arria-qspi-flash-layout" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 6 </span><span class="caption-text">Altera Arria 10 Family QSPI Flash Layout</span><a class="headerlink" href="#altera-arria-qspi-flash-layout" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="25%" />
 <col width="25%" />
@@ -1225,7 +1282,7 @@ sudo /etc/init.d/isc-dhcp-server restart
 <td>0xc00000</td>
 </tr>
 <tr class="row-even"><th class="stub">U-Boot environment</th>
-<td>&nbsp;</td>
+<td>&#160;</td>
 <td>0xd00000</td>
 <td>0x40000</td>
 </tr>
@@ -1279,30 +1336,30 @@ Also, it does not change the storage available in Linux (see next section).</p>
 <span class="o">=</span>&gt; mmc <span class="nv">rescan</span>
 <span class="o">=</span>&gt; mmc info
 Device: SOCFPGA DWMMC
-Manufacturer ID: 3
-OEM: 5344
+Manufacturer ID: <span class="m">3</span>
+OEM: <span class="m">5344</span>
 Name: SL08G
-Tran Speed: 50000000
-Rd Block Len: 512
-SD version 3.0
+Tran Speed: <span class="m">50000000</span>
+Rd Block Len: <span class="m">512</span>
+SD version <span class="m">3</span>.0
 High Capacity: Yes
-Capacity: 7.4 GiB
-Bus Width: 4-bit
+Capacity: <span class="m">7</span>.4 GiB
+Bus Width: <span class="m">4</span>-bit
 
 <span class="c1"># Switch to eMMC</span>
 <span class="o">=</span>&gt; altera_set_storage <span class="nv">EMMC</span>
 <span class="o">=</span>&gt; mmc <span class="nv">rescan</span>
 <span class="o">=</span>&gt; mmc info
 Device: SOCFPGA DWMMC
-Manufacturer ID: 70
-OEM: 100
+Manufacturer ID: <span class="m">70</span>
+OEM: <span class="m">100</span>
 Name: W5251
-Tran Speed: 52000000
-Rd Block Len: 512
-MMC version 5.0
+Tran Speed: <span class="m">52000000</span>
+Rd Block Len: <span class="m">512</span>
+MMC version <span class="m">5</span>.0
 High Capacity: Yes
-Capacity: 14.3 GiB
-Bus Width: 8-bit
+Capacity: <span class="m">14</span>.3 GiB
+Bus Width: <span class="m">8</span>-bit
 
 <span class="c1"># Switch to QSPI</span>
 <span class="o">=</span>&gt; altera_set_storage <span class="nv">QSPI</span>
@@ -1313,14 +1370,14 @@ dwmci_send_cmd: Timeout on data busy
 dwmci_send_cmd: Timeout on data busy
 Card did not respond to voltage <span class="k">select</span>!
 <span class="o">=</span>&gt; sf probe
-SF: Read data capture delay calibrated to <span class="m">6</span> <span class="o">(</span><span class="m">0</span> - 12<span class="o">)</span>
+SF: Read data capture delay calibrated to <span class="m">6</span> <span class="o">(</span><span class="m">0</span> - <span class="m">12</span><span class="o">)</span>
 SF: Detected S25FL512S_256K with page size <span class="m">512</span> Bytes, erase size <span class="m">256</span> KiB, total <span class="m">64</span> MiB
 </pre></div>
 </div>
 <div class="section" id="selecting-storage-used-by-linux">
 <h5>Selecting storage used by Linux<a class="headerlink" href="#selecting-storage-used-by-linux" title="Permalink to this headline">¶</a></h5>
 <p>The storage selection when booting Linux is automated.
-There are two Linux storage-related U-Boot&#8217;s environment variables:</p>
+There are two Linux storage-related U-Boot’s environment variables:</p>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">linux_storage</span></code> - decides which storage will be available in Linux. Possible values are the same as in the <code class="docutils literal"><span class="pre">altera_set_storage</span></code> command (<code class="docutils literal"><span class="pre">MMC</span></code>, <code class="docutils literal"><span class="pre">EMMC</span></code>, <code class="docutils literal"><span class="pre">QSPI</span></code>). By default boot storage is used.</li>
 <li><code class="docutils literal"><span class="pre">use_ramdisk</span></code> - when set to <code class="docutils literal"><span class="pre">0</span></code>, Linux will boot with rootfs located in the storage chosen with <code class="docutils literal"><span class="pre">linux_storage</span></code>. When set to <code class="docutils literal"><span class="pre">1</span></code>, ramdisk located in the boot partition of the boot storage will be used. Default value depends on the <code class="docutils literal"><span class="pre">.scr</span></code> file used - it is <code class="docutils literal"><span class="pre">1</span></code> for <code class="docutils literal"><span class="pre">uboot_ramdisk.scr</span></code> and <code class="docutils literal"><span class="pre">0</span></code> for <code class="docutils literal"><span class="pre">uboot.scr</span></code>.</li>
@@ -1332,10 +1389,10 @@ There are two Linux storage-related U-Boot&#8217;s environment variables:</p>
 <span class="o">=</span>&gt; run bootcmd
 FPGA BRIDGES: <span class="nb">enable</span>
 Booting on SD card...
-<span class="m">1478</span> bytes <span class="nb">read</span> in <span class="m">3</span> ms <span class="o">(</span>480.5 KiB/s<span class="o">)</span>
+<span class="m">1478</span> bytes <span class="nb">read</span> in <span class="m">3</span> ms <span class="o">(</span><span class="m">480</span>.5 KiB/s<span class="o">)</span>
 <span class="c1">## Executing script at 00100000</span>
-<span class="m">4068096</span> bytes <span class="nb">read</span> in <span class="m">364</span> ms <span class="o">(</span>10.7 MiB/s<span class="o">)</span>
-<span class="m">16185</span> bytes <span class="nb">read</span> in <span class="m">8</span> ms <span class="o">(</span>1.9 MiB/s<span class="o">)</span>
+<span class="m">4068096</span> bytes <span class="nb">read</span> in <span class="m">364</span> ms <span class="o">(</span><span class="m">10</span>.7 MiB/s<span class="o">)</span>
+<span class="m">16185</span> bytes <span class="nb">read</span> in <span class="m">8</span> ms <span class="o">(</span><span class="m">1</span>.9 MiB/s<span class="o">)</span>
 Switching storage to QSPI
 Booting with rootfs
 <span class="o">(</span>...Linux with QSPI rootfs boots...<span class="o">)</span>
@@ -1345,11 +1402,11 @@ Booting with rootfs
 <span class="o">=</span>&gt; run bootcmd
 FPGA BRIDGES: <span class="nb">enable</span>
 Booting on SD card...
-<span class="m">1478</span> bytes <span class="nb">read</span> in <span class="m">3</span> ms <span class="o">(</span>480.5 KiB/s<span class="o">)</span>
+<span class="m">1478</span> bytes <span class="nb">read</span> in <span class="m">3</span> ms <span class="o">(</span><span class="m">480</span>.5 KiB/s<span class="o">)</span>
 <span class="c1">## Executing script at 00100000</span>
-<span class="m">4068096</span> bytes <span class="nb">read</span> in <span class="m">364</span> ms <span class="o">(</span>10.7 MiB/s<span class="o">)</span>
-<span class="m">16185</span> bytes <span class="nb">read</span> in <span class="m">8</span> ms <span class="o">(</span>1.9 MiB/s<span class="o">)</span>
-<span class="m">17657259</span> bytes <span class="nb">read</span> in <span class="m">1558</span> ms <span class="o">(</span>10.8 MiB/s<span class="o">)</span>
+<span class="m">4068096</span> bytes <span class="nb">read</span> in <span class="m">364</span> ms <span class="o">(</span><span class="m">10</span>.7 MiB/s<span class="o">)</span>
+<span class="m">16185</span> bytes <span class="nb">read</span> in <span class="m">8</span> ms <span class="o">(</span><span class="m">1</span>.9 MiB/s<span class="o">)</span>
+<span class="m">17657259</span> bytes <span class="nb">read</span> in <span class="m">1558</span> ms <span class="o">(</span><span class="m">10</span>.8 MiB/s<span class="o">)</span>
 Switching storage to EMMC
 Booting with ramdisk
 <span class="o">(</span>...Linux with ramdisk from SD card and access to eMMC storage boots...<span class="o">)</span>
@@ -1361,7 +1418,7 @@ Booting with ramdisk
 <p>The variables, when changed in U-Boot, are reset after reboot.
 To make them permanent, create <code class="docutils literal"><span class="pre">uEnv.txt</span></code> file on the boot partition located on the boot storage and put the variables in it, e.g.:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">linux_storage</span><span class="o">=</span>QSPI
-<span class="nv">use_ramdisk</span><span class="o">=</span>0
+<span class="nv">use_ramdisk</span><span class="o">=</span><span class="m">0</span>
 </pre></div>
 </div>
 <p>Keep in mind, the file will not be editable on Linux when you set a different storage than the boot one.
@@ -1425,13 +1482,13 @@ run altera_mux_sd_memory
 </div>
 <span id="document-project_mode"></span><div class="section" id="project-mode">
 <h2>Project mode<a class="headerlink" href="#project-mode" title="Permalink to this headline">¶</a></h2>
-<p>For users who want to use the Enclustra Build Environment, but still be able to modify the parts of the system, a &#8216;project mode&#8217; is available.</p>
+<p>For users who want to use the Enclustra Build Environment, but still be able to modify the parts of the system, a ‘project mode’ is available.</p>
 <p>Project mode is similar to regular mode, but enables user to fully customize all the parts of the system.</p>
-<p>To enable project mode, choose &#8220;Advanced&#8221; option on the very last screen of the GUI workflow.</p>
+<p>To enable project mode, choose “Advanced” option on the very last screen of the GUI workflow.</p>
 <blockquote>
 <div><img alt="_images/project_name.png" src="_images/project_name.png" />
 </div></blockquote>
-<p>Check the &#8216;enable&#8217; option on.</p>
+<p>Check the ‘enable’ option on.</p>
 <blockquote>
 <div><img alt="_images/project_enable.png" src="_images/project_enable.png" />
 </div></blockquote>
@@ -1442,6 +1499,44 @@ User is free to modify those sources and add a git upstream to them to keep them
 This script will run the Enclustra Build Environment in a special project mode.
 In this mode the step for choosing components to fetch is skipped, and the user is prompted to choose which of the components to build.
 If any of the components of the system were modified, the Build system will build them, and include the output files in the final boot images.</p>
+</div>
+<span id="document-update_binaries_altera"></span><div class="section" id="updating-the-binaries">
+<h2>Updating the binaries<a class="headerlink" href="#updating-the-binaries" title="Permalink to this headline">¶</a></h2>
+<p><strong>Changes in the FPGA design</strong></p>
+<p>If you want to modify the FPGA design, you can update the binaries in two ways:</p>
+<ol class="arabic">
+<li><p class="first">By changing the path to custom binaries when you are choosing the device option in the Enclustra Build Environment.</p>
+</li>
+<li><p class="first">By copying to the target device:</p>
+<blockquote>
+<div><ul class="simple">
+<li>the new *.rbf file (if you introduced changes to the FPGA logic),</li>
+<li>the new *.bin file (if you introduced changes to the hard processing system (HPS) of the FPGA SoC, e.g. in the clock configuration).</li>
+</ul>
+</div></blockquote>
+<p>Please note that the *.rbf file should be named ‘fpga.rbf’ and the *.bin file ‘preloader-mkpimage.bin’.
+Pay attention to choosing the correct partition to replace the files if you use an SD Card (please refer to <a class="reference internal" href="index_altera.html#altera-mmc"><span class="std std-ref">SD Card (MMC)</span></a>).</p>
+</li>
+</ol>
+<p><strong>Changes in U-boot, Linux or Buildroot</strong></p>
+<p>If you want to modify U-boot, Linux or Buildroot, perform the following steps:</p>
+<ol class="arabic">
+<li><p class="first">Go to the ‘sources/’ directory, where U-boot, Linux and Buildroot repositories are placed.</p>
+</li>
+<li><p class="first">Introduce your changes in the selected repository</p>
+</li>
+<li><p class="first">Run the Enclustra Build Environment in the project mode to compile and build the modified sources.</p>
+</li>
+<li><p class="first">Replace the files on the target device, depending on which repository you changed:</p>
+<blockquote>
+<div><ul class="simple">
+<li>altera-linux: the ‘devicetree.dtb’ and ‘uImage’ files.</li>
+<li>altera-uboot: the ‘uboot.scr’ and ‘uboot.img’ files (only for Cyclone V modules).</li>
+<li>buildroot-rootfs: the ‘rootfs.tar’ archive (or the ‘rootfs.jffs2’ or ‘uramdisk’, depending on which the target device you choose).</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
 </div>
 <span id="document-faq_altera"></span><div class="section" id="faq">
 <h2>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
@@ -1535,7 +1630,7 @@ getsize <span class="o">()</span>
 <span class="nv">ROOTFS_OFFSET</span><span class="o">=</span><span class="s2">&quot;0&quot;</span>
 
 <span class="c1"># write preloader</span>
-flash_erase /dev/mtd0 <span class="m">0</span> 0
+flash_erase /dev/mtd0 <span class="m">0</span> <span class="m">0</span>
 <span class="nv">FILESIZE</span><span class="o">=</span><span class="sb">`</span>getsize <span class="si">${</span><span class="nv">PRELOADER_FILE</span><span class="si">}</span><span class="sb">`</span>
 <span class="nb">echo</span> Writing preloader file <span class="si">${</span><span class="nv">PRELOADER_FILE</span><span class="si">}</span> size <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span>
 mtd_debug write /dev/mtd0 <span class="si">${</span><span class="nv">PRELOADER_OFFSET</span><span class="si">}</span> <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span> <span class="si">${</span><span class="nv">PRELOADER_FILE</span><span class="si">}</span>
@@ -1566,7 +1661,7 @@ mtd_debug write /dev/mtd0 <span class="si">${</span><span class="nv">SCRIPT_OFFS
 mtd_debug write /dev/mtd0 <span class="si">${</span><span class="nv">KERNEL_OFFSET</span><span class="si">}</span> <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span> <span class="si">${</span><span class="nv">KERNEL_FILE</span><span class="si">}</span>
 
 <span class="c1"># write rootfs</span>
-flash_erase /dev/mtd1 <span class="m">0</span> 0
+flash_erase /dev/mtd1 <span class="m">0</span> <span class="m">0</span>
 <span class="nv">FILESIZE</span><span class="o">=</span><span class="sb">`</span>getsize <span class="si">${</span><span class="nv">ROOTFS_FILE</span><span class="si">}</span><span class="sb">`</span>
 <span class="nb">echo</span> Writing rootfs file <span class="si">${</span><span class="nv">ROOTFS_FILE</span><span class="si">}</span> size <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span>
 mtd_debug write /dev/mtd1 <span class="si">${</span><span class="nv">ROOTFS_OFFSET</span><span class="si">}</span> <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span> <span class="si">${</span><span class="nv">ROOTFS_FILE</span><span class="si">}</span>
@@ -1627,6 +1722,7 @@ mtd_debug write /dev/mtd1 <span class="si">${</span><span class="nv">ROOTFS_OFFS
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index_altera.html#document-project_mode">Project mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_altera.html#document-update_binaries_altera">Updating the binaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index_altera.html#document-faq_altera">FAQ</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="index_altera.html#how-to-script-u-boot">How to script U-Boot?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index_altera.html#how-can-the-flash-memory-be-programmed-from-linux">How can the flash memory be programmed from Linux?</a></li>
@@ -1641,13 +1737,13 @@ mtd_debug write /dev/mtd1 <span class="si">${</span><span class="nv">ROOTFS_OFFS
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
-        <li class="nav-item nav-item-0"><a href="index_altera.html#document-index_altera">Enclustra Build Environment - User Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index_altera.html#document-index_altera">Enclustra Build Environment - User Documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright Antmicro Ltd for Enclustra GmbH, 2015.
-      Last updated on 2018-03-29.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
+        &#169; Copyright Antmicro Ltd for Enclustra GmbH, 2015.
+      Last updated on 2018-11-22.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
     </div>
   </body>
 </html>

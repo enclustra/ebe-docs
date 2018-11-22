@@ -1,35 +1,34 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Enclustra Build Environment - User Documentation</title>
-    
     <link rel="stylesheet" href="_static/rtd.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
         VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="None" href="index_xilinx.html#document-index_xilinx" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
-        <li class="nav-item nav-item-0"><a href="index_xilinx.html#document-index_xilinx">Enclustra Build Environment - User Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index_xilinx.html#document-index_xilinx">Enclustra Build Environment - User Documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -111,7 +110,7 @@ Its internal functionality is determined by <cite>ini</cite> files placed in a s
 The system is compatible with both, Python 2 and Python 3.</p>
 <p>The build environment requires additional software to be installed as listed below:</p>
 <table border="1" class="docutils" id="sample-table">
-<caption><span class="caption-text">Required software</span><a class="headerlink" href="#sample-table" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Required software</span><a class="headerlink" href="#sample-table" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="33%" />
 <col width="33%" />
@@ -130,45 +129,57 @@ The system is compatible with both, Python 2 and Python 3.</p>
 </tr>
 <tr class="row-odd"><th class="stub">make</th>
 <td>3.81.8</td>
-<td>&nbsp;</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-even"><th class="stub">git</th>
 <td>1.9.1</td>
-<td>&nbsp;</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-odd"><th class="stub">mercurial</th>
 <td>2.8.2</td>
-<td>&nbsp;</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-even"><th class="stub">tar</th>
 <td>1.27.1</td>
-<td>&nbsp;</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-odd"><th class="stub">unzip</th>
 <td>6.0</td>
-<td>&nbsp;</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-even"><th class="stub">curl</th>
 <td>7.35.0</td>
-<td>&nbsp;</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-odd"><th class="stub">wget</th>
 <td>1.15</td>
-<td>&nbsp;</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-even"><th class="stub">bc</th>
 <td>1.06.95</td>
-<td>&nbsp;</td>
+<td>&#160;</td>
 </tr>
-<tr class="row-odd"><th class="stub">autoconf</th>
+<tr class="row-odd"><th class="stub">libssl-dev</th>
+<td>1.0.0</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><th class="stub">patch</th>
+<td>2.7.1</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><th class="stub">rsync</th>
+<td>3.1.0</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><th class="stub">autoconf</th>
 <td>2.69</td>
 <td>Required to build a buildroot rootfs</td>
 </tr>
-<tr class="row-even"><th class="stub">g++</th>
+<tr class="row-odd"><th class="stub">g++</th>
 <td>4.8.3</td>
 <td>Required to build a buildroot rootfs</td>
 </tr>
-<tr class="row-odd"><th class="stub">gcc</th>
+<tr class="row-even"><th class="stub">gcc</th>
 <td>4.8.3</td>
 <td>Required to build the Linux kernel, U-Boot and a buildroot rootfs</td>
 </tr>
@@ -214,7 +225,7 @@ sudo apt install -y autoconf bc build-essential curl git mercurial <span class="
 </pre></div>
 </div>
 <table border="1" class="docutils" id="folder-description">
-<caption><span class="caption-text">Folder description</span><a class="headerlink" href="#folder-description" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Folder description</span><a class="headerlink" href="#folder-description" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
@@ -282,7 +293,7 @@ Additionally, parameters in the <code class="docutils literal"><span class="pre"
 <span id="document-supported_devices_xilinx"></span><div class="section" id="supported-devices">
 <h2>Supported Devices<a class="headerlink" href="#supported-devices" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils" id="supported-devices-xilinx">
-<caption><span class="caption-text">Supported devices</span><a class="headerlink" href="#supported-devices-xilinx" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Supported devices</span><a class="headerlink" href="#supported-devices-xilinx" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="25%" />
 <col width="25%" />
@@ -299,7 +310,7 @@ Additionally, parameters in the <code class="docutils literal"><span class="pre"
 <tbody valign="top">
 <tr class="row-even"><th class="stub">Xilinx</th>
 <td>Cosmos XZQ10</td>
-<td>&#8211;</td>
+<td>–</td>
 <td>Linux, U-Boot, Buildroot</td>
 </tr>
 <tr class="row-odd"><th class="stub">Xilinx</th>
@@ -354,11 +365,33 @@ Additionally, parameters in the <code class="docutils literal"><span class="pre"
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Since release 1.7, the ZU3EG ES variant of the Mars XU3 module is no longer supported.</p>
+</div>
 </div>
 <span id="document-quickstart_xilinx"></span><div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="gui">
 <h3>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>By default the build script will fetch and build the latest EBE release.
+To use a specific release you need to clone a clean copy of the EBE repo and switch to a selected release:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">enclustra</span><span class="o">-</span><span class="n">bsp</span><span class="o">/</span><span class="n">bsp</span><span class="o">-</span><span class="n">xilinx</span><span class="o">.</span><span class="n">git</span> <span class="o">-</span><span class="n">b</span> <span class="n">v1</span><span class="o">.</span><span class="n">x</span>
+<span class="c1"># where v1.x is the release number (e.g. v1.5)</span>
+</pre></div>
+</div>
+<p>In order to use the latest code, switch to develop release:</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">enclustra</span><span class="o">-</span><span class="n">bsp</span><span class="o">/</span><span class="n">bsp</span><span class="o">-</span><span class="n">xilinx</span><span class="o">.</span><span class="n">git</span> <span class="o">-</span><span class="n">b</span> <span class="n">develop</span>
+<span class="n">export</span> <span class="n">EBE_RELEASE</span><span class="o">=</span><span class="n">master</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Since software in the develop release uses code which is currently under development the resulting software may be unstable.</p>
+</div>
 <p>In order to build the software for a chosen board using the GUI, please follow these steps:</p>
 <ol class="arabic">
 <li><p class="first">Clone the build environment repository with:</p>
@@ -419,27 +452,55 @@ Additionally, parameters in the <code class="docutils literal"><span class="pre"
 A list of the available command line options can be obtained like this:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">build</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">help</span>
 
-<span class="n">usage</span><span class="p">:</span> <span class="n">build</span><span class="o">.</span><span class="n">sh</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">L</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">d</span> <span class="n">device</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">l</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">x</span> <span class="n">target</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">f</span> <span class="n">target</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">b</span> <span class="n">target</span><span class="p">]</span>
-            <span class="p">[</span><span class="o">--</span><span class="n">fetch</span><span class="o">-</span><span class="n">history</span> <span class="n">target</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">dev</span><span class="o">-</span><span class="n">options</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">o</span> <span class="n">index</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">c</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span>
+<span class="n">usage</span><span class="p">:</span> <span class="n">tool</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">release</span> <span class="n">ver</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">L</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">devices</span><span class="o">-</span><span class="n">raw</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">d</span> <span class="n">device</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">l</span><span class="p">]</span>
+    <span class="p">[</span><span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">targets</span><span class="o">-</span><span class="n">raw</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">x</span> <span class="n">target</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">f</span> <span class="n">target</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">b</span> <span class="n">target</span><span class="p">]</span>
+    <span class="p">[</span><span class="o">--</span><span class="n">custom</span><span class="o">-</span><span class="n">build</span> <span class="n">target</span> <span class="n">steps</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">fetch</span><span class="o">-</span><span class="n">history</span> <span class="n">target</span><span class="p">]</span>
+    <span class="p">[</span><span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">dev</span><span class="o">-</span><span class="n">options</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">dev</span><span class="o">-</span><span class="n">binaries</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">B</span> <span class="n">file</span> <span class="n">path</span><span class="p">]</span>
+    <span class="p">[</span><span class="o">--</span><span class="n">anti</span><span class="o">-</span><span class="n">unicorn</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">expert</span><span class="o">-</span><span class="n">mode</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">o</span> <span class="n">index</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">generate</span><span class="o">-</span><span class="n">project</span><span class="p">]</span>
+    <span class="p">[</span><span class="o">--</span><span class="n">build</span><span class="o">-</span><span class="n">project</span> <span class="n">project_file</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">build</span><span class="o">-</span><span class="n">project</span><span class="o">-</span><span class="n">auto</span> <span class="n">project_file</span><span class="p">]</span>
+    <span class="p">[</span><span class="o">-</span><span class="n">s</span> <span class="n">cfg</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">c</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">C</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span>
 
 <span class="n">Enclustra</span> <span class="n">Build</span> <span class="n">Environment</span>
 
 <span class="n">optional</span> <span class="n">arguments</span><span class="p">:</span>
   <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>                    <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
+  <span class="o">--</span><span class="n">release</span> <span class="n">ver</span>                 <span class="n">specify</span> <span class="n">release</span> <span class="n">version</span> <span class="n">of</span> <span class="n">the</span> <span class="n">buidscripts</span>
   <span class="o">-</span><span class="n">L</span><span class="p">,</span> <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">devices</span>            <span class="nb">list</span> <span class="nb">all</span> <span class="n">available</span> <span class="n">devices</span>
+  <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">devices</span><span class="o">-</span><span class="n">raw</span>            <span class="nb">list</span> <span class="nb">all</span> <span class="n">available</span> <span class="n">devices</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">script</span>
+                                <span class="n">friendly</span> <span class="n">way</span>
   <span class="o">-</span><span class="n">d</span> <span class="n">device</span><span class="p">,</span> <span class="o">--</span><span class="n">device</span> <span class="n">device</span>    <span class="n">specify</span> <span class="n">device</span> <span class="k">as</span> <span class="n">follows</span><span class="p">:</span>
-                                <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;/&lt;</span><span class="n">base_board</span><span class="o">&gt;/&lt;</span><span class="n">boot_device</span><span class="o">&gt;</span>
+                                <span class="o">&lt;</span><span class="n">family</span><span class="o">&gt;/&lt;</span><span class="n">module</span><span class="o">&gt;/&lt;</span><span class="n">base_board</span><span class="o">&gt;/&lt;</span><span class="n">boot_device</span><span class="o">&gt;</span>
   <span class="o">-</span><span class="n">l</span><span class="p">,</span> <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">targets</span>            <span class="nb">list</span> <span class="nb">all</span> <span class="n">targets</span> <span class="k">for</span> <span class="n">chosen</span> <span class="n">device</span>
+  <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">targets</span><span class="o">-</span><span class="n">raw</span>            <span class="nb">list</span> <span class="nb">all</span> <span class="n">targets</span> <span class="k">for</span> <span class="n">chosen</span> <span class="n">device</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">script</span>
+                                <span class="n">friendly</span> <span class="n">way</span>
   <span class="o">-</span><span class="n">x</span> <span class="n">target</span>                     <span class="n">fetch</span> <span class="ow">and</span> <span class="n">build</span> <span class="n">specific</span> <span class="n">target</span>
   <span class="o">-</span><span class="n">f</span> <span class="n">target</span><span class="p">,</span> <span class="o">--</span><span class="n">fetch</span> <span class="n">target</span>     <span class="n">fetch</span> <span class="n">specific</span> <span class="n">target</span>
   <span class="o">-</span><span class="n">b</span> <span class="n">target</span><span class="p">,</span> <span class="o">--</span><span class="n">build</span> <span class="n">target</span>     <span class="n">build</span> <span class="n">specific</span> <span class="n">target</span>
+  <span class="o">--</span><span class="n">custom</span><span class="o">-</span><span class="n">build</span> <span class="n">target</span> <span class="n">steps</span>   <span class="n">build</span> <span class="n">specific</span> <span class="n">target</span> <span class="k">with</span> <span class="n">specific</span> <span class="n">steps</span>
+                                <span class="p">(</span><span class="n">comma</span> <span class="n">separated</span><span class="p">)</span>
   <span class="o">--</span><span class="n">fetch</span><span class="o">-</span><span class="n">history</span> <span class="n">target</span>        <span class="n">fetch</span> <span class="n">specific</span> <span class="n">target</span> <span class="k">with</span> <span class="n">history</span>
   <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">dev</span><span class="o">-</span><span class="n">options</span>            <span class="nb">list</span> <span class="nb">all</span> <span class="n">available</span> <span class="n">device</span> <span class="n">options</span> <span class="k">for</span> <span class="n">chosen</span>
                                 <span class="n">device</span>
+  <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">dev</span><span class="o">-</span><span class="n">binaries</span>           <span class="nb">list</span> <span class="nb">all</span> <span class="n">available</span> <span class="n">binary</span> <span class="n">files</span> <span class="k">for</span> <span class="n">chosen</span>
+                                <span class="n">device</span>
+  <span class="o">-</span><span class="n">B</span> <span class="n">file</span> <span class="n">path</span><span class="p">,</span> <span class="o">--</span><span class="n">custom</span><span class="o">-</span><span class="n">binary</span> <span class="n">file</span> <span class="n">path</span>
+                                <span class="n">exchange</span> <span class="n">selected</span> <span class="n">binary</span> <span class="n">file</span> <span class="k">with</span> <span class="n">the</span> <span class="n">one</span>
+                                <span class="n">pointed</span> <span class="n">by</span> <span class="n">the</span> <span class="n">path</span>
+  <span class="o">--</span><span class="n">anti</span><span class="o">-</span><span class="n">unicorn</span>                <span class="n">disables</span> <span class="n">colored</span> <span class="n">output</span>
+  <span class="o">--</span><span class="n">expert</span><span class="o">-</span><span class="n">mode</span>                 <span class="n">expert</span> <span class="n">mode</span><span class="p">:</span> <span class="n">prepare</span> <span class="n">the</span> <span class="n">environment</span> <span class="k">for</span>
+                                <span class="n">building</span> <span class="n">the</span> <span class="n">whole</span> <span class="n">system</span> <span class="n">manually</span>
   <span class="o">-</span><span class="n">o</span> <span class="n">index</span><span class="p">,</span> <span class="o">--</span><span class="n">dev</span><span class="o">-</span><span class="n">option</span> <span class="n">index</span>  <span class="nb">set</span> <span class="n">device</span> <span class="n">option</span> <span class="n">by</span> <span class="n">index</span><span class="p">,</span> <span class="n">the</span> <span class="n">default</span> <span class="n">one</span>
                                 <span class="n">will</span> <span class="n">be</span> <span class="n">used</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">specified</span>
+  <span class="o">--</span><span class="n">generate</span><span class="o">-</span><span class="n">project</span>            <span class="n">generate</span> <span class="n">project</span> <span class="n">directory</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">a</span>
+                                <span class="n">regular</span> <span class="n">output</span>
+  <span class="o">--</span><span class="n">build</span><span class="o">-</span><span class="n">project</span> <span class="n">project_file</span>  <span class="n">build</span> <span class="n">project</span>
+  <span class="o">--</span><span class="n">build</span><span class="o">-</span><span class="n">project</span><span class="o">-</span><span class="n">auto</span> <span class="n">project_file</span>
+                                <span class="n">build</span> <span class="n">project</span> <span class="n">automatically</span><span class="p">,</span> <span class="n">skip</span> <span class="n">the</span> <span class="n">gui</span>
+  <span class="o">-</span><span class="n">s</span> <span class="n">cfg</span><span class="p">,</span> <span class="o">--</span><span class="n">saved</span><span class="o">-</span><span class="n">config</span> <span class="n">cfg</span>    <span class="n">use</span> <span class="n">previously</span> <span class="n">saved</span> <span class="n">configuration</span> <span class="n">file</span>
   <span class="o">-</span><span class="n">c</span><span class="p">,</span> <span class="o">--</span><span class="n">clean</span><span class="o">-</span><span class="nb">all</span>               <span class="n">delete</span> <span class="nb">all</span> <span class="n">downloaded</span> <span class="n">code</span><span class="p">,</span> <span class="n">binaries</span><span class="p">,</span> <span class="n">tools</span>
                                 <span class="ow">and</span> <span class="n">built</span> <span class="n">files</span>
+  <span class="o">-</span><span class="n">C</span><span class="p">,</span> <span class="o">--</span><span class="n">clean</span><span class="o">-</span><span class="n">soft</span>              <span class="n">run</span> <span class="n">clean</span> <span class="n">commands</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">specified</span> <span class="n">targets</span>
+                                <span class="p">(</span><span class="k">if</span> <span class="n">available</span><span class="p">)</span>
   <span class="o">-</span><span class="n">v</span><span class="p">,</span> <span class="o">--</span><span class="n">version</span>                 <span class="nb">print</span> <span class="n">version</span>
 </pre></div>
 </div>
@@ -473,7 +534,7 @@ To list all the available targets for a selected device, the user needs to add t
 </div>
 <p>This will print out an indexed list of device options.</p>
 <p>The <code class="docutils literal"><span class="pre">-o</span></code> option allows the user to choose a device option for the selected device by providing the index of a specific device option, like this:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>./build.sh -d Zynq-7000/Mars_ZX3/Mars_PM3/QSPI -x Linux -o 1
+<div class="highlight-bash"><div class="highlight"><pre><span></span>./build.sh -d Zynq-7000/Mars_ZX3/Mars_PM3/QSPI -x Linux -o <span class="m">1</span>
 </pre></div>
 </div>
 <p>If no device option is selected, the default one will be used.</p>
@@ -561,15 +622,15 @@ To permanently restore the default environment, the <code class="docutils litera
 <ol class="arabic">
 <li><p class="first">Prepare a bootable SD card with a ramdisk or persistent rootfs as described in <a class="reference internal" href="#xilinx-mmc"><span class="std std-ref">SD Card (MMC)</span></a>.</p>
 </li>
-<li><p class="first">You&#8217;ll need the following files from eMMC build:
+<li><p class="first">You’ll need the following files from eMMC build:
 <code class="docutils literal"><span class="pre">boot.bin</span></code>, <code class="docutils literal"><span class="pre">devicetree.dtb</span></code>, <code class="docutils literal"><span class="pre">Image</span></code> (Zynq Ultrascale+ only), <code class="docutils literal"><span class="pre">uImage</span></code> (Zynq-7000 only).
-Additionally, you&#8217;ll need <code class="docutils literal"><span class="pre">uramdisk</span></code>, <code class="docutils literal"><span class="pre">uboot_ramdisk.scr</span></code> when you want to use a ramdisk, and <code class="docutils literal"><span class="pre">rootfs.tar</span></code>, <code class="docutils literal"><span class="pre">uboot.scr</span></code> to use a persistent rootfs.
-Copy the files to a TFTP server&#8217;s directory to load them later through the network.
-If you don&#8217;t want to use the network connection on the board, copy the files to the <code class="docutils literal"><span class="pre">emmc</span></code> directory on the SD card&#8217;s rootfs partition instead.</p>
+Additionally, you’ll need <code class="docutils literal"><span class="pre">uramdisk</span></code>, <code class="docutils literal"><span class="pre">uboot_ramdisk.scr</span></code> when you want to use a ramdisk, and <code class="docutils literal"><span class="pre">rootfs.tar</span></code>, <code class="docutils literal"><span class="pre">uboot.scr</span></code> to use a persistent rootfs.
+Copy the files to a TFTP server’s directory to load them later through the network.
+If you don’t want to use the network connection on the board, copy the files to the <code class="docutils literal"><span class="pre">emmc</span></code> directory on the SD card’s rootfs partition instead.</p>
 </li>
 <li><p class="first">Boot Linux on the device from the SD Card (ramdisk or persistent rootfs) and login as root.</p>
 </li>
-<li><p class="first">If you&#8217;ve put eMMC build files on the SD card, and you&#8217;re booting from a ramdisk, mount the SD card&#8217;s second partition in <code class="docutils literal"><span class="pre">/mnt</span></code>.
+<li><p class="first">If you’ve put eMMC build files on the SD card, and you’re booting from a ramdisk, mount the SD card’s second partition in <code class="docutils literal"><span class="pre">/mnt</span></code>.
 When booting from a persistent rootfs, the files are already in <code class="docutils literal"><span class="pre">/emmc</span></code>. In either case, <code class="docutils literal"><span class="pre">cd</span></code> to a directory with the files.
 In the case of files located on a TFTP server, connect to the network by running <code class="docutils literal"><span class="pre">dhcpcd</span> <span class="pre">eth0</span></code> and download the files:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>tftp -g -r boot.bin       <span class="nv">$SERVER_IP</span>
@@ -740,6 +801,37 @@ sf write <span class="si">${</span><span class="nv">jffs2_loadaddr</span><span c
 <p class="first admonition-title">Note</p>
 <p class="last">Note that step 8 to 12 can be invoked independently.</p>
 </div>
+<div class="section" id="qspi-flash-using-the-full-image">
+<span id="xilinx-qspi-flash-full"></span><h4>QSPI Flash using the full image<a class="headerlink" href="#qspi-flash-using-the-full-image" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Copy the <code class="docutils literal"><span class="pre">boot_full.bin</span></code> (or <code class="docutils literal"><span class="pre">boot_full_ramdisk.bin</span></code> when using RAMDISK, which must be renamed to <code class="docutils literal"><span class="pre">boot_full.bin</span></code>) file from the build environment output directory to the TFTP server directory.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <code class="docutils literal"><span class="pre">boot_full.bin</span></code> file is available only for modules equipped with Zynq-7000 devices.</p>
+</div>
+<ol class="arabic">
+<li><p class="first">Flash the QSPI memory:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">bootfull_loadaddr</span><span class="si">}</span> 0xFF 0x4000000
+tftpboot <span class="si">${</span><span class="nv">bootfull_loadaddr</span><span class="si">}</span> boot_full.bin
+sf probe
+sf erase 0x0 0x4000000
+sf write <span class="si">${</span><span class="nv">bootfull_loadaddr</span><span class="si">}</span> 0x0 <span class="si">${</span><span class="nv">filesize</span><span class="si">}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Configure the board to boot from the QSPI flash (refer to the board’s User Manual).</p>
+</li>
+<li><p class="first">Reset the board.</p>
+</li>
+<li><p class="first">The board should boot the Linux system.</p>
+</li>
+</ol>
+<p>If you want to manually trigger booting from the QSPI flash, the following command has to be invoked from the U-Boot command line:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>run qspiboot
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="nand-flash">
 <span id="xilinx-nand"></span><h3>NAND Flash<a class="headerlink" href="#nand-flash" title="Permalink to this headline">¶</a></h3>
@@ -748,7 +840,7 @@ The FSBL and the U-Boot have to be started from SD Card (MMC) or QSPI Flash.
 Please refer to <a class="reference internal" href="#xilinx-mmc"><span class="std std-ref">SD Card (MMC)</span></a> or <a class="reference internal" href="#xilinx-qspi"><span class="std std-ref">eMMC Flash</span></a> in order to boot U-Boot from SD Card or QSPI Flash.
 When U-Boot is booted it can load and boot the Linux system stored on the NAND Flash memory.</p>
 <table border="1" class="docutils" id="xilinx-qspi-flash-layout">
-<caption><span class="caption-text">Xilinx Family NAND Flash Layout</span><a class="headerlink" href="#xilinx-qspi-flash-layout" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 4 </span><span class="caption-text">Xilinx Family NAND Flash Layout</span><a class="headerlink" href="#xilinx-qspi-flash-layout" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="33%" />
 <col width="33%" />
@@ -813,7 +905,7 @@ setenv serverip <span class="s1">&#39;yyy.yyy.yyy.yyy&#39;</span>
 <li><p class="first">Update the boot script image:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">bootscript_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">bootscript_size</span><span class="si">}</span>
 tftpboot <span class="si">${</span><span class="nv">bootscript_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">bootscript_image</span><span class="si">}</span>
-nand device 0
+nand device <span class="m">0</span>
 nand erase.part nand-bootscript
 nand write <span class="si">${</span><span class="nv">bootscript_loadaddr</span><span class="si">}</span> nand-bootscript <span class="si">${</span><span class="nv">filesize</span><span class="si">}</span>
 </pre></div>
@@ -822,7 +914,7 @@ nand write <span class="si">${</span><span class="nv">bootscript_loadaddr</span>
 <li><p class="first">Update the Linux kernel:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">kernel_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">kernel_size</span><span class="si">}</span>
 tftpboot <span class="si">${</span><span class="nv">kernel_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">kernel_image</span><span class="si">}</span>
-nand device 0
+nand device <span class="m">0</span>
 nand erase.part nand-linux
 nand write <span class="si">${</span><span class="nv">kernel_loadaddr</span><span class="si">}</span> nand-linux <span class="si">${</span><span class="nv">filesize</span><span class="si">}</span>
 </pre></div>
@@ -831,7 +923,7 @@ nand write <span class="si">${</span><span class="nv">kernel_loadaddr</span><spa
 <li><p class="first">Update the devicetree image:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">devicetree_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">devicetree_size</span><span class="si">}</span>
 tftpboot <span class="si">${</span><span class="nv">devicetree_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">devicetree_image</span><span class="si">}</span>
-nand device 0
+nand device <span class="m">0</span>
 nand erase.part nand-device-tree
 nand write <span class="si">${</span><span class="nv">devicetree_loadaddr</span><span class="si">}</span> nand-device-tree <span class="si">${</span><span class="nv">filesize</span><span class="si">}</span>
 </pre></div>
@@ -840,7 +932,7 @@ nand write <span class="si">${</span><span class="nv">devicetree_loadaddr</span>
 <li><p class="first">Update the rootfs image:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">ubifs_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">ubifs_size</span><span class="si">}</span>
 tftpboot <span class="si">${</span><span class="nv">ubifs_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">ubifs_image</span><span class="si">}</span>
-nand device 0
+nand device <span class="m">0</span>
 nand erase.part nand-rootfs
 nand write <span class="si">${</span><span class="nv">ubifs_loadaddr</span><span class="si">}</span> nand-rootfs <span class="si">${</span><span class="nv">filesize</span><span class="si">}</span>
 </pre></div>
@@ -885,7 +977,7 @@ When U-Boot is booted it can load and boot the Linux system stored on the USB Dr
 <div class="section" id="nfs">
 <h3>NFS<a class="headerlink" href="#nfs" title="Permalink to this headline">¶</a></h3>
 <p>The Xilinx family devices cannot boot directly from NFS.</p>
-<p>The FSBL and the U-Boot have to be started from SD Card (MMC), with the images generated by the build environment. When U-Boot is booted it can load and boot the Linux system from the host machine via Ethernet. Please refer to <span class="xref std std-ref">nfs_preparation_guide</span> to prepare your system for NFS boot.</p>
+<p>The FSBL and the U-Boot have to be started from SD Card (MMC), with the images generated by the build environment. When U-Boot is booted it can load and boot the Linux system from the host machine via Ethernet. Please refer to <a class="reference internal" href="#nfs-preparation-guide"><span class="std std-ref">NFS Preparation Guide</span></a> to prepare your system for NFS boot.</p>
 <p>In order to deploy images and boot the Linux system over NFS, do the following steps as root:</p>
 <ol class="arabic">
 <li><p class="first">Create a FAT formatted BOOT partition as the first one on the SD Card. The size of the partition should be at least 64 MB. (For more information on how to prepare the boot medium, please refer to the official <a class="reference external" href="http://www.wiki.xilinx.com/Prepare+Boot+Medium">Xilinx guide</a>.)</p>
@@ -905,10 +997,10 @@ When U-Boot is booted it can load and boot the Linux system stored on the USB Dr
 </li>
 <li><p class="first">Power on the board and stop the U-Boot autoboot.</p>
 </li>
-<li><p class="first">Set the server&#8217;s and target&#8217;s IP address, and the path to the rootfs NFS folder.</p>
+<li><p class="first">Set the server’s and target’s IP address, and the path to the rootfs NFS folder.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>env default -a
-setenv ipaddr 192.168.1.10
-setenv serverip 192.168.1.2
+setenv ipaddr <span class="m">192</span>.168.1.10
+setenv serverip <span class="m">192</span>.168.1.2
 setenv serverpath /path/to/NFS
 saveenv
 </pre></div>
@@ -925,11 +1017,88 @@ saveenv
 <p class="last">Saving the U-Boot environment this way will ensure that NFS boot runs automatically after reboot.</p>
 </div>
 </div>
+<div class="section" id="nfs-preparation-guide">
+<span id="id5"></span><h3>NFS Preparation Guide<a class="headerlink" href="#nfs-preparation-guide" title="Permalink to this headline">¶</a></h3>
+<p>For development, it can be very handy to mount the root filesystem via NFS (nfsroot).</p>
+<p>To prepare the host machine several preparatory steps are required.</p>
+<p>The following servers need to be installed on the host machine, and configured properly:</p>
+<ul class="simple">
+<li>NFS server (e.g. on Ubuntu <code class="docutils literal"><span class="pre">nfs-kernel-server</span></code>)</li>
+<li>TFTP server (e.g. on Ubuntu <code class="docutils literal"><span class="pre">tftpd</span></code>)</li>
+<li>DHCP server (e.g. on Ubuntu <code class="docutils literal"><span class="pre">isc-dhcp-server</span></code>)</li>
+</ul>
+<p>For demonstration purpose, the TFTP folder on the host is <code class="docutils literal"><span class="pre">/tftpboot</span></code>. It can be configured like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo mkdir /tftpboot
+$ sudo chown nobody /tftpboot
+$ nano /etc/xinetd.d/tftp
+$ cat /etc/xinetd.d/tftp
+service tftp
+<span class="o">{</span>
+<span class="nv">protocol</span> <span class="o">=</span> udp
+<span class="nv">port</span> <span class="o">=</span> <span class="m">69</span>
+<span class="nv">socket_type</span> <span class="o">=</span> dgram
+<span class="nb">wait</span> <span class="o">=</span> yes
+<span class="nv">user</span> <span class="o">=</span> nobody
+<span class="nv">server</span> <span class="o">=</span> /usr/sbin/in.tftpd
+<span class="nv">server_args</span> <span class="o">=</span> /tftpboot
+<span class="nv">disable</span> <span class="o">=</span> no
+<span class="o">}</span>
+$ sudo /etc/init.d/xinetd restart
+</pre></div>
+</div>
+<p>For demonstration purpose, the NFS export folder is <code class="docutils literal"><span class="pre">/nfs_exp</span></code>. In can be configured like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo mkdir /nfs_exp
+$ sudo chown root:root /nfs_exp
+$ sudo chmod <span class="m">777</span> /nfs_exp
+$ sudo nano /etc/exports
+$ cat /etc/exports
+/nfs_exp <span class="m">192</span>.168.1.0/24<span class="o">(</span><span class="nv">fsid</span><span class="o">=</span><span class="m">0</span>,rw,no_subtree_check,no_root_squash<span class="o">)</span>
+$ sudo exportfs -a
+</pre></div>
+</div>
+<p>Sometimes it is also necessary to restart the NFS server:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo /etc/init.d/nfs-kernel-server restart
+</pre></div>
+</div>
+<p>To configure the DHCP server do this:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ cat /etc/dhcp/dhcpd.conf
+default-lease-time <span class="m">600</span><span class="p">;</span>
+max-lease-time <span class="m">7200</span><span class="p">;</span>
+option subnet-mask <span class="m">255</span>.255.255.0<span class="p">;</span>
+option broadcast-address <span class="m">192</span>.168.1.255<span class="p">;</span>
+option domain-name-servers <span class="m">192</span>.168.1.1, <span class="m">192</span>.168.1.2<span class="p">;</span>
+subnet <span class="m">192</span>.168.1.0 netmask <span class="m">255</span>.255.255.0 <span class="o">{</span>
+    range <span class="m">192</span>.168.1.10 <span class="m">192</span>.168.1.255<span class="p">;</span>
+<span class="o">}</span>
+$ sudo /etc/init.d/isc-dhcp-server restart
+</pre></div>
+</div>
+<p>To select your ethernet interface edit <code class="docutils literal"><span class="pre">/etc/default/isc-dhcp-server</span></code>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo sed -i -r <span class="s1">&#39;s/INTERFACES=&quot;(.+)&quot;/INTERFACES=&quot;eth1&quot;/g&#39;</span> /etc/default/isc-dhcp-server
+sudo /etc/init.d/isc-dhcp-server restart
+</pre></div>
+</div>
+<p>On the target in the Linux console, the NFS folder from the host should now accessible like this</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># mkdir /nfs</span>
+<span class="c1"># mount -t nfs -o port=2049,nolock,proto=tcp,ro,vers=3 &lt;server_ip&gt;:/nfs_exp /nfs</span>
+<span class="c1"># cd /nfs</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Note that currently our Linux only supports NFS version 3, not 4. So the target folder needs to be specified, and the version is 3 (vers=3).</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Take care to properly handle the permissions on the server. They should match those used on the client.</p>
+</div>
+<p>After configuring your system, you can now deploy the new boot images to your TFTP folder, and extract the rootfs TAR archive to your NFS folder.</p>
+</div>
 <div class="section" id="qspi-flash-layouts">
 <span id="xilinx-qspi-layout"></span><h3>QSPI Flash Layouts<a class="headerlink" href="#qspi-flash-layouts" title="Permalink to this headline">¶</a></h3>
 <p>The QSPI flash layout depends on the version of the Zynq chip that is present in the module.</p>
 <table border="1" class="docutils" id="xilinx-qspi-flash-layout-zynq-7010-7015-7020">
-<caption><span class="caption-text">Xilinx Zynq-7010/7015/7020 Family QSPI Flash Layout</span><a class="headerlink" href="#xilinx-qspi-flash-layout-zynq-7010-7015-7020" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 5 </span><span class="caption-text">Xilinx Zynq-7010/7015/7020 Family QSPI Flash Layout</span><a class="headerlink" href="#xilinx-qspi-flash-layout-zynq-7010-7015-7020" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="25%" />
 <col width="25%" />
@@ -960,7 +1129,7 @@ saveenv
 <td>0x80000</td>
 </tr>
 <tr class="row-odd"><th class="stub">U-Boot environment</th>
-<td>&nbsp;</td>
+<td>&#160;</td>
 <td>0x3F80000</td>
 <td>0x80000</td>
 </tr>
@@ -978,7 +1147,7 @@ saveenv
 </table>
 <p>&nbsp;</p>
 <table border="1" class="docutils" id="xilinx-qspi-flash-layout-zynq-7030">
-<caption><span class="caption-text">Xilinx Zynq-7030 Family QSPI Flash Layout</span><a class="headerlink" href="#xilinx-qspi-flash-layout-zynq-7030" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 6 </span><span class="caption-text">Xilinx Zynq-7030 Family QSPI Flash Layout</span><a class="headerlink" href="#xilinx-qspi-flash-layout-zynq-7030" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="25%" />
 <col width="25%" />
@@ -1009,7 +1178,7 @@ saveenv
 <td>0x80000</td>
 </tr>
 <tr class="row-odd"><th class="stub">U-Boot environment</th>
-<td>&nbsp;</td>
+<td>&#160;</td>
 <td>0x3F80000</td>
 <td>0x80000</td>
 </tr>
@@ -1027,7 +1196,7 @@ saveenv
 </table>
 <p>&nbsp;</p>
 <table border="1" class="docutils" id="xilinx-qspi-flash-layout-zynq-7035-7045">
-<caption><span class="caption-text">Xilinx Zynq-7035/7045 Family QSPI Flash Layout</span><a class="headerlink" href="#xilinx-qspi-flash-layout-zynq-7035-7045" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 7 </span><span class="caption-text">Xilinx Zynq-7035/7045 Family QSPI Flash Layout</span><a class="headerlink" href="#xilinx-qspi-flash-layout-zynq-7035-7045" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="25%" />
 <col width="25%" />
@@ -1058,7 +1227,7 @@ saveenv
 <td>0x80000</td>
 </tr>
 <tr class="row-odd"><th class="stub">U-Boot environment</th>
-<td>&nbsp;</td>
+<td>&#160;</td>
 <td>0x3F80000</td>
 <td>0x80000</td>
 </tr>
@@ -1075,8 +1244,8 @@ saveenv
 </tbody>
 </table>
 <p>&nbsp;</p>
-<table border="1" class="docutils" id="xilinx-qspi-flash-layout-zu2cg-zu2eg-zu3eg">
-<caption><span class="caption-text">Xilinx Zynq Ultrascale+ ZU2CG/ZU2EG/ZU3EG Family QSPI Flash Layout</span><a class="headerlink" href="#xilinx-qspi-flash-layout-zu2cg-zu2eg-zu3eg" title="Permalink to this table">¶</a></caption>
+<table border="1" class="docutils" id="xilinx-qspi-flash-layout-zu2cg-zu2eg-zu3eg-zu5ev">
+<caption><span class="caption-number">Table 8 </span><span class="caption-text">Xilinx Zynq Ultrascale+ ZU2CG/ZU2EG/ZU3EG/ZU5EV Family QSPI Flash Layout</span><a class="headerlink" href="#xilinx-qspi-flash-layout-zu2cg-zu2eg-zu3eg-zu5ev" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="25%" />
 <col width="25%" />
@@ -1107,17 +1276,17 @@ saveenv
 <td>0x80000</td>
 </tr>
 <tr class="row-odd"><th class="stub">U-Boot environment</th>
-<td>&nbsp;</td>
+<td>&#160;</td>
 <td>0x3F80000</td>
 <td>0x80000</td>
 </tr>
 <tr class="row-even"><th class="stub">Bootscript</th>
-<td>uboot.scr/uboot_ramdisk.scr</td>
+<td>uboot_ramdisk.scr</td>
 <td>0x1780000</td>
 <td>0x80000</td>
 </tr>
 <tr class="row-odd"><th class="stub">Rootfs</th>
-<td>rootfs.tar/uramdisk</td>
+<td>uramdisk</td>
 <td>0x1800000</td>
 <td>0x2780000</td>
 </tr>
@@ -1125,7 +1294,7 @@ saveenv
 </table>
 <p>&nbsp;</p>
 <table border="1" class="docutils" id="xilinx-qspi-flash-layout-zu6eg-zu9eg">
-<caption><span class="caption-text">Xilinx Zynq Ultrascale+ ZU6EG/ZU9EG Family QSPI Flash Layout</span><a class="headerlink" href="#xilinx-qspi-flash-layout-zu6eg-zu9eg" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 9 </span><span class="caption-text">Xilinx Zynq Ultrascale+ ZU6EG/ZU9EG Family QSPI Flash Layout</span><a class="headerlink" href="#xilinx-qspi-flash-layout-zu6eg-zu9eg" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="25%" />
 <col width="25%" />
@@ -1156,17 +1325,17 @@ saveenv
 <td>0x80000</td>
 </tr>
 <tr class="row-odd"><th class="stub">U-Boot environment</th>
-<td>&nbsp;</td>
+<td>&#160;</td>
 <td>0x3F80000</td>
 <td>0x80000</td>
 </tr>
 <tr class="row-even"><th class="stub">Bootscript</th>
-<td>uboot.scr/uboot_ramdisk.scr</td>
+<td>uboot_ramdisk.scr</td>
 <td>0x2B80000</td>
 <td>0x80000</td>
 </tr>
 <tr class="row-odd"><th class="stub">Rootfs</th>
-<td>rootfs.tar/uramdisk</td>
+<td>uramdisk</td>
 <td>0x2C00000</td>
 <td>0x1580000</td>
 </tr>
@@ -1174,7 +1343,7 @@ saveenv
 </table>
 <p>&nbsp;</p>
 <table border="1" class="docutils" id="xilinx-qspi-flash-layout-zu15eg">
-<caption><span class="caption-text">Xilinx Zynq Ultrascale+ ZU15EG Family QSPI Flash Layout</span><a class="headerlink" href="#xilinx-qspi-flash-layout-zu15eg" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 10 </span><span class="caption-text">Xilinx Zynq Ultrascale+ ZU15EG Family QSPI Flash Layout</span><a class="headerlink" href="#xilinx-qspi-flash-layout-zu15eg" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="25%" />
 <col width="25%" />
@@ -1205,17 +1374,17 @@ saveenv
 <td>0x80000</td>
 </tr>
 <tr class="row-odd"><th class="stub">U-Boot environment</th>
-<td>&nbsp;</td>
+<td>&#160;</td>
 <td>0x3F80000</td>
 <td>0x80000</td>
 </tr>
 <tr class="row-even"><th class="stub">Bootscript</th>
-<td>uboot.scr/uboot_ramdisk.scr</td>
+<td>uboot_ramdisk.scr</td>
 <td>0x2D80000</td>
 <td>0x80000</td>
 </tr>
 <tr class="row-odd"><th class="stub">Rootfs</th>
-<td>rootfs.tar/uramdisk</td>
+<td>uramdisk</td>
 <td>0x2E00000</td>
 <td>0x1580000</td>
 </tr>
@@ -1225,13 +1394,13 @@ saveenv
 </div>
 <span id="document-project_mode"></span><div class="section" id="project-mode">
 <h2>Project mode<a class="headerlink" href="#project-mode" title="Permalink to this headline">¶</a></h2>
-<p>For users who want to use the Enclustra Build Environment, but still be able to modify the parts of the system, a &#8216;project mode&#8217; is available.</p>
+<p>For users who want to use the Enclustra Build Environment, but still be able to modify the parts of the system, a ‘project mode’ is available.</p>
 <p>Project mode is similar to regular mode, but enables user to fully customize all the parts of the system.</p>
-<p>To enable project mode, choose &#8220;Advanced&#8221; option on the very last screen of the GUI workflow.</p>
+<p>To enable project mode, choose “Advanced” option on the very last screen of the GUI workflow.</p>
 <blockquote>
 <div><img alt="_images/project_name.png" src="_images/project_name.png" />
 </div></blockquote>
-<p>Check the &#8216;enable&#8217; option on.</p>
+<p>Check the ‘enable’ option on.</p>
 <blockquote>
 <div><img alt="_images/project_enable.png" src="_images/project_enable.png" />
 </div></blockquote>
@@ -1242,6 +1411,56 @@ User is free to modify those sources and add a git upstream to them to keep them
 This script will run the Enclustra Build Environment in a special project mode.
 In this mode the step for choosing components to fetch is skipped, and the user is prompted to choose which of the components to build.
 If any of the components of the system were modified, the Build system will build them, and include the output files in the final boot images.</p>
+</div>
+<span id="document-update_binaries_xilinx"></span><div class="section" id="updating-the-binaries">
+<h2>Updating the binaries<a class="headerlink" href="#updating-the-binaries" title="Permalink to this headline">¶</a></h2>
+<p><strong>Changes in the FPGA design</strong></p>
+<p>If you want to modify the FPGA design, you can update the binaries in two ways:</p>
+<ol class="arabic">
+<li><p class="first">By changing the path to custom binaries when you choose the device option in the Enclustra Build Environment.</p>
+</li>
+<li><p class="first">By using the project mode:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">Enable project mode in the Enclustra Build Environment.</p>
+</li>
+<li><p class="first">Copy to the output directory (the directory with the boot sources created by the Enclustra Build Environment):</p>
+<blockquote>
+<div><ul class="simple">
+<li>the new *.bit file (if you introduced changes to the FPGA programmable logic (PL)),</li>
+<li>the new *.elf file (if you introduced changes to the processing system (PS) of the FPGA SoC).</li>
+</ul>
+</div></blockquote>
+<p>Please note that the *.bit file should be named ‘fpga.bit’ and the *.elf file ‘fsbl.elf’.</p>
+</li>
+<li><p class="first">Run the Enclustra Build Environment.</p>
+</li>
+<li><p class="first">The new ‘boot.bin’ file will be generated in the output directory.
+You can then place this file to boot the device (for example, in case of an SD Card, please refer to <a class="reference internal" href="index_xilinx.html#xilinx-mmc"><span class="std std-ref">SD Card (MMC)</span></a>).</p>
+</li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
+<p><strong>Changes in U-boot, Linux or Buildroot</strong></p>
+<p>If you want to modify U-boot, Linux or Buildroot, perform the following steps:</p>
+<ol class="arabic">
+<li><p class="first">Go to the ‘sources/’ directory, where U-boot, Linux and Buildroot repositories are placed.</p>
+</li>
+<li><p class="first">Introduce your changes in the selected repository.</p>
+</li>
+<li><p class="first">Run the Enclustra Build Environment in project mode to compile and build the modified sources.</p>
+</li>
+<li><p class="first">Replace the files on the target device, depending on which repository you changed:</p>
+<blockquote>
+<div><ul class="simple">
+<li>xilinx-linux: the devicetree.dtb and the kernel image files (‘uImage’ for Zynq-7000 or ‘Image’ for Zynq Ultrascale+).</li>
+<li>xilinx-uboot: the ‘uboot.scr’ and the ‘boot.bin’ file (containing the u-boot binary).</li>
+<li>buildroot-rootfs: the ‘rootfs.tar’ archive (or the ‘rootfs.jffs2’ or ‘uramdisk’, depending on which the target device you choose).</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
 </div>
 <span id="document-faq_xilinx"></span><div class="section" id="faq">
 <h2>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
@@ -1314,34 +1533,34 @@ getsize <span class="o">()</span>
 <span class="nv">ROOTFS_FILE</span><span class="o">=</span><span class="s2">&quot;rootfs.jffs2&quot;</span>
 
 <span class="c1"># write boot image</span>
-flash_erase /dev/mtd0 <span class="m">0</span> 0
+flash_erase /dev/mtd0 <span class="m">0</span> <span class="m">0</span>
 <span class="nv">FILESIZE</span><span class="o">=</span><span class="sb">`</span>getsize <span class="si">${</span><span class="nv">BOOTIMAGE_FILE</span><span class="si">}</span><span class="sb">`</span>
 <span class="nb">echo</span> Writing preloader file <span class="si">${</span><span class="nv">BOOTIMAGE_FILE</span><span class="si">}</span> size <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span>
 mtd_debug write /dev/mtd0 <span class="m">0</span> <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span> <span class="si">${</span><span class="nv">BOOTIMAGE_FILE</span><span class="si">}</span>
 
 <span class="c1"># write Linux kernel</span>
-flash_erase /dev/mtd1 <span class="m">0</span> 0
+flash_erase /dev/mtd1 <span class="m">0</span> <span class="m">0</span>
 <span class="nv">FILESIZE</span><span class="o">=</span><span class="sb">`</span>getsize <span class="si">${</span><span class="nv">KERNEL_FILE</span><span class="si">}</span><span class="sb">`</span>
 <span class="nb">echo</span> Writing kernel file <span class="si">${</span><span class="nv">KERNEL_FILE</span><span class="si">}</span> size <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span>
 mtd_debug write /dev/mtd1 <span class="m">0</span> <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span> <span class="si">${</span><span class="nv">KERNEL_FILE</span><span class="si">}</span>
 
 <span class="c1"># write devicetree</span>
-flash_erase /dev/mtd2 <span class="m">0</span> 0
+flash_erase /dev/mtd2 <span class="m">0</span> <span class="m">0</span>
 <span class="nv">FILESIZE</span><span class="o">=</span><span class="sb">`</span>getsize <span class="si">${</span><span class="nv">DEVICETREE_FILE</span><span class="si">}</span><span class="sb">`</span>
 <span class="nb">echo</span> Writing devicetree <span class="si">${</span><span class="nv">DEVICETREE_FILE</span><span class="si">}</span> size <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span>
 mtd_debug write /dev/mtd2 <span class="m">0</span> <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span> <span class="si">${</span><span class="nv">DEVICETREE_FILE</span><span class="si">}</span>
 
 <span class="c1"># delete U-Boot configuration</span>
-flash_erase /dev/mtd3 <span class="m">0</span> 0
+flash_erase /dev/mtd3 <span class="m">0</span> <span class="m">0</span>
 
 <span class="c1"># write boot script</span>
-flash_erase /dev/mtd4 <span class="m">0</span> 0
+flash_erase /dev/mtd4 <span class="m">0</span> <span class="m">0</span>
 <span class="nv">FILESIZE</span><span class="o">=</span><span class="sb">`</span>getsize <span class="si">${</span><span class="nv">SCRIPT_FILE</span><span class="si">}</span><span class="sb">`</span>
 <span class="nb">echo</span> Writing bootscript file <span class="si">${</span><span class="nv">SCRIPT_FILE</span><span class="si">}</span> size <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span>
 mtd_debug write /dev/mtd4 <span class="m">0</span> <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span> <span class="si">${</span><span class="nv">SCRIPT_FILE</span><span class="si">}</span>
 
 <span class="c1"># write rootfs</span>
-flash_erase /dev/mtd5 <span class="m">0</span> 0
+flash_erase /dev/mtd5 <span class="m">0</span> <span class="m">0</span>
 <span class="nv">FILESIZE</span><span class="o">=</span><span class="sb">`</span>getsize <span class="si">${</span><span class="nv">ROOTFS_FILE</span><span class="si">}</span><span class="sb">`</span>
 <span class="nb">echo</span> Writing rootfs file <span class="si">${</span><span class="nv">ROOTFS_FILE</span><span class="si">}</span> size <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span>
 mtd_debug write /dev/mtd5 <span class="m">0</span> <span class="si">${</span><span class="nv">FILESIZE</span><span class="si">}</span> <span class="si">${</span><span class="nv">ROOTFS_FILE</span><span class="si">}</span>
@@ -1396,10 +1615,12 @@ mtd_debug write /dev/mtd5 <span class="m">0</span> <span class="si">${</span><sp
 <li class="toctree-l2"><a class="reference internal" href="index_xilinx.html#nand-flash">NAND Flash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index_xilinx.html#usb-drive">USB Drive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index_xilinx.html#nfs">NFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_xilinx.html#nfs-preparation-guide">NFS Preparation Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index_xilinx.html#qspi-flash-layouts">QSPI Flash Layouts</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index_xilinx.html#document-project_mode">Project mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_xilinx.html#document-update_binaries_xilinx">Updating the binaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index_xilinx.html#document-faq_xilinx">FAQ</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="index_xilinx.html#how-to-script-u-boot">How to script U-Boot?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index_xilinx.html#how-can-the-flash-memory-be-programmed-from-linux">How can the flash memory be programmed from Linux?</a></li>
@@ -1414,13 +1635,13 @@ mtd_debug write /dev/mtd5 <span class="m">0</span> <span class="si">${</span><sp
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
-        <li class="nav-item nav-item-0"><a href="index_xilinx.html#document-index_xilinx">Enclustra Build Environment - User Documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index_xilinx.html#document-index_xilinx">Enclustra Build Environment - User Documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright Antmicro Ltd for Enclustra GmbH, 2015.
-      Last updated on 2018-03-29.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
+        &#169; Copyright Antmicro Ltd for Enclustra GmbH, 2015.
+      Last updated on 2018-11-22.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
     </div>
   </body>
 </html>
