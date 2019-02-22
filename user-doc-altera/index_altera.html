@@ -4,27 +4,22 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Enclustra Build Environment - User Documentation</title>
     <link rel="stylesheet" href="_static/rtd.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -100,6 +95,11 @@
 <td>Wojciech Tatarski</td>
 <td>Updates for release v1.7</td>
 </tr>
+<tr class="row-even"><td>2019-02-22</td>
+<td>0.1.8</td>
+<td>Joanna Brozek</td>
+<td>Updates for release v1.8</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -107,7 +107,7 @@
 <span id="document-system"></span><div class="section" id="build-environment">
 <h2>Build Environment<a class="headerlink" href="#build-environment" title="Permalink to this headline">¶</a></h2>
 <p>This chapter describes the usage of the build environment.
-The whole build environment is written in <code class="docutils literal"><span class="pre">Python</span></code>.
+The whole build environment is written in <code class="docutils literal notranslate"><span class="pre">Python</span></code>.
 Its internal functionality is determined by <cite>ini</cite> files placed in a specific directory layout.</p>
 <div class="section" id="prerequisites">
 <h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h3>
@@ -193,7 +193,7 @@ The system is compatible with both, Python 2 and Python 3.</p>
 <p>For more information on how to install the required packages in the supported systems, please refer to the corresponding subsection (<a class="reference internal" href="#suse"><span class="std std-ref">OpenSUSE 42.3</span></a>, <a class="reference internal" href="#ubuntu"><span class="std std-ref">Ubuntu 14.04 LTS</span></a>).</p>
 <div class="section" id="opensuse-42-3">
 <span id="suse"></span><h4>OpenSUSE 42.3<a class="headerlink" href="#opensuse-42-3" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>su -
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>su -
 zypper -n install -yt pattern devel_basis
 zypper -n install -y autoconf bc curl gcc-c++ git glibc-32bit <span class="se">\</span>
                      mercurial python-dialog unzip wget
@@ -202,7 +202,7 @@ zypper -n install -y autoconf bc curl gcc-c++ git glibc-32bit <span class="se">\
 </div>
 <div class="section" id="ubuntu-14-04-lts">
 <span id="ubuntu"></span><h4>Ubuntu 14.04 LTS<a class="headerlink" href="#ubuntu-14-04-lts" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt update
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt update
 sudo apt install -y autoconf bc build-essential curl git mercurial <span class="se">\</span>
                     libc6-i386 python python-dialog unzip wget
 </pre></div>
@@ -212,7 +212,7 @@ sudo apt install -y autoconf bc build-essential curl git mercurial <span class="
 <div class="section" id="directory-structure">
 <h3>Directory Structure<a class="headerlink" href="#directory-structure" title="Permalink to this headline">¶</a></h3>
 <p>The build environment is designed to work with a specific directory structure depicted below:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="p">|</span>-- bin
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="p">|</span>-- bin
 <span class="p">|</span>-- binaries
 <span class="p">|</span>-- buildscripts
 <span class="p">|</span>-- sources
@@ -264,15 +264,15 @@ sudo apt install -y autoconf bc build-essential curl git mercurial <span class="
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
 <p>By default, the target output folders are named according to this folder naming scheme:</p>
-<p><code class="docutils literal"><span class="pre">out_&lt;timestamp&gt;_&lt;module&gt;_&lt;board&gt;_&lt;bootmode&gt;</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">out_&lt;timestamp&gt;_&lt;module&gt;_&lt;board&gt;_&lt;bootmode&gt;</span></code>.</p>
 <p class="last">The default name can be overwriten during the build process.</p>
 </div>
 </div>
 <div class="section" id="repositories-structure">
 <h3>Repositories Structure<a class="headerlink" href="#repositories-structure" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal"><span class="pre">sources</span></code> directory is the master git repository with a number of submodules pointing to actual code repositories.
+<p>The <code class="docutils literal notranslate"><span class="pre">sources</span></code> directory is the master git repository with a number of submodules pointing to actual code repositories.
 During the fetch phase, the build environment synchronizes only the submodules required to build the selected targets.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.
 <span class="p">|</span>-- container_git_repository
 <span class="p">|</span>   <span class="p">|</span>-- target_submodule_1
 <span class="p">|</span>   <span class="p">|</span>-- target_submodule_2
@@ -282,23 +282,23 @@ During the fetch phase, the build environment synchronizes only the submodules r
 </div>
 <div class="section" id="general-build-environment-configuration">
 <h3>General Build Environment Configuration<a class="headerlink" href="#general-build-environment-configuration" title="Permalink to this headline">¶</a></h3>
-<p>Environment settings are stored in the <code class="docutils literal"><span class="pre">enclustra.ini</span></code> file in the main directory of the build environment.
+<p>Environment settings are stored in the <code class="docutils literal notranslate"><span class="pre">enclustra.ini</span></code> file in the main directory of the build environment.
 Before starting the build script, one may need to adjust the general settings of the build environment by editing this file.
 One of the most crucial setting is the number of build threads used in a parallel.
-This parameter is set in the <code class="docutils literal"><span class="pre">[general]</span></code> section by changing the <code class="docutils literal"><span class="pre">nthreads</span></code> key.
-Additionally, parameters in the <code class="docutils literal"><span class="pre">[debug]</span></code> section allow the user to adjust the logging settings:</p>
+This parameter is set in the <code class="docutils literal notranslate"><span class="pre">[general]</span></code> section by changing the <code class="docutils literal notranslate"><span class="pre">nthreads</span></code> key.
+Additionally, parameters in the <code class="docutils literal notranslate"><span class="pre">[debug]</span></code> section allow the user to adjust the logging settings:</p>
 <ul class="simple">
-<li>If the <code class="docutils literal"><span class="pre">debug-calls</span></code> option if set to <code class="docutils literal"><span class="pre">true</span></code>, the output of all external tool calls (such as <code class="docutils literal"><span class="pre">make</span></code>, <code class="docutils literal"><span class="pre">tar</span></code> etc.) will be displayed in the terminal.</li>
-<li>If the <code class="docutils literal"><span class="pre">quiet-mode</span></code> option is set to <code class="docutils literal"><span class="pre">true</span></code>, the build log of the targets will not be printed to the terminal, only informations about actual build state will be shown. This option does not affect the <code class="docutils literal"><span class="pre">build-logfile</span></code> option.</li>
-<li>If the <code class="docutils literal"><span class="pre">build-logfile</span></code> option is set to a file name, the build environment will write the whole build log output to that file. If the option is not set, the output will not be logged.</li>
-<li>If the <code class="docutils literal"><span class="pre">break-on-error</span></code> option is set to <code class="docutils literal"><span class="pre">true</span></code>, the build environment will interrupted on the first error. Otherwise the build environment will only print an error message and continue to work on a next available target.</li>
+<li>If the <code class="docutils literal notranslate"><span class="pre">debug-calls</span></code> option if set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the output of all external tool calls (such as <code class="docutils literal notranslate"><span class="pre">make</span></code>, <code class="docutils literal notranslate"><span class="pre">tar</span></code> etc.) will be displayed in the terminal.</li>
+<li>If the <code class="docutils literal notranslate"><span class="pre">quiet-mode</span></code> option is set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the build log of the targets will not be printed to the terminal, only informations about actual build state will be shown. This option does not affect the <code class="docutils literal notranslate"><span class="pre">build-logfile</span></code> option.</li>
+<li>If the <code class="docutils literal notranslate"><span class="pre">build-logfile</span></code> option is set to a file name, the build environment will write the whole build log output to that file. If the option is not set, the output will not be logged.</li>
+<li>If the <code class="docutils literal notranslate"><span class="pre">break-on-error</span></code> option is set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the build environment will interrupted on the first error. Otherwise the build environment will only print an error message and continue to work on a next available target.</li>
 </ul>
 </div>
 </div>
 <span id="document-supported_devices_altera"></span><div class="section" id="supported-devices">
 <h2>Supported Devices<a class="headerlink" href="#supported-devices" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils" id="supported-devices-altera">
-<caption><span class="caption-number">Table 3 </span><span class="caption-text">Supported devices</span><a class="headerlink" href="#supported-devices-altera" title="Permalink to this table">¶</a></caption>
+<table border="1" class="docutils" id="supported-devices-intel">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Supported devices</span><a class="headerlink" href="#supported-devices-intel" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="25%" />
 <col width="25%" />
@@ -313,27 +313,27 @@ Additionally, parameters in the <code class="docutils literal"><span class="pre"
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><th class="stub">Altera</th>
+<tr class="row-even"><th class="stub">Intel</th>
 <td>Mars MA3</td>
 <td>Mars EB1</td>
 <td>Linux, U-Boot, Buildroot</td>
 </tr>
-<tr class="row-odd"><th class="stub">Altera</th>
+<tr class="row-odd"><th class="stub">Intel</th>
 <td>Mars MA3</td>
 <td>Mars PM3</td>
 <td>Linux, U-Boot, Buildroot</td>
 </tr>
-<tr class="row-even"><th class="stub">Altera</th>
+<tr class="row-even"><th class="stub">Intel</th>
 <td>Mercury SA1</td>
 <td>Mercury PE1</td>
 <td>Linux, U-Boot, Buildroot</td>
 </tr>
-<tr class="row-odd"><th class="stub">Altera</th>
+<tr class="row-odd"><th class="stub">Intel</th>
 <td>Mercury+ SA2</td>
 <td>Mercury PE1</td>
 <td>Linux, U-Boot, Buildroot</td>
 </tr>
-<tr class="row-even"><th class="stub">Altera</th>
+<tr class="row-even"><th class="stub">Intel</th>
 <td>Mercury+ AA1</td>
 <td>Mercury PE1</td>
 <td>Linux, Buildroot</td>
@@ -342,7 +342,7 @@ Additionally, parameters in the <code class="docutils literal"><span class="pre"
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">For Mercury+ AA1, U-Boot is delivered as a precompiled binary. It is generated using the Intel/Altera SoCEDS tool. The AA1 module support is added using custom patches.</p>
+<p class="last">For Mercury+ AA1, U-Boot is delivered as a precompiled binary. It is generated using the Intel SoCEDS tool. The AA1 module support is added using custom patches.</p>
 </div>
 </div>
 <span id="document-quickstart_altera"></span><div class="section" id="usage">
@@ -353,12 +353,12 @@ Additionally, parameters in the <code class="docutils literal"><span class="pre"
 <p class="first admonition-title">Note</p>
 <p>By default the build script will fetch and build the latest EBE release.
 To use a specific release you need to clone a clean copy of the EBE repo and switch to a selected release:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">enclustra</span><span class="o">-</span><span class="n">bsp</span><span class="o">/</span><span class="n">bsp</span><span class="o">-</span><span class="n">altera</span><span class="o">.</span><span class="n">git</span> <span class="o">-</span><span class="n">b</span> <span class="n">v1</span><span class="o">.</span><span class="n">x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">enclustra</span><span class="o">-</span><span class="n">bsp</span><span class="o">/</span><span class="n">bsp</span><span class="o">-</span><span class="n">altera</span><span class="o">.</span><span class="n">git</span> <span class="o">-</span><span class="n">b</span> <span class="n">v1</span><span class="o">.</span><span class="n">x</span>
 <span class="c1"># where v1.x is the release number (e.g. v1.5)</span>
 </pre></div>
 </div>
 <p>In order to use the latest code, switch to develop release:</p>
-<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">enclustra</span><span class="o">-</span><span class="n">bsp</span><span class="o">/</span><span class="n">bsp</span><span class="o">-</span><span class="n">altera</span><span class="o">.</span><span class="n">git</span> <span class="o">-</span><span class="n">b</span> <span class="n">develop</span>
+<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">enclustra</span><span class="o">-</span><span class="n">bsp</span><span class="o">/</span><span class="n">bsp</span><span class="o">-</span><span class="n">altera</span><span class="o">.</span><span class="n">git</span> <span class="o">-</span><span class="n">b</span> <span class="n">develop</span>
 <span class="n">export</span> <span class="n">EBE_RELEASE</span><span class="o">=</span><span class="n">master</span>
 </pre></div>
 </div>
@@ -372,7 +372,7 @@ To use a specific release you need to clone a clean copy of the EBE repo and swi
 <li>Clone the build environment repository with:</li>
 </ol>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span></span>git clone https://github.com/enclustra-bsp/bsp-altera.git
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/enclustra-bsp/bsp-altera.git
 </pre></div>
 </div>
 </div></blockquote>
@@ -380,12 +380,12 @@ To use a specific release you need to clone a clean copy of the EBE repo and swi
 <li>Change to the bsp-altera directory:</li>
 </ol>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> bsp-altera
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> bsp-altera
 </pre></div>
 </div>
 </div></blockquote>
 <ol class="arabic" start="3">
-<li><p class="first">Run <code class="docutils literal"><span class="pre">./build.sh</span></code> script.</p>
+<li><p class="first">Run <code class="docutils literal notranslate"><span class="pre">./build.sh</span></code> script.</p>
 </li>
 <li><p class="first">The welcome screen provides basic information about the version of the build environment.</p>
 <blockquote>
@@ -417,7 +417,7 @@ To use a specific release you need to clone a clean copy of the EBE repo and swi
 <div><img alt="_images/fetch.png" src="_images/fetch.png" />
 </div></blockquote>
 </li>
-<li><p class="first">Choose which targets will be built. On the bottom of the screen a short description of a highlighted target is displayed. Choosing certain targets may disable building others. In order to use the default target configuration enable the <code class="docutils literal"><span class="pre">Load</span> <span class="pre">initial</span> <span class="pre">...</span> <span class="pre">configuration</span></code> checkbox. If changes have been made to the target, disable this checkbox, so that the changes are not overwritten during the build process.</p>
+<li><p class="first">Choose which targets will be built. On the bottom of the screen a short description of a highlighted target is displayed. Choosing certain targets may disable building others. In order to use the default target configuration enable the <code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">initial</span> <span class="pre">...</span> <span class="pre">configuration</span></code> checkbox. If changes have been made to the target, disable this checkbox, so that the changes are not overwritten during the build process.</p>
 <blockquote>
 <div><img alt="_images/build.png" src="_images/build.png" />
 </div></blockquote>
@@ -450,7 +450,7 @@ To use a specific release you need to clone a clean copy of the EBE repo and swi
 <h3>Command Line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h3>
 <p>The build process can be invoked from the command line. All options that are available in the GUI are present on the command line interface as well.
 A list of the available command line options can be obtained like this:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>./build.sh --help
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./build.sh --help
 
 usage: tool [-h] [--release ver] [-L] [--list-devices-raw] [-d device] [-l]
     [--list-targets-raw] [-x target] [-f target] [-b target]
@@ -505,41 +505,41 @@ optional arguments:
 </pre></div>
 </div>
 <p>In order to list all available devices use the following command:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>./build.sh -L
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./build.sh -L
 </pre></div>
 </div>
-<p>If the <code class="docutils literal"><span class="pre">build.sh</span></code> script is invoked with the <code class="docutils literal"><span class="pre">-d</span></code> option, the build environment switches to console mode.
-This mode requires a valid device specifier in order to locate the device configuration within the <code class="docutils literal"><span class="pre">targets</span></code> directory for the specific device, e.g. for the <cite>Mercury SA1</cite> module on the <cite>Mercury PE1</cite> base board in <cite>QSPI</cite> boot mode, the command would look like this:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>./build.sh -d Mercury_SA1/Mercury_PE1/QSPI
+<p>If the <code class="docutils literal notranslate"><span class="pre">build.sh</span></code> script is invoked with the <code class="docutils literal notranslate"><span class="pre">-d</span></code> option, the build environment switches to console mode.
+This mode requires a valid device specifier in order to locate the device configuration within the <code class="docutils literal notranslate"><span class="pre">targets</span></code> directory for the specific device, e.g. for the <cite>Mercury SA1</cite> module on the <cite>Mercury PE1</cite> base board in <cite>QSPI</cite> boot mode, the command would look like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./build.sh -d Mercury_SA1/Mercury_PE1/QSPI
 </pre></div>
 </div>
 <p>Such a command will fetch and build all the default targets for a selected device.
-To list all the available targets for a selected device, the user needs to add the <code class="docutils literal"><span class="pre">-l</span></code> switch to the command, e.g.:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>./build.sh -d Mercury_SA1/Mercury_PE1/QSPI -l
+To list all the available targets for a selected device, the user needs to add the <code class="docutils literal notranslate"><span class="pre">-l</span></code> switch to the command, e.g.:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./build.sh -d Mercury_SA1/Mercury_PE1/QSPI -l
 </pre></div>
 </div>
-<p>The <code class="docutils literal"><span class="pre">-x</span></code> option will fetch and build only the selected target, e.g.:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>./build.sh -d Mercury_SA1/Mercury_PE1/QSPI -x Linux
+<p>The <code class="docutils literal notranslate"><span class="pre">-x</span></code> option will fetch and build only the selected target, e.g.:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./build.sh -d Mercury_SA1/Mercury_PE1/QSPI -x Linux
 </pre></div>
 </div>
-<p>That will fetch and build only the <code class="docutils literal"><span class="pre">Linux</span></code> target for the selected device.</p>
-<p>To only fetch or build a specific target, the user can specify those targets with the <code class="docutils literal"><span class="pre">-f</span></code> (fetch) and <code class="docutils literal"><span class="pre">-b</span></code> (build) options. It is possible to choose multiple targets, e.g. like this:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>./build.sh -d Mercury_SA1/Mercury_PE1/QSPI -f Linux -b Buildroot -x U-Boot
+<p>That will fetch and build only the <code class="docutils literal notranslate"><span class="pre">Linux</span></code> target for the selected device.</p>
+<p>To only fetch or build a specific target, the user can specify those targets with the <code class="docutils literal notranslate"><span class="pre">-f</span></code> (fetch) and <code class="docutils literal notranslate"><span class="pre">-b</span></code> (build) options. It is possible to choose multiple targets, e.g. like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./build.sh -d Mercury_SA1/Mercury_PE1/QSPI -f Linux -b Buildroot -x U-Boot
 </pre></div>
 </div>
 <p>This will fetch Linux, build Buildroot and fetch/build U-Boot.</p>
-<p>The <code class="docutils literal"><span class="pre">--list-dev-options</span></code> option will list all the available device options for the chosen device. It can be used like this:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>./build.sh -d Mercury_SA1/Mercury_PE1/QSPI -x Linux --list-dev-options
+<p>The <code class="docutils literal notranslate"><span class="pre">--list-dev-options</span></code> option will list all the available device options for the chosen device. It can be used like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./build.sh -d Mercury_SA1/Mercury_PE1/QSPI -x Linux --list-dev-options
 </pre></div>
 </div>
 <p>This will print out an indexed list of device options.</p>
-<p>The <code class="docutils literal"><span class="pre">-o</span></code> option allows the user to choose a device option for the selected device by providing the index of a specific device option, like this:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>./build.sh -d Mercury_SA1/Mercury_PE1/QSPI -x Linux -o <span class="m">1</span>
+<p>The <code class="docutils literal notranslate"><span class="pre">-o</span></code> option allows the user to choose a device option for the selected device by providing the index of a specific device option, like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./build.sh -d Mercury_SA1/Mercury_PE1/QSPI -x Linux -o <span class="m">1</span>
 </pre></div>
 </div>
 <p>If no device option is selected, the default one will be used.</p>
-<p>To reset the build environment and delete all downloaded code, binaries, tools and built files, the <code class="docutils literal"><span class="pre">--clean</span></code> option can be used:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>./build.sh --clean
+<p>To reset the build environment and delete all downloaded code, binaries, tools and built files, the <code class="docutils literal notranslate"><span class="pre">--clean</span></code> option can be used:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./build.sh --clean
 </pre></div>
 </div>
 </div>
@@ -552,7 +552,7 @@ Once the files are built, they can be deployed to the hardware as described in t
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>Default target output directories are named according to the following directory naming scheme:</p>
-<p class="last"><code class="docutils literal"><span class="pre">out_&lt;timestamp&gt;_&lt;module&gt;_&lt;board&gt;_&lt;bootmode&gt;</span></code>.</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">out_&lt;timestamp&gt;_&lt;module&gt;_&lt;board&gt;_&lt;bootmode&gt;</span></code>.</p>
 </div>
 <p>As a general note on U-Boot used in all the following guides: U-Boot is using variables from the default environment. Moreover, the boot scripts used by U-Boot also rely on those variables. If the environment was changed and saved earlier, U-Boot will always use these saved environment variables on a fresh boot, even after changing the U-Boot environment.</p>
 <table border="1" class="docutils" id="u-boot-environment-location-and-size">
@@ -565,7 +565,7 @@ Once the files are built, they can be deployed to the hardware as described in t
 <col width="20%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head stub">Altera chip</th>
+<tr class="row-odd"><th class="head stub">Intel chip</th>
 <th class="head">Boot storage</th>
 <th class="head">Environment storage</th>
 <th class="head">Offset</th>
@@ -574,34 +574,52 @@ Once the files are built, they can be deployed to the hardware as described in t
 </thead>
 <tbody valign="top">
 <tr class="row-even"><th class="stub">Arria 10</th>
-<td>MMC/eMMC</td>
-<td>MMC/eMMC</td>
+<td>MMC</td>
+<td>MMC</td>
 <td>0x200 (1 block)</td>
 <td>0x1000 (8 blocks)</td>
 </tr>
 <tr class="row-odd"><th class="stub">Arria 10</th>
+<td>eMMC</td>
+<td>eMMC</td>
+<td>0x200 (1 block)</td>
+<td>0x1000 (8 blocks)</td>
+</tr>
+<tr class="row-even"><th class="stub">Arria 10</th>
 <td>QSPI</td>
 <td>QSPI</td>
 <td>0xD00000</td>
 <td>0x1000</td>
 </tr>
-<tr class="row-even"><th class="stub">Cyclone V</th>
-<td>All</td>
+<tr class="row-odd"><th class="stub">Cyclone V</th>
+<td>QSPI/NET/USB</td>
 <td>QSPI</td>
 <td>0x800000</td>
+<td>0x40000</td>
+</tr>
+<tr class="row-even"><th class="stub">Cyclone V</th>
+<td>eMMC</td>
+<td>eMMC</td>
+<td>partition 1</td>
+<td>0x40000</td>
+</tr>
+<tr class="row-odd"><th class="stub">Cyclone V</th>
+<td>MMC</td>
+<td>MMC</td>
+<td>partition 1</td>
 <td>0x40000</td>
 </tr>
 </tbody>
 </table>
 <p>To restore the default environment, run the following command in the U-Boot command line:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>env default -a
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>env default -a
 </pre></div>
 </div>
 <p>This will not overwrite the stored environment but will only restore the default one in the current run.
-To permanently restore the default environment, the <code class="docutils literal"><span class="pre">saveenv</span></code> command has to be invoked.</p>
+To permanently restore the default environment, the <code class="docutils literal notranslate"><span class="pre">saveenv</span></code> command has to be invoked.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">A <code class="docutils literal"><span class="pre">***</span> <span class="pre">Warning</span> <span class="pre">-</span> <span class="pre">bad</span> <span class="pre">CRC,</span> <span class="pre">using</span> <span class="pre">default</span> <span class="pre">environment</span></code> warning message that appears when booting into U-Boot indicates that the default environment will be loaded.</p>
+<p class="last">A <code class="docutils literal notranslate"><span class="pre">***</span> <span class="pre">Warning</span> <span class="pre">-</span> <span class="pre">bad</span> <span class="pre">CRC,</span> <span class="pre">using</span> <span class="pre">default</span> <span class="pre">environment</span></code> warning message that appears when booting into U-Boot indicates that the default environment will be loaded.</p>
 </div>
 <div class="section" id="sd-card-mmc">
 <span id="altera-mmc"></span><h3>SD Card (MMC)<a class="headerlink" href="#sd-card-mmc" title="Permalink to this headline">¶</a></h3>
@@ -610,7 +628,7 @@ To permanently restore the default environment, the <code class="docutils litera
 <li><p class="first">Prepare the SD Card (refer to the <a class="reference internal" href="#altera-partitioning"><span class="std std-ref">SD Card (MMC) Partitioning Guide</span></a>).</p>
 </li>
 <li><p class="first">Record the preloader/bootloader image to the unformatted partition of a SD Card (type a2):</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo dd <span class="k">if</span><span class="o">=</span>preloader-mkpimage.bin <span class="nv">of</span><span class="o">=</span>/dev/sdX2
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dd <span class="k">if</span><span class="o">=</span>preloader-mkpimage.bin <span class="nv">of</span><span class="o">=</span>/dev/sdX2
 sync
 <span class="c1"># where X is the letter of the device</span>
 </pre></div>
@@ -618,14 +636,14 @@ sync
 </li>
 <li><p class="first">Mount the BOOT and rootfs partitions.</p>
 </li>
-<li><p class="first">Copy <code class="docutils literal"><span class="pre">uImage</span></code>, <code class="docutils literal"><span class="pre">devicetree.dtb</span></code>, <code class="docutils literal"><span class="pre">fpga.rbf</span></code>, <code class="docutils literal"><span class="pre">u-boot.img</span></code> and <code class="docutils literal"><span class="pre">uboot.scr</span></code> (or <code class="docutils literal"><span class="pre">uboot_ramdisk.scr</span></code> file when using RAMDISK, which must be renamed to <code class="docutils literal"><span class="pre">uboot.scr</span></code>) from the build environment output directory to the BOOT partition (FAT formatted). Copy <code class="docutils literal"><span class="pre">uramdisk</span></code> to the same partition (only when using RAMDISK).</p>
+<li><p class="first">Copy <code class="docutils literal notranslate"><span class="pre">uImage</span></code>, <code class="docutils literal notranslate"><span class="pre">devicetree.dtb</span></code>, <code class="docutils literal notranslate"><span class="pre">fpga.rbf</span></code>, <code class="docutils literal notranslate"><span class="pre">u-boot.img</span></code> and <code class="docutils literal notranslate"><span class="pre">uboot.scr</span></code> (or <code class="docutils literal notranslate"><span class="pre">uboot_ramdisk.scr</span></code> file when using RAMDISK, which must be renamed to <code class="docutils literal notranslate"><span class="pre">uboot.scr</span></code>) from the build environment output directory to the BOOT partition (FAT formatted). Copy <code class="docutils literal notranslate"><span class="pre">uramdisk</span></code> to the same partition (only when using RAMDISK).</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal"><span class="pre">u-boot.img</span></code> is only required for Cyclone V modules.</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">u-boot.img</span></code> is only required for Cyclone V modules.</p>
 </div>
 </li>
-<li><p class="first">Extract the <code class="docutils literal"><span class="pre">rootfs.tar</span></code> archive from the build environment output directory onto the second partition (rootfs, ext2 formatted).</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo tar -xpf rootfs.tar -C /path/to/mmc/mountpoint
+<li><p class="first">Extract the <code class="docutils literal notranslate"><span class="pre">rootfs.tar</span></code> archive from the build environment output directory onto the second partition (rootfs, ext2 formatted).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo tar -xpf rootfs.tar -C /path/to/mmc/mountpoint
 </pre></div>
 </div>
 </li>
@@ -641,26 +659,30 @@ sync
 </li>
 </ol>
 <p>If one wants to manually trigger booting from a SD Card, the following command has to be invoked from the U-Boot command line:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>run mmcboot
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>run mmcboot
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If <code class="docutils literal notranslate"><span class="pre">saveenv</span></code> command is used in U-boot to save the U-Boot environment, a ‘uboot.env’ file will appear on the boot partition of the SD card .</p>
 </div>
 </div>
 <div class="section" id="emmc-flash">
-<span id="altera-qspi"></span><h3>eMMC Flash<a class="headerlink" href="#emmc-flash" title="Permalink to this headline">¶</a></h3>
+<h3>eMMC Flash<a class="headerlink" href="#emmc-flash" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">This section is valid only for the Mars MA3 and Mercury AA1 modules.</p>
+<p class="last">This section is valid only for the Mars MA3, Mercury SA1-R3 and Mercury AA1 modules.</p>
 </div>
 </div></blockquote>
-<p>On both Mars MA3 and Mercury AA1 module the MMC bus lines are shared between eMMC flash and SD card. It may be necessary to switch the pinmux between them during the flashing procedure. More information on memory pinmux switching can be found in section <a class="reference internal" href="#altera-pinmux-switching"><span class="std std-ref">Storage pinmux switching</span></a>.
+<p>On the Mars MA3, Mercury SA1-R3 and Mercury AA1 modules the MMC bus lines are shared between eMMC flash and SD card. It may be necessary to switch the pinmux between them during the flashing procedure. More information on memory pinmux switching can be found in section <a class="reference internal" href="#altera-pinmux-switching"><span class="std std-ref">Storage pinmux switching</span></a>.
 In order to deploy images to eMMC flash and boot from it, perform the following steps:</p>
 <ol class="arabic">
 <li><p class="first">Setup a TFTP server on the host computer.</p>
 </li>
 <li><p class="first">Prepare the SD card as usual for <em>ramdisk</em> boot (refer to the <a class="reference internal" href="#altera-mmc"><span class="std std-ref">SD Card (MMC)</span></a> section)</p>
 </li>
-<li><p class="first">On the host machine, copy <code class="docutils literal"><span class="pre">uImage</span></code>, <code class="docutils literal"><span class="pre">devicetree.dtb</span></code>, <code class="docutils literal"><span class="pre">uboot.scr</span></code> (or <code class="docutils literal"><span class="pre">uboot_ramdisk.scr</span></code> file when using RAMDISK, which must be renamed to <code class="docutils literal"><span class="pre">uboot.scr</span></code>) , <code class="docutils literal"><span class="pre">rootfs.tar</span></code> (or <code class="docutils literal"><span class="pre">uramdisk</span></code> when using RAMDISK), <code class="docutils literal"><span class="pre">fpga.rbf</span></code>, <code class="docutils literal"><span class="pre">preloader-mkpimage.bin</span></code> and <code class="docutils literal"><span class="pre">u-boot.img</span></code> (only for the Mars MA3 module) from the EMMC build output directory to the TFTP server directory.</p>
+<li><p class="first">On the host machine, copy <code class="docutils literal notranslate"><span class="pre">uImage</span></code>, <code class="docutils literal notranslate"><span class="pre">devicetree.dtb</span></code>, <code class="docutils literal notranslate"><span class="pre">uboot.scr</span></code> (or <code class="docutils literal notranslate"><span class="pre">uboot_ramdisk.scr</span></code> file when using RAMDISK, which must be renamed to <code class="docutils literal notranslate"><span class="pre">uboot.scr</span></code>) , <code class="docutils literal notranslate"><span class="pre">rootfs.tar</span></code> (or <code class="docutils literal notranslate"><span class="pre">uramdisk</span></code> when using RAMDISK), <code class="docutils literal notranslate"><span class="pre">fpga.rbf</span></code>, <code class="docutils literal notranslate"><span class="pre">preloader-mkpimage.bin</span></code> and <code class="docutils literal notranslate"><span class="pre">u-boot.img</span></code> (only for the Mars MA3 and Mercury SA1-R3 modules) from the EMMC build output directory to the TFTP server directory.</p>
 </li>
 <li><p class="first">Connect an Ethernet cable to the device.</p>
 </li>
@@ -670,25 +692,25 @@ In order to deploy images to eMMC flash and boot from it, perform the following 
 </li>
 <li><p class="first">Stop the U-Boot autoboot and manually boot to the Linux system:</p>
 <p>This step depends on the chosen module.</p>
-<p>For Mars MA3:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>setenv sd_target emmc
+<p>For Mars MA3 and Mercury SA1-R3:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>setenv sd_target emmc
 run mmcboot
 </pre></div>
 </div>
 <p>For Mercury AA1:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>setenv linux_storage EMMC
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>setenv linux_storage EMMC
 setenv use_ramdisk <span class="m">1</span>
 run bootcmd
 </pre></div>
 </div>
 </li>
 <li><p class="first">Format the eMMC card.</p>
-<p>Run <code class="docutils literal"><span class="pre">fdisk</span></code> tool:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>fdisk /dev/mmcblk0
+<p>Run <code class="docutils literal notranslate"><span class="pre">fdisk</span></code> tool:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fdisk /dev/mmcblk0
 </pre></div>
 </div>
-<p>Within <code class="docutils literal"><span class="pre">fdisk</span></code> run the following commands:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># delete the partition table</span>
+<p>Within <code class="docutils literal notranslate"><span class="pre">fdisk</span></code> run the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># delete the partition table</span>
 o
 <span class="c1"># create a new partition</span>
 n
@@ -702,7 +724,7 @@ p
 +2M
 <span class="c1"># change the partition type</span>
 t
-<span class="c1"># set type to Altera Boot Partition</span>
+<span class="c1"># set type to Intel Boot Partition</span>
 a2
 <span class="c1"># create a new partition</span>
 n
@@ -733,31 +755,31 @@ q
 </pre></div>
 </div>
 <p>Format the 1st and 3rd partitions:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>mkfs.fat -n BOOT /dev/mmcblk0p1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkfs.vfat -F <span class="m">32</span> -n BOOT /dev/mmcblk0p1
 mkfs.ext2 -L rootfs /dev/mmcblk0p3
 </pre></div>
 </div>
 </li>
 <li><p class="first">Set the TFTP server IP address:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">TFTP_IP</span><span class="o">=</span><span class="s1">&#39;xxx.xxx.xxx.xxx&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">TFTP_IP</span><span class="o">=</span><span class="s1">&#39;xxx.xxx.xxx.xxx&#39;</span>
 <span class="c1"># where xxx.xxx.xxx.xxx is the TFTP server address</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Update the preloader/bootloader image:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>tftp -g -r preloader-mkpimage.bin -l preloader-mkpimage.bin <span class="nv">$TFTP_IP</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tftp -g -r preloader-mkpimage.bin -l preloader-mkpimage.bin <span class="nv">$TFTP_IP</span>
 dd <span class="k">if</span><span class="o">=</span>preloader-mkpimage.bin <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0p2
 </pre></div>
 </div>
 </li>
 <li><p class="first">Update the boot files:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>mount /dev/mmcblk0p1 /mnt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mount /dev/mmcblk0p1 /mnt
 tftp -g -r uImage -l /mnt/uImage <span class="nv">$TFTP_IP</span>
 tftp -g -r devicetree.dtb -l /mnt/devicetree.dtb <span class="nv">$TFTP_IP</span>
 tftp -g -r uboot.scr -l /mnt/uboot.scr <span class="nv">$TFTP_IP</span>
 tftp -g -r fpga.rbf -l /mnt/fpga.rbf <span class="nv">$TFTP_IP</span>
 
-<span class="c1"># only for Mars MA3:</span>
+<span class="c1"># only for Mars MA3 and Mercury SA1-R3:</span>
 tftp -g -r u-boot.img -l /mnt/u-boot.img <span class="nv">$TFTP_IP</span>
 
 <span class="c1"># when using RAMDISK rootfs:</span>
@@ -772,7 +794,7 @@ sync <span class="o">&amp;&amp;</span> umount /mnt
 <p class="first admonition-title">Note</p>
 <p class="last">This step is required only when using persistent rootfs.</p>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>mount /dev/mmcblk0p3 /mnt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mount /dev/mmcblk0p3 /mnt
 tftp -g -r rootfs.tar -l rootfs.tar <span class="nv">$TFTP_IP</span>
 tar -xpf rootfs.tar -C /mnt
 sync <span class="o">&amp;&amp;</span> umount /mnt
@@ -786,9 +808,13 @@ sync <span class="o">&amp;&amp;</span> umount /mnt
 <li><p class="first">The board should boot the Linux system.</p>
 </li>
 </ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If <code class="docutils literal notranslate"><span class="pre">saveenv</span></code> command is used in U-boot to save the U-Boot environment, a ‘uboot.env’ file will appear on the boot partition of the eMMC flash.</p>
+</div>
 </div>
 <div class="section" id="qspi-flash">
-<h3>QSPI Flash<a class="headerlink" href="#qspi-flash" title="Permalink to this headline">¶</a></h3>
+<span id="altera-qspi"></span><h3>QSPI Flash<a class="headerlink" href="#qspi-flash" title="Permalink to this headline">¶</a></h3>
 <p>The QSPI flash is divided into partitions based on the module’s family. The partition offsets are hard coded in the U-Boot code and should not be modified. For more detailed information on partition offsets and sizes, please refer to <a class="reference internal" href="#altera-qspi-layout"><span class="std std-ref">QSPI Flash Layouts</span></a>.</p>
 <p>There are two ways of flashing the QSPI flash memory - deploy each system part step by step or use the generated QSPI flash image.
 The first few steps are the same for both options. In order to prepare the flashing environment, perform the following steps:</p>
@@ -802,7 +828,7 @@ The first few steps are the same for both options. In order to prepare the flash
 <li><p class="first">Connect a serial console to the device (e.g. using PuTTY or picocom).</p>
 </li>
 <li><p class="first">Setup the U-Boot connection parameters:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>setenv ipaddr <span class="s1">&#39;xxx.xxx.xxx.xxx&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>setenv ipaddr <span class="s1">&#39;xxx.xxx.xxx.xxx&#39;</span>
 <span class="c1"># where xxx.xxx.xxx.xxx is the board address</span>
 setenv serverip <span class="s1">&#39;yyy.yyy.yyy.yyy&#39;</span>
 <span class="c1"># where yyy.yyy.yyy.yyy is the server (host computer) address</span>
@@ -814,24 +840,24 @@ setenv serverip <span class="s1">&#39;yyy.yyy.yyy.yyy&#39;</span>
 <div class="section" id="flashing-the-qspi-step-by-step">
 <span id="altera-qspi-flash-sbs"></span><h4>Flashing the QSPI step by step<a class="headerlink" href="#flashing-the-qspi-step-by-step" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic">
-<li><p class="first">Copy <code class="docutils literal"><span class="pre">uImage</span></code>, <code class="docutils literal"><span class="pre">devicetree.dtb</span></code>, <code class="docutils literal"><span class="pre">uboot.scr</span></code> (or <code class="docutils literal"><span class="pre">uboot_ramdisk.scr</span></code> file when using RAMDISK, which must be renamed to <code class="docutils literal"><span class="pre">uboot.scr</span></code>) and <code class="docutils literal"><span class="pre">rootfs.jffs2</span></code> (or <code class="docutils literal"><span class="pre">uramdisk</span></code> when using RAMDISK), <code class="docutils literal"><span class="pre">u-boot.img</span></code> (only for the Cyclone V based modules), <code class="docutils literal"><span class="pre">fpga.rbf.img</span></code> and <code class="docutils literal"><span class="pre">preloader-mkpimage.bin</span></code> from the build environment output directory to the TFTP server directory.</p>
+<li><p class="first">Copy <code class="docutils literal notranslate"><span class="pre">uImage</span></code>, <code class="docutils literal notranslate"><span class="pre">devicetree.dtb</span></code>, <code class="docutils literal notranslate"><span class="pre">uboot.scr</span></code> (or <code class="docutils literal notranslate"><span class="pre">uboot_ramdisk.scr</span></code> file when using RAMDISK, which must be renamed to <code class="docutils literal notranslate"><span class="pre">uboot.scr</span></code>) and <code class="docutils literal notranslate"><span class="pre">rootfs.jffs2</span></code> (or <code class="docutils literal notranslate"><span class="pre">uramdisk</span></code> when using RAMDISK), <code class="docutils literal notranslate"><span class="pre">u-boot.img</span></code> (only for the Cyclone V based modules), <code class="docutils literal notranslate"><span class="pre">fpga.rbf.img</span></code> and <code class="docutils literal notranslate"><span class="pre">preloader-mkpimage.bin</span></code> from the build environment output directory to the TFTP server directory.</p>
 </li>
 <li><p class="first">Set the memory pinmux to QSPI flash:</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This step is required only for the Arria 10 based modules.</p>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>altera_set_storage QSPI
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>altera_set_storage QSPI
 </pre></div>
 </div>
 </li>
 <li><p class="first">Before accessing the QSPI Flash for the first time, the flash device must be enumerated:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sf probe
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sf probe
 </pre></div>
 </div>
 </li>
 <li><p class="first">Update the preloader/bootloader image:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">preloader_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">preloader_size</span><span class="si">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">preloader_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">preloader_size</span><span class="si">}</span>
 tftpboot <span class="si">${</span><span class="nv">preloader_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">preloader_image</span><span class="si">}</span>
 sf erase <span class="si">${</span><span class="nv">qspi_preloader_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">preloader_size</span><span class="si">}</span>
 sf write <span class="si">${</span><span class="nv">preloader_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">qspi_preloader_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">filesize</span><span class="si">}</span>
@@ -843,7 +869,7 @@ sf write <span class="si">${</span><span class="nv">preloader_loadaddr</span><sp
 <p class="first admonition-title">Note</p>
 <p class="last">This step is required only for the Cyclone V based modules.</p>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">uboot_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">qspi_uboot_erase_size</span><span class="si">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">uboot_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">qspi_uboot_erase_size</span><span class="si">}</span>
 tftpboot <span class="si">${</span><span class="nv">uboot_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">uboot_image</span><span class="si">}</span>
 sf erase <span class="si">${</span><span class="nv">qspi_uboot_erase_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">qspi_uboot_erase_size</span><span class="si">}</span>
 sf write <span class="si">${</span><span class="nv">uboot_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">qspi_uboot_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">filesize</span><span class="si">}</span>
@@ -851,7 +877,7 @@ sf write <span class="si">${</span><span class="nv">uboot_loadaddr</span><span c
 </div>
 </li>
 <li><p class="first">Update the bitstream image:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">bitstream_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">bitstream_size</span><span class="si">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">bitstream_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">bitstream_size</span><span class="si">}</span>
 tftpboot <span class="si">${</span><span class="nv">bitstream_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">bitstream_image</span><span class="si">}</span>
 sf erase <span class="si">${</span><span class="nv">qspi_bitstream_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">bitstream_size</span><span class="si">}</span>
 sf write <span class="si">${</span><span class="nv">bitstream_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">qspi_bitstream_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">filesize</span><span class="si">}</span>
@@ -859,7 +885,7 @@ sf write <span class="si">${</span><span class="nv">bitstream_loadaddr</span><sp
 </div>
 </li>
 <li><p class="first">Update the boot script image:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">bootscript_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">bootscript_size</span><span class="si">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">bootscript_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">bootscript_size</span><span class="si">}</span>
 tftpboot <span class="si">${</span><span class="nv">bootscript_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">bootscript_image</span><span class="si">}</span>
 sf erase <span class="si">${</span><span class="nv">qspi_bootscript_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">bootscript_size</span><span class="si">}</span>
 sf write <span class="si">${</span><span class="nv">bootscript_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">qspi_bootscript_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">filesize</span><span class="si">}</span>
@@ -867,7 +893,7 @@ sf write <span class="si">${</span><span class="nv">bootscript_loadaddr</span><s
 </div>
 </li>
 <li><p class="first">Update the Linux kernel:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">kernel_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">kernel_size</span><span class="si">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">kernel_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">kernel_size</span><span class="si">}</span>
 tftpboot <span class="si">${</span><span class="nv">kernel_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">kernel_image</span><span class="si">}</span>
 sf erase <span class="si">${</span><span class="nv">qspi_kernel_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">kernel_size</span><span class="si">}</span>
 sf write <span class="si">${</span><span class="nv">kernel_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">qspi_kernel_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">filesize</span><span class="si">}</span>
@@ -875,7 +901,7 @@ sf write <span class="si">${</span><span class="nv">kernel_loadaddr</span><span 
 </div>
 </li>
 <li><p class="first">Update the devicetree image:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">devicetree_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">devicetree_size</span><span class="si">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">devicetree_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">devicetree_size</span><span class="si">}</span>
 tftpboot <span class="si">${</span><span class="nv">devicetree_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">devicetree_image</span><span class="si">}</span>
 sf erase <span class="si">${</span><span class="nv">qspi_devicetree_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">devicetree_size</span><span class="si">}</span>
 sf write <span class="si">${</span><span class="nv">devicetree_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">qspi_devicetree_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">filesize</span><span class="si">}</span>
@@ -885,14 +911,14 @@ sf write <span class="si">${</span><span class="nv">devicetree_loadaddr</span><s
 <li><p class="first">Update the rootfs image:</p>
 <p>This step depends on the chosen boot device.</p>
 <p>If QSPI RAMDISK was selected:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">ramdisk_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">ramdisk_size</span><span class="si">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">ramdisk_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">ramdisk_size</span><span class="si">}</span>
 tftpboot <span class="si">${</span><span class="nv">ramdisk_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">uramdisk_image</span><span class="si">}</span>
 sf erase <span class="si">${</span><span class="nv">qspi_ramdisk_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">ramdisk_size</span><span class="si">}</span>
 sf write <span class="si">${</span><span class="nv">ramdisk_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">qspi_ramdisk_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">filesize</span><span class="si">}</span>
 </pre></div>
 </div>
 <p>If QSPI was selected:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">rootfs_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">rootfs_size</span><span class="si">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">rootfs_loadaddr</span><span class="si">}</span> 0xFF <span class="si">${</span><span class="nv">rootfs_size</span><span class="si">}</span>
 tftpboot <span class="si">${</span><span class="nv">rootfs_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">rootfs_image</span><span class="si">}</span>
 sf erase <span class="si">${</span><span class="nv">qspi_rootfs_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">rootfs_size</span><span class="si">}</span>
 sf write <span class="si">${</span><span class="nv">rootfs_loadaddr</span><span class="si">}</span> <span class="si">${</span><span class="nv">qspi_rootfs_offset</span><span class="si">}</span> <span class="si">${</span><span class="nv">filesize</span><span class="si">}</span>
@@ -907,7 +933,7 @@ sf write <span class="si">${</span><span class="nv">rootfs_loadaddr</span><span 
 </li>
 </ol>
 <p>If you want to manually trigger booting from the QSPI flash, the following command has to be invoked from the U-Boot command line:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>run qspiboot
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>run qspiboot
 </pre></div>
 </div>
 <div class="admonition note">
@@ -918,19 +944,19 @@ sf write <span class="si">${</span><span class="nv">rootfs_loadaddr</span><span 
 <div class="section" id="flashing-the-qspi-using-the-full-image">
 <span id="altera-qspi-flash-full"></span><h4>Flashing the QSPI using the full image<a class="headerlink" href="#flashing-the-qspi-using-the-full-image" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic">
-<li><p class="first">Copy the <code class="docutils literal"><span class="pre">boot_full.bin</span></code> (or <code class="docutils literal"><span class="pre">boot_full_ramdisk.bin</span></code> when using RAMDISK, which must be renamed to <code class="docutils literal"><span class="pre">boot_full.bin</span></code>) file from the build environment output directory to the TFTP server directory.</p>
+<li><p class="first">Copy the <code class="docutils literal notranslate"><span class="pre">boot_full.bin</span></code> (or <code class="docutils literal notranslate"><span class="pre">boot_full_ramdisk.bin</span></code> when using RAMDISK, which must be renamed to <code class="docutils literal notranslate"><span class="pre">boot_full.bin</span></code>) file from the build environment output directory to the TFTP server directory.</p>
 </li>
 <li><p class="first">Set the memory pinmux to QSPI flash:</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This step is required only for the Arria 10 based modules.</p>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>altera_set_storage QSPI
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>altera_set_storage QSPI
 </pre></div>
 </div>
 </li>
 <li><p class="first">Flash the QSPI memory:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">preloader_loadaddr</span><span class="si">}</span> 0xFF 0x4000000
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mw.b <span class="si">${</span><span class="nv">preloader_loadaddr</span><span class="si">}</span> 0xFF 0x4000000
 tftpboot <span class="si">${</span><span class="nv">preloader_loadaddr</span><span class="si">}</span> boot_full.bin
 sf probe
 sf erase 0x0 0x4000000
@@ -946,7 +972,7 @@ sf write <span class="si">${</span><span class="nv">preloader_loadaddr</span><sp
 </li>
 </ol>
 <p>If you want to manually trigger booting from the QSPI flash, the following command has to be invoked from the U-Boot command line:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>run qspiboot
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>run qspiboot
 </pre></div>
 </div>
 </div>
@@ -957,9 +983,9 @@ sf write <span class="si">${</span><span class="nv">preloader_loadaddr</span><sp
 <p class="first admonition-title">Note</p>
 <p class="last">USB boot is supported only on Cyclone V modules.</p>
 </div>
-<p>The Altera family devices cannot boot directly from a USB device.
+<p>The Intel family devices cannot boot directly from a USB device.
 The preloader and the U-Boot have to be started from a SD Card (MMC) or QSPI flash.
-Please refer to <a class="reference internal" href="#altera-mmc"><span class="std std-ref">SD Card (MMC)</span></a> or <a class="reference internal" href="#altera-qspi"><span class="std std-ref">eMMC Flash</span></a> to boot the U-Boot from MMC or QSPI.
+Please refer to <a class="reference internal" href="#altera-mmc"><span class="std std-ref">SD Card (MMC)</span></a> or <a class="reference internal" href="#altera-qspi"><span class="std std-ref">QSPI Flash</span></a> to boot the U-Boot from MMC or QSPI.
 When the U-Boot is booted it can load and boot the Linux system stored on the USB drive.</p>
 <p>In order to deploy images and boot the Linux system from a USB drive, perform the following steps:</p>
 <ol class="arabic">
@@ -967,10 +993,10 @@ When the U-Boot is booted it can load and boot the Linux system stored on the US
 </li>
 <li><p class="first">Create a ext2 formatted partition as the second partition on the drive. This partition should have at least 16 MiB.</p>
 </li>
-<li><p class="first">Copy <code class="docutils literal"><span class="pre">uImage</span></code>, <code class="docutils literal"><span class="pre">devicetree.dtb</span></code> and <code class="docutils literal"><span class="pre">uboot.scr</span></code> from the build environment output directory to the FAT formatted partition.</p>
+<li><p class="first">Copy <code class="docutils literal notranslate"><span class="pre">uImage</span></code>, <code class="docutils literal notranslate"><span class="pre">devicetree.dtb</span></code> and <code class="docutils literal notranslate"><span class="pre">uboot.scr</span></code> from the build environment output directory to the FAT formatted partition.</p>
 </li>
 <li><p class="first">Unpack root file system onto the ext2 partition of the USB drive. This has to be done as root.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo tar -xpf rootfs.tar -C /path/to/mmc/mountpoint
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo tar -xpf rootfs.tar -C /path/to/mmc/mountpoint
 </pre></div>
 </div>
 </li>
@@ -983,7 +1009,7 @@ When the U-Boot is booted it can load and boot the Linux system stored on the US
 <li><p class="first">Stop the U-Boot autoboot.</p>
 </li>
 <li><p class="first">Trigger USB boot with</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>run usbboot
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>run usbboot
 </pre></div>
 </div>
 </li>
@@ -1002,19 +1028,19 @@ When the U-Boot is booted it can load and boot the Linux system stored on the US
 </li>
 <li><p class="first">Record the preloader image to the unformatted partition of a SD Card (type a2):</p>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span></span>sudo dd <span class="k">if</span><span class="o">=</span>preloader-mkpimage.bin <span class="nv">of</span><span class="o">=</span>/dev/sdX2
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dd <span class="k">if</span><span class="o">=</span>preloader-mkpimage.bin <span class="nv">of</span><span class="o">=</span>/dev/sdX2
 sync
 <span class="c1"># where X is the letter of the device</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Copy <code class="docutils literal"><span class="pre">fpga.rbf</span></code>, <code class="docutils literal"><span class="pre">u-boot.img</span></code> and <code class="docutils literal"><span class="pre">uboot.scr</span></code> from the build environment output directory to the BOOT partition.</p>
+<li><p class="first">Copy <code class="docutils literal notranslate"><span class="pre">fpga.rbf</span></code>, <code class="docutils literal notranslate"><span class="pre">u-boot.img</span></code> and <code class="docutils literal notranslate"><span class="pre">uboot.scr</span></code> from the build environment output directory to the BOOT partition.</p>
 </li>
-<li><p class="first">Copy <code class="docutils literal"><span class="pre">uImage</span></code>, <code class="docutils literal"><span class="pre">devicetree.dtb</span></code> and <code class="docutils literal"><span class="pre">uboot.scr</span></code> from the build environment output directory to the TFTP folder.</p>
+<li><p class="first">Copy <code class="docutils literal notranslate"><span class="pre">uImage</span></code>, <code class="docutils literal notranslate"><span class="pre">devicetree.dtb</span></code> and <code class="docutils literal notranslate"><span class="pre">uboot.scr</span></code> from the build environment output directory to the TFTP folder.</p>
 </li>
-<li><p class="first">Extract the <code class="docutils literal"><span class="pre">rootfs.tar</span></code> archive from the build environment output directory into the NFS folder.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo tar -xpf rootfs.tar -C /path/to/NFS
+<li><p class="first">Extract the <code class="docutils literal notranslate"><span class="pre">rootfs.tar</span></code> archive from the build environment output directory into the NFS folder.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo tar -xpf rootfs.tar -C /path/to/NFS
 </pre></div>
 </div>
 </li>
@@ -1025,7 +1051,7 @@ sync
 <li><p class="first">Power on the board and stop the U-Boot autoboot.</p>
 </li>
 <li><p class="first">Set the server’s and target’s IP address, and the path to the rootfs NFS folder.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>env default -a
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>env default -a
 setenv ipaddr <span class="m">192</span>.168.1.10
 setenv serverip <span class="m">192</span>.168.1.2
 setenv serverpath /path/to/NFS
@@ -1034,7 +1060,7 @@ saveenv
 </div>
 </li>
 <li><p class="first">Trigger NFS boot with:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>run netboot
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>run netboot
 </pre></div>
 </div>
 </li>
@@ -1050,18 +1076,18 @@ saveenv
 <li><p class="first">Insert the SD Card into the card reader of the host computer.</p>
 </li>
 <li><p class="first">If the partitions were mounted - unmount them:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo umount /path/to/mountpoint
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo umount /path/to/mountpoint
 </pre></div>
 </div>
 </li>
-<li><p class="first">Run <code class="docutils literal"><span class="pre">fdisk</span></code> tool:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo fdisk /dev/sdX
+<li><p class="first">Run <code class="docutils literal notranslate"><span class="pre">fdisk</span></code> tool:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo fdisk /dev/sdX
 <span class="c1"># where X is the letter of the SD card</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Within <code class="docutils literal"><span class="pre">fdisk</span></code> run the following commands:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># create a new partition table</span>
+<li><p class="first">Within <code class="docutils literal notranslate"><span class="pre">fdisk</span></code> run the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a new partition table</span>
 o
 <span class="c1"># create a new primary partition</span>
 n
@@ -1077,7 +1103,7 @@ p
 t
 <span class="c1"># choose the second partition (may be chosen automatically if only one exists)</span>
 <span class="m">2</span>
-<span class="c1"># set type to Altera Boot Partition</span>
+<span class="c1"># set type to Intel Boot Partition</span>
 a2
 <span class="c1"># create a new primary partition</span>
 n
@@ -1113,7 +1139,7 @@ q
 </div>
 </li>
 <li><p class="first">Format newly created partitions:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo mkfs.fat -n BOOT /dev/sdX1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo mkfs.vfat -F <span class="m">32</span> -n BOOT /dev/sdX1
 sudo mkfs.ext2 -L rootfs /dev/sdX3
 <span class="c1"># where X is the letter of the SD card</span>
 </pre></div>
@@ -1127,12 +1153,12 @@ sudo mkfs.ext2 -L rootfs /dev/sdX3
 <p>To prepare the host machine several preparatory steps are required.</p>
 <p>The following servers need to be installed on the host machine, and configured properly:</p>
 <ul class="simple">
-<li>NFS server (e.g. on Ubuntu <code class="docutils literal"><span class="pre">nfs-kernel-server</span></code>)</li>
-<li>TFTP server (e.g. on Ubuntu <code class="docutils literal"><span class="pre">tftpd</span></code>)</li>
-<li>DHCP server (e.g. on Ubuntu <code class="docutils literal"><span class="pre">isc-dhcp-server</span></code>)</li>
+<li>NFS server (e.g. on Ubuntu <code class="docutils literal notranslate"><span class="pre">nfs-kernel-server</span></code>)</li>
+<li>TFTP server (e.g. on Ubuntu <code class="docutils literal notranslate"><span class="pre">tftpd</span></code>)</li>
+<li>DHCP server (e.g. on Ubuntu <code class="docutils literal notranslate"><span class="pre">isc-dhcp-server</span></code>)</li>
 </ul>
-<p>For demonstration purpose, the TFTP folder on the host is <code class="docutils literal"><span class="pre">/tftpboot</span></code>. It can be configured like this:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo mkdir /tftpboot
+<p>For demonstration purpose, the TFTP folder on the host is <code class="docutils literal notranslate"><span class="pre">/tftpboot</span></code>. It can be configured like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo mkdir /tftpboot
 $ sudo chown nobody /tftpboot
 $ nano /etc/xinetd.d/tftp
 $ cat /etc/xinetd.d/tftp
@@ -1150,8 +1176,8 @@ service tftp
 $ sudo /etc/init.d/xinetd restart
 </pre></div>
 </div>
-<p>For demonstration purpose, the NFS export folder is <code class="docutils literal"><span class="pre">/nfs_exp</span></code>. In can be configured like this:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo mkdir /nfs_exp
+<p>For demonstration purpose, the NFS export folder is <code class="docutils literal notranslate"><span class="pre">/nfs_exp</span></code>. In can be configured like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo mkdir /nfs_exp
 $ sudo chown root:root /nfs_exp
 $ sudo chmod <span class="m">777</span> /nfs_exp
 $ sudo nano /etc/exports
@@ -1161,11 +1187,11 @@ $ sudo exportfs -a
 </pre></div>
 </div>
 <p>Sometimes it is also necessary to restart the NFS server:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo /etc/init.d/nfs-kernel-server restart
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo /etc/init.d/nfs-kernel-server restart
 </pre></div>
 </div>
 <p>To configure the DHCP server do this:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ cat /etc/dhcp/dhcpd.conf
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cat /etc/dhcp/dhcpd.conf
 default-lease-time <span class="m">600</span><span class="p">;</span>
 max-lease-time <span class="m">7200</span><span class="p">;</span>
 option subnet-mask <span class="m">255</span>.255.255.0<span class="p">;</span>
@@ -1177,13 +1203,13 @@ subnet <span class="m">192</span>.168.1.0 netmask <span class="m">255</span>.255
 $ sudo /etc/init.d/isc-dhcp-server restart
 </pre></div>
 </div>
-<p>To select your ethernet interface edit <code class="docutils literal"><span class="pre">/etc/default/isc-dhcp-server</span></code>:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo sed -i -r <span class="s1">&#39;s/INTERFACES=&quot;(.+)&quot;/INTERFACES=&quot;eth1&quot;/g&#39;</span> /etc/default/isc-dhcp-server
+<p>To select your ethernet interface edit <code class="docutils literal notranslate"><span class="pre">/etc/default/isc-dhcp-server</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo sed -i -r <span class="s1">&#39;s/INTERFACES=&quot;(.+)&quot;/INTERFACES=&quot;eth1&quot;/g&#39;</span> /etc/default/isc-dhcp-server
 sudo /etc/init.d/isc-dhcp-server restart
 </pre></div>
 </div>
 <p>On the target in the Linux console, the NFS folder from the host should now accessible like this</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># mkdir /nfs</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># mkdir /nfs</span>
 <span class="c1"># mount -t nfs -o port=2049,nolock,proto=tcp,ro,vers=3 &lt;server_ip&gt;:/nfs_exp /nfs</span>
 <span class="c1"># cd /nfs</span>
 </pre></div>
@@ -1200,9 +1226,9 @@ sudo /etc/init.d/isc-dhcp-server restart
 </div>
 <div class="section" id="qspi-flash-layouts">
 <span id="altera-qspi-layout"></span><h3>QSPI Flash Layouts<a class="headerlink" href="#qspi-flash-layouts" title="Permalink to this headline">¶</a></h3>
-<p>The QSPI flash layout depends on the version of the Altera chip that is present in the module.</p>
-<table border="1" class="docutils" id="altera-cyclone-qspi-flash-layout">
-<caption><span class="caption-number">Table 5 </span><span class="caption-text">Altera Cyclone V Family QSPI Flash Layout</span><a class="headerlink" href="#altera-cyclone-qspi-flash-layout" title="Permalink to this table">¶</a></caption>
+<p>The QSPI flash layout depends on the version of the Intel chip that is present in the module.</p>
+<table border="1" class="docutils" id="intel-cyclone-qspi-flash-layout">
+<caption><span class="caption-number">Table 5 </span><span class="caption-text">Intel Cyclone V Family QSPI Flash Layout</span><a class="headerlink" href="#intel-cyclone-qspi-flash-layout" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="25%" />
 <col width="25%" />
@@ -1260,8 +1286,8 @@ sudo /etc/init.d/isc-dhcp-server restart
 </tbody>
 </table>
 <p>&nbsp;</p>
-<table border="1" class="docutils" id="altera-arria-qspi-flash-layout">
-<caption><span class="caption-number">Table 6 </span><span class="caption-text">Altera Arria 10 Family QSPI Flash Layout</span><a class="headerlink" href="#altera-arria-qspi-flash-layout" title="Permalink to this table">¶</a></caption>
+<table border="1" class="docutils" id="intel-arria-qspi-flash-layout">
+<caption><span class="caption-number">Table 6 </span><span class="caption-text">Intel Arria 10 Family QSPI Flash Layout</span><a class="headerlink" href="#intel-arria-qspi-flash-layout" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="25%" />
 <col width="25%" />
@@ -1323,11 +1349,11 @@ As the commands may differ between modules, more detailed information can be fou
 <div class="section" id="storage-pinmux-on-mercury-aa1">
 <h4>Storage pinmux on Mercury AA1<a class="headerlink" href="#storage-pinmux-on-mercury-aa1" title="Permalink to this headline">¶</a></h4>
 <p>The SD Card, eMMC and QSPI controllers share common pins and only one of them can be used at a time.
-It’s possible to switch between them using the <code class="docutils literal"><span class="pre">altera_set_storage</span></code> U-Boot command with one of three parameters:</p>
+It’s possible to switch between them using the <code class="docutils literal notranslate"><span class="pre">altera_set_storage</span></code> U-Boot command with one of three parameters:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">MMC</span></code></li>
-<li><code class="docutils literal"><span class="pre">EMMC</span></code></li>
-<li><code class="docutils literal"><span class="pre">QSPI</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">MMC</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">EMMC</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">QSPI</span></code></li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -1336,7 +1362,7 @@ It will reset to boot storage after reboot.
 Also, it does not change the storage available in Linux (see next section).</p>
 </div>
 <p>Examples:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># Switch to SD card</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Switch to SD card</span>
 <span class="o">=</span>&gt; altera_set_storage <span class="nv">MMC</span>
 <span class="o">=</span>&gt; mmc <span class="nv">rescan</span>
 <span class="o">=</span>&gt; mmc info
@@ -1384,11 +1410,11 @@ SF: Detected S25FL512S_256K with page size <span class="m">512</span> Bytes, era
 <p>The storage selection when booting Linux is automated.
 There are two Linux storage-related U-Boot’s environment variables:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">linux_storage</span></code> - decides which storage will be available in Linux. Possible values are the same as in the <code class="docutils literal"><span class="pre">altera_set_storage</span></code> command (<code class="docutils literal"><span class="pre">MMC</span></code>, <code class="docutils literal"><span class="pre">EMMC</span></code>, <code class="docutils literal"><span class="pre">QSPI</span></code>). By default boot storage is used.</li>
-<li><code class="docutils literal"><span class="pre">use_ramdisk</span></code> - when set to <code class="docutils literal"><span class="pre">0</span></code>, Linux will boot with rootfs located in the storage chosen with <code class="docutils literal"><span class="pre">linux_storage</span></code>. When set to <code class="docutils literal"><span class="pre">1</span></code>, ramdisk located in the boot partition of the boot storage will be used. Default value depends on the <code class="docutils literal"><span class="pre">.scr</span></code> file used - it is <code class="docutils literal"><span class="pre">1</span></code> for <code class="docutils literal"><span class="pre">uboot_ramdisk.scr</span></code> and <code class="docutils literal"><span class="pre">0</span></code> for <code class="docutils literal"><span class="pre">uboot.scr</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">linux_storage</span></code> - decides which storage will be available in Linux. Possible values are the same as in the <code class="docutils literal notranslate"><span class="pre">altera_set_storage</span></code> command (<code class="docutils literal notranslate"><span class="pre">MMC</span></code>, <code class="docutils literal notranslate"><span class="pre">EMMC</span></code>, <code class="docutils literal notranslate"><span class="pre">QSPI</span></code>). By default boot storage is used.</li>
+<li><code class="docutils literal notranslate"><span class="pre">use_ramdisk</span></code> - when set to <code class="docutils literal notranslate"><span class="pre">0</span></code>, Linux will boot with rootfs located in the storage chosen with <code class="docutils literal notranslate"><span class="pre">linux_storage</span></code>. When set to <code class="docutils literal notranslate"><span class="pre">1</span></code>, ramdisk located in the boot partition of the boot storage will be used. Default value depends on the <code class="docutils literal notranslate"><span class="pre">.scr</span></code> file used - it is <code class="docutils literal notranslate"><span class="pre">1</span></code> for <code class="docutils literal notranslate"><span class="pre">uboot_ramdisk.scr</span></code> and <code class="docutils literal notranslate"><span class="pre">0</span></code> for <code class="docutils literal notranslate"><span class="pre">uboot.scr</span></code>.</li>
 </ul>
 <p>Examples:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># Boot storage is assumed to be SD card (MMC)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Boot storage is assumed to be SD card (MMC)</span>
 
 <span class="o">=</span>&gt; setenv linux_storage <span class="nv">QSPI</span>
 <span class="o">=</span>&gt; run bootcmd
@@ -1421,14 +1447,14 @@ Booting with ramdisk
 <div class="section" id="saving-the-linux-storage-selection-emmc-and-sd-card">
 <h5>Saving the Linux storage selection - eMMC and SD card<a class="headerlink" href="#saving-the-linux-storage-selection-emmc-and-sd-card" title="Permalink to this headline">¶</a></h5>
 <p>The variables, when changed in U-Boot, are reset after reboot.
-To make them permanent, create <code class="docutils literal"><span class="pre">uEnv.txt</span></code> file on the boot partition located on the boot storage and put the variables in it, e.g.:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">linux_storage</span><span class="o">=</span>QSPI
+To make them permanent, create <code class="docutils literal notranslate"><span class="pre">uEnv.txt</span></code> file on the boot partition located on the boot storage and put the variables in it, e.g.:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">linux_storage</span><span class="o">=</span>QSPI
 <span class="nv">use_ramdisk</span><span class="o">=</span><span class="m">0</span>
 </pre></div>
 </div>
 <p>Keep in mind, the file will not be editable on Linux when you set a different storage than the boot one.
-In this case you can set the variable in U-Boot manually to your boot storage, boot the system and change <code class="docutils literal"><span class="pre">uEnv.txt</span></code>:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># Boot storage assumed to be SD card (MMC) and linux_storage set to EMMC</span>
+In this case you can set the variable in U-Boot manually to your boot storage, boot the system and change <code class="docutils literal notranslate"><span class="pre">uEnv.txt</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Boot storage assumed to be SD card (MMC) and linux_storage set to EMMC</span>
 
 <span class="o">=</span>&gt; setenv linux_storage <span class="nv">MMC</span>
 <span class="o">=</span>&gt; run bootcmd
@@ -1445,14 +1471,14 @@ Password:
 </div>
 <div class="section" id="saving-the-linux-storage-selection-qspi">
 <h5>Saving the Linux storage selection - QSPI<a class="headerlink" href="#saving-the-linux-storage-selection-qspi" title="Permalink to this headline">¶</a></h5>
-<p>When using the QSPI storage, you can save your choice in U-Boot using the <code class="docutils literal"><span class="pre">saveenv</span></code> command:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">=</span>&gt; setenv linux_storage <span class="nv">MMC</span>
+<p>When using the QSPI storage, you can save your choice in U-Boot using the <code class="docutils literal notranslate"><span class="pre">saveenv</span></code> command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">=</span>&gt; setenv linux_storage <span class="nv">MMC</span>
 <span class="o">=</span>&gt; setenv use_ramdisk <span class="nv">1</span>
 <span class="o">=</span>&gt; saveenv
 </pre></div>
 </div>
-<p>When Linux is using QSPI storage and you used <code class="docutils literal"><span class="pre">saveenv</span></code> in U-Boot at least once before, you can use the <code class="docutils literal"><span class="pre">fw_setenv</span></code> command in Linux. This works the same way as in U-Boot:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># fw_setenv linux_storage MMC</span>
+<p>When Linux is using QSPI storage and you used <code class="docutils literal notranslate"><span class="pre">saveenv</span></code> in U-Boot at least once before, you can use the <code class="docutils literal notranslate"><span class="pre">fw_setenv</span></code> command in Linux. This works the same way as in U-Boot:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># fw_setenv linux_storage MMC</span>
 <span class="c1"># fw_setenv use_ramdisk 1</span>
 </pre></div>
 </div>
@@ -1463,25 +1489,25 @@ Password:
 <p>On Mars MA3 the eMMC flash and SD Card controllers have common bus lines.
 Depending on the boot mode, one of them is enabled when the other is put into reset.
 The eMMC flash interface can be enabled by calling:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>run altera_enable_emmc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>run altera_enable_emmc
 </pre></div>
 </div>
 <p>The SD Card interface can be enabled with the following command:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>run altera_enable_mmc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>run altera_enable_mmc
 </pre></div>
 </div>
-<p>Additionally, a more complex <code class="docutils literal"><span class="pre">altera_mux_sd_memory</span></code> function has been added to the U-Boot environment.
-It enables the SD interface based on the <code class="docutils literal"><span class="pre">sd_target</span></code> U-Boot environment variable (possible values are <code class="docutils literal"><span class="pre">mmc</span></code> and <code class="docutils literal"><span class="pre">emmc</span></code>) and sets proper bus width (4 bit for SD/MMC Card and 8 bit for eMMC flash) in the dwmmc node in the Linux devicetree.</p>
+<p>Additionally, a more complex <code class="docutils literal notranslate"><span class="pre">altera_mux_sd_memory</span></code> function has been added to the U-Boot environment.
+It enables the SD interface based on the <code class="docutils literal notranslate"><span class="pre">sd_target</span></code> U-Boot environment variable (possible values are <code class="docutils literal notranslate"><span class="pre">mmc</span></code> and <code class="docutils literal notranslate"><span class="pre">emmc</span></code>) and sets proper bus width (4 bit for SD/MMC Card and 8 bit for eMMC flash) in the dwmmc node in the Linux devicetree.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">As <code class="docutils literal"><span class="pre">altera_mux_sd_memory</span></code> modifies the Linux devicetree, it requires the devicetree to be loaded earlier.</p>
+<p class="last">As <code class="docutils literal notranslate"><span class="pre">altera_mux_sd_memory</span></code> modifies the Linux devicetree, it requires the devicetree to be loaded earlier.</p>
 </div>
 <p>E.g. to enable eMMC, call:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>setenv sd_target emmc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>setenv sd_target emmc
 run altera_mux_sd_memory
 </pre></div>
 </div>
-<p>For an example see: <a class="reference internal" href="#altera-qspi"><span class="std std-ref">eMMC Flash</span></a> (Note that <code class="docutils literal"><span class="pre">altera_mux_sd_memory</span></code> is called in boot script.)</p>
+<p>For an example see: <a class="reference internal" href="#altera-qspi"><span class="std std-ref">QSPI Flash</span></a> (Note that <code class="docutils literal notranslate"><span class="pre">altera_mux_sd_memory</span></code> is called in boot script.)</p>
 </div>
 </div>
 </div>
@@ -1549,8 +1575,8 @@ Pay attention to choosing the correct partition to replace the files if you use 
 <h3>How to script U-Boot?<a class="headerlink" href="#how-to-script-u-boot" title="Permalink to this headline">¶</a></h3>
 <p>All U-Boot commands can be automated by scripting, so that it is much more convenient to deploy flash images to the hardware.</p>
 <p>For example, QSPI deployment:</p>
-<p>Put the following commands as plain text to a file <code class="docutils literal"><span class="pre">cmd.txt</span></code>:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>sf probe
+<p>Put the following commands as plain text to a file <code class="docutils literal notranslate"><span class="pre">cmd.txt</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sf probe
 
 echo &quot;preloader&quot;
 mw.b ${preloader_loadaddr} 0xFF ${preloader_size}
@@ -1597,13 +1623,13 @@ sf write ${rootfs_loadaddr} ${qspi_rootfs_offset} ${filesize}
 run qspiboot
 </pre></div>
 </div>
-<p>Then generate an image <code class="docutils literal"><span class="pre">cmd.img</span></code> and put it onto the TFTP server on the host computer like following. Note that on Windows operating systems this needs to be executed in SoC EDS Command Shell. Be sure to use Unix line endings.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>mkimage -T script -C none -n <span class="s2">&quot;QSPI flash commands&quot;</span> -d cmd.txt cmd.img
+<p>Then generate an image <code class="docutils literal notranslate"><span class="pre">cmd.img</span></code> and put it onto the TFTP server on the host computer like following. Note that on Windows operating systems this needs to be executed in SoC EDS Command Shell. Be sure to use Unix line endings.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkimage -T script -C none -n <span class="s2">&quot;QSPI flash commands&quot;</span> -d cmd.txt cmd.img
 cp cmd.img /tftpboot
 </pre></div>
 </div>
 <p>And finally, load the file on the target platform in U-boot and execute it, like this (after step 5 Setup U-Boot connection parameters, in the user documentation):</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>tftpboot 100000 cmd.img
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>tftpboot 100000 cmd.img
 source 100000
 </pre></div>
 </div>
@@ -1611,7 +1637,7 @@ source 100000
 <div class="section" id="how-can-the-flash-memory-be-programmed-from-linux">
 <h3>How can the flash memory be programmed from Linux?<a class="headerlink" href="#how-can-the-flash-memory-be-programmed-from-linux" title="Permalink to this headline">¶</a></h3>
 <p>In order to program flash memory from Linux, a script like the following one can be used. - All required files need to be present in the current folder. They can be loaded via TFTP or from USB drive / SD card. Be sure to set the address offset for each file according to <a class="reference internal" href="index_altera.html#altera-qspi-layout"><span class="std std-ref">QSPI Flash Layouts</span></a>.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
 
 getsize <span class="o">()</span>
 <span class="o">{</span>
@@ -1673,7 +1699,7 @@ mtd_debug write /dev/mtd1 <span class="si">${</span><span class="nv">ROOTFS_OFFS
 </pre></div>
 </div>
 <p>Just make the script executable and execute it like this:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>chmod +x flash.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod +x flash.sh
 ./flash.sh
 </pre></div>
 </div>
@@ -1695,7 +1721,7 @@ mtd_debug write /dev/mtd1 <span class="si">${</span><span class="nv">ROOTFS_OFFS
             <p class="logo"><a href="index_altera.html#document-index_altera">
               <img class="logo" src="_static/logo.png" alt="Logo"/>
             </a></p>
-  <h3><a href="index_altera.html#document-index_altera">Table Of Contents</a></h3>
+  <h3><a href="index_altera.html#document-index_altera">Table of Contents</a></h3>
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="index_altera.html#document-introduction">Introduction</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="index_altera.html#version-information">Version Information</a></li>
@@ -1747,8 +1773,8 @@ mtd_debug write /dev/mtd1 <span class="si">${</span><span class="nv">ROOTFS_OFFS
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright Antmicro Ltd for Enclustra GmbH, 2015.
-      Last updated on 2018-11-23.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
+      Last updated on 2019-02-22.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.3.
     </div>
   </body>
 </html>
